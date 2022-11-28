@@ -1,8 +1,12 @@
 # Movies Browser
 
-Description 
+Description: 
 
-#Demo: https://s5zee.github.io/Movies-Browser/
+Group project 
+
+Demo:
+
+https://s5zee.github.io/Movies-Browser/
 
 # Getting Started with Create React App
 
