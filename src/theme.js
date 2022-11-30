@@ -1,4 +1,6 @@
 export const breakpoints = {
+  small: "480px",
+  large: "992px",
   mobileMin: 320,
   mobileMax: 767
 };
