@@ -1,6 +1,10 @@
+import { MovieTile } from "./common/tiles/MovieTile";
+
 function App() {
   return (
-    <div>test</div>
+    <div>
+      <MovieTile />
+    </div>
   );
 }
 
