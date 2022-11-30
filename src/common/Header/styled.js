@@ -11,7 +11,7 @@ export const HeaderArea = styled.div`
 `;
 
 export const HeaderContainer = styled.div`
-  max-width: 1920px;
+  max-width: 1368px;
   padding: 0 20px;
   margin: 0 auto;
   display: flex;

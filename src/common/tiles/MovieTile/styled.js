@@ -2,14 +2,14 @@ import styled from "styled-components";
 import { Ratings } from "./Ratings/index.js";
 
 export const Wrapper = styled.div`
-  max-width: 1920px;
+  max-width: 1368px;
   margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
-  padding: 20px;
   gap: 20px;
+  margin-top: 24px;
   justify-content: center;
-  background-color: ${({ theme }) => theme.colors.grey};
+  background-color: ${({ theme }) => theme.colors.lightGrey};
 `;
 
 export const Container = styled.div`
