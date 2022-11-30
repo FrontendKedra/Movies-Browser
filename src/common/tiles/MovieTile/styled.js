@@ -1,14 +1,15 @@
 import styled from "styled-components";
 import { Ratings } from "./Ratings/index.js";
 
-export const Wrapper = styled.section`
-  max-width: 1291px;
+export const Wrapper = styled.div`
+  max-width: 1920px;
   margin: 0 auto;
-  padding: 20px;
   display: flex;
   flex-wrap: wrap;
+  padding: 20px;
   gap: 20px;
-  background-color: grey;
+  justify-content: center;
+  background-color: ${({ theme }) => theme.colors.grey};
 `;
 
 export const Container = styled.div`

@@ -2,6 +2,7 @@ import {
   Container,
   Details,
   InfoContent,
+  MovieWrapper,
   Poster,
   StyledRatings,
   Title,
