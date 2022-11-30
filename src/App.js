@@ -1,6 +1,8 @@
+import { BigTile } from "./Components/common/BigTile";
+
 function App() {
   return (
-    <div>test</div>
+    <BigTile />
   );
 }
 
