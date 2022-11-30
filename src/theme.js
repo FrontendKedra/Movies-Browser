@@ -1,8 +1,15 @@
 export const theme = {
-  colors: {},
+  colors: {
+    black: "#000000",
+    stormGray: "#74788B",
+    woodsmoke: "#18181B",
+    mystic: "#E4E6F0",
+    white: "#FFFFFF",
+    waterloo: "#7E839A",
+  },
   breakpoints: {
-    mobileMin: 320,
-    mobileMax: 767,
+    small: 480,
+    large: 992,
   },
   radius: {
     small: "5px",
