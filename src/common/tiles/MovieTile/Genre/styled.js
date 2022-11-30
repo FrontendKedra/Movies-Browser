@@ -7,6 +7,7 @@ export const GenreContainer = styled.div`
   font-size: 14px;
   line-height: 1.4;
   margin-left: 16px;
+  gap: 8px;
 
   @media (max-width: 480px) {
     font-size: 10px;
