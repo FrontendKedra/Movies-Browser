@@ -11,7 +11,7 @@ export const HeaderArea = styled.div`
 `;
 
 export const HeaderContainer = styled.div`
-  max-width: 1920px;
+  max-width: 1368px;
   padding: 0 20px;
   margin: 0 auto;
   display: flex;
@@ -108,7 +108,7 @@ export const ListLink = styled.a`//dadać NavLink po podpięciu react-router
   
   @media (min-width: ${({ theme }) => theme.breakpoints.large}) {
     &.active:hover{
-      border: 1px solid ${({ theme }) => theme.colors.hoverLink};
+      border: 1px solid ${({ theme }) => theme.radius.navigationLinks};
     }
   }
 `;
@@ -147,7 +147,7 @@ export const SearchInput = styled.input`
   
   ::placeholder {
     font-size: 13px;
-    color: #7E839A;
+    color: ${({ theme }) => theme.colors.waterloo};
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.large}) {
