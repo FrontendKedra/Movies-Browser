@@ -5,6 +5,7 @@ import {
   ListItem,
   ListLink,
   NavList, 
+
   SearchBar,
   SearchIcon,
   SearchInput,
@@ -43,3 +44,4 @@ export const Header = () => {
     </HeaderArea>
   );
 };
+

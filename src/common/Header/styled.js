@@ -78,7 +78,8 @@ export const ListItem = styled.li`
   margin: 0 8px;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.large}) {
-    &:last-child{
+
+    &:last-child {
       margin-right: 0px;
     }
   }
@@ -107,10 +108,12 @@ export const ListLink = styled(NavLink)`
   @media (max-width: ${({ theme }) => theme.breakpoints.small}) {
     font-size: 12px;
   }
+
   
   @media (min-width: ${({ theme }) => theme.breakpoints.large}) {
     &.active:hover{
       border: 1px solid ${({ theme }) => theme.radius.navigationLinks};
+
     }
   }
 `;
@@ -122,7 +125,7 @@ export const SearchBar = styled.div`
     flex-basis: 100%;
     margin-top: 20px;
   }
-  
+
   @media (max-width: ${({ theme }) => theme.breakpoints.small}) {
     margin-top: 33px;
   }
@@ -149,7 +152,8 @@ export const SearchInput = styled.input`
   
   ::placeholder {
     font-size: 13px;
-    color: ${({ theme }) => theme.colors.waterloo};
+    color: ${({ theme }) => theme.colors.darkGrey};
+
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.large}) {

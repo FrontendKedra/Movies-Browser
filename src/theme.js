@@ -9,10 +9,10 @@ export const theme = {
     lightBlue: "#D6E4FF",
     yellow: "#FCD420",
   },
-    
+
   breakpoints: {
     small: "480px",
-    large: "992px"
+    large: "992px",
   },
 
   radius: {
