@@ -3,7 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const popularMoviesSlice = createSlice({
   name: "popularMovies",
   initialState: {
-    status: "initial",
+    status: "loading",
     movies: [],
   },
   reducers: {
