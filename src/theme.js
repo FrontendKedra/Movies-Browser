@@ -13,16 +13,14 @@ export const theme = {
   breakpoints: {
     small: "480px",
     large: "992px",
-    mobileMin: 320,
-    mobileMax: 767,
-
+    mobileMin: "320px",
+    mobileMax: "767px",
   },
 
   radius: {
     small: "5px",
     navigationInput: "33px",
-    navigationLinks: "24px"
-
+    navigationLinks: "24px",
   },
 
   shadow: {
