@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import { NavLink } from "react-router-dom";
 
 export const HeaderArea = styled.div`
   background-color: ${({ theme }) => theme.colors.black};
@@ -34,7 +35,7 @@ export const TextSide = styled.div`
   }
 `;
 
-export const Title = styled.a`//dadać NavLink po podpięciu react-router
+export const Title = styled(NavLink)`
   margin: 0;
   text-decoration: none;
   color: ${({ theme }) => theme.colors.white};
@@ -86,14 +87,15 @@ export const ListItem = styled.li`
   }
 `;
 
-export const ListLink = styled.a`//dadać NavLink po podpięciu react-router
+export const ListLink = styled(NavLink)`
   font-size: 14px;
   font-weight: 600;
   padding: 14px 24px;
+  color:${({ theme }) => theme.colors.white};
   text-transform: uppercase;
   text-decoration: none;
 
-  &:active{
+  &.active{
     border: 1px solid ${({ theme }) => theme.colors.white};
     border-radius: ${({ theme }) => theme.radius.navigationLinks};
   }
