@@ -1,28 +1,27 @@
-export const breakpoints = {
-  small: "480px",
-  large: "992px",
-  mobileMin: 320,
-  mobileMax: 767
-};
-
-export const radius = {
-  small: "5px",
-  navigationInput: "33px",
-  navigationLinks: "24px"
-};
-
-export const shadow = {
-  mainShadow: "0px 4px 12px rgba(186, 199, 213, 0.5);"
-};
-
-export const colors = {
-  black: "#18181b",
-  white: "#FFFFFF"
-};
-
 export const theme = {
-  colors: colors,
-  breakpoints: breakpoints,
-  radius: radius,
-  shadow: shadow
+  colors: {
+    black: "#18181B",
+    white: "#FFFFFF",
+    waterloo: "#7E839A",
+    grey: "#E4E6F0",
+    lightGrey: "#F5F5FA",
+    blue: "#0044CC",
+    lightBlue: "#D6E4FF",
+    yellow: "#FCD420",
+  },
+    
+  breakpoints: {
+    small: "480px",
+    large: "992px"
+  },
+
+  radius: {
+    small: "5px",
+    navigationInput: "33px",
+    navigationLinks: "24px"
+  },
+
+  shadow: {
+    mainShadow: "0px 4px 12px rgba(186, 199, 213, 0.5);",
+  },
 };
