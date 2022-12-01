@@ -1,62 +1,62 @@
 import {
   Container,
-  TileImage,
+  Image,
   TileContainer,
-  TileTitle,
-  TileYear,
-  TileSubHeaderContainer,
-  TileSubHeader,
-  TileSubHeaderTitle,
-  TileSubHeaderInformation,
-  TileGenreContainer,
-  TileGenre,
-  TileVotesContainer,
-  TileRatesContainer,
-  TileStarIcon,
-  TileActualRating,
-  TileMaxRating,
-  TileVoteAmount,
-  TileArticle,
+  Title,
+  Year,
+  SubHeaderContainer,
+  SubHeader,
+  SubHeaderTitle,
+  SubHeaderInformation,
+  GenreContainer,
+  Genre,
+  VotesContainer,
+  RatesContainer,
+  StarIcon,
+  ActualRating,
+  MaxRating,
+  VoteAmount,
+  Article,
 } from "./styled";
 import poster from "../../../images/poster.png";
 
 export const BigTile = () => (
   <Container>
-    <TileImage src={poster} />
+    <Image src={poster} />
     <TileContainer>
-      <TileTitle>Mulan</TileTitle>
-      <TileYear>2020</TileYear>
-      <TileSubHeaderContainer>
-        <TileSubHeader>
-          <TileSubHeaderTitle>Production:</TileSubHeaderTitle>
-          <TileSubHeaderInformation>
+      <Title>Mulan</Title>
+      <Year>2020</Year>
+      <SubHeaderContainer>
+        <SubHeader>
+          <SubHeaderTitle>Production:</SubHeaderTitle>
+          <SubHeaderInformation>
             China, United States of America
-          </TileSubHeaderInformation>
-        </TileSubHeader>
-        <TileSubHeader>
-          <TileSubHeaderTitle>Release date:</TileSubHeaderTitle>
-          <TileSubHeaderInformation>24.10.2020</TileSubHeaderInformation>
-        </TileSubHeader>
-      </TileSubHeaderContainer>
-      <TileGenreContainer>
-        <TileGenre>Action</TileGenre>
-        <TileGenre>Drama</TileGenre>
-        <TileGenre>Adventure</TileGenre>
-      </TileGenreContainer>
-      <TileVotesContainer>
-        <TileRatesContainer>
-          <TileStarIcon />
-          <TileActualRating>7,8</TileActualRating>
-          <TileMaxRating>/ 10</TileMaxRating>
-        </TileRatesContainer>
-        <TileVoteAmount>335 votes</TileVoteAmount>
-      </TileVotesContainer>
+          </SubHeaderInformation>
+        </SubHeader>
+        <SubHeader>
+          <SubHeaderTitle>Release date:</SubHeaderTitle>
+          <SubHeaderInformation>24.10.2020</SubHeaderInformation>
+        </SubHeader>
+      </SubHeaderContainer>
+      <GenreContainer>
+        <Genre>Action</Genre>
+        <Genre>Drama</Genre>
+        <Genre>Adventure</Genre>
+      </GenreContainer>
+      <VotesContainer>
+        <RatesContainer>
+          <StarIcon />
+          <ActualRating>7,8</ActualRating>
+          <MaxRating>/ 10</MaxRating>
+        </RatesContainer>
+        <VoteAmount>335 votes</VoteAmount>
+      </VotesContainer>
     </TileContainer>
-    <TileArticle>
+    <Article>
       A young Chinese maiden disguises herself as a male warrior in order to
       save her father. Disguises herself as a male warrior in order to save her
       father. A young Chinese maiden disguises herself as a male warrior in
       order to save her father.
-    </TileArticle>
+    </Article>
   </Container>
 );

@@ -16,142 +16,142 @@ export const Container = styled.div`
   background-color: ${({ theme }) => theme.colors.white};
   grid-template-rows: auto 1fr;
 
-    @media (max-width: ${({ theme }) => theme.breakpoints.large}px) {
+    @media (max-width: ${({ theme }) => theme.breakpoints.large}) {
       gap: 0 28px;
       grid-template-columns: minmax(auto, 215px) 1fr;
     }
 
-    @media (max-width: ${({ theme }) => theme.breakpoints.small}px) {
+    @media (max-width: ${({ theme }) => theme.breakpoints.small}) {
       grid-template-columns: minmax(auto, 114px) 1fr;
       gap: 0 16px;
     }
 `;
 
-export const TileImage = styled.img`
+export const Image = styled.img`
   width: 312px;
   height: 464px;
   border-radius: ${({ theme }) => theme.radius.small};
   grid-row: span 2;
 
-    @media (max-width: ${({ theme }) => theme.breakpoints.large}px) {
+    @media (max-width: ${({ theme }) => theme.breakpoints.large}) {
       width: 215px;
       height: 319px;
     }
 
-    @media (max-width: ${({ theme }) => theme.breakpoints.small}px) {
+    @media (max-width: ${({ theme }) => theme.breakpoints.small}) {
       width: 114px;
       height: 169px;
     }
 `;
 
 export const TileContainer = styled.div`
-    @media (max-width: ${({ theme }) => theme.breakpoints.large}px) {
+    @media (max-width: ${({ theme }) => theme.breakpoints.large}) {
       grid-row: span 2;
     }
 `;
 
-export const TileTitle = styled.header`
+export const Title = styled.header`
   font-weight: 600;
   font-size: 36px;
   color: ${({ theme }) => theme.colors.black};
   margin: 0 0 24px 0;
 
-    @media (max-width: ${({ theme }) => theme.breakpoints.large}px) {
+    @media (max-width: ${({ theme }) => theme.breakpoints.large}) {
       font-size: 24px;
       margin: 0 0 18px 0;
     }
 
-    @media (max-width: ${({ theme }) => theme.breakpoints.small}px) {
+    @media (max-width: ${({ theme }) => theme.breakpoints.small}) {
       font-size: 13px;
       margin: 0 0 8px 0;
     }
 `;
 
-export const TileYear = styled.p`
+export const Year = styled.p`
   font-weight: 400;
   font-size: 22px;
   color: ${({ theme }) => theme.colors.black};
   margin: 0 0 24px 0;
 
-    @media (max-width: ${({ theme }) => theme.breakpoints.large}px) {
+    @media (max-width: ${({ theme }) => theme.breakpoints.large}) {
       font-size: 18px;
       margin: 0 0 18px 0;
     }
 
-    @media (max-width: ${({ theme }) => theme.breakpoints.small}px) {
+    @media (max-width: ${({ theme }) => theme.breakpoints.small}) {
       color: ${({ theme }) => theme.colors.waterloo};
       font-size: 13px;
       margin: 0 0 8px 0;
     }
 `;
 
-export const TileSubHeaderContainer = styled.div`
+export const SubHeaderContainer = styled.div`
   display: grid;
   gap: 8px;
   margin: 0 0 24px 0;
 
-    @media (max-width: ${({ theme }) => theme.breakpoints.large}px) {
+    @media (max-width: ${({ theme }) => theme.breakpoints.large}) {
       margin: 0 0 18px 0;
     }
 
-    @media (max-width: ${({ theme }) => theme.breakpoints.small}px) {
+    @media (max-width: ${({ theme }) => theme.breakpoints.small}) {
       color: ${({ theme }) => theme.colors.waterloo};
       margin: 0 0 8px 0;
     }
 `;
 
-export const TileSubHeader = styled.div`
+export const SubHeader = styled.div`
   display: grid;
   grid-template-columns: auto 1fr;
   gap: 10px;
 `;
 
-export const TileSubHeaderTitle = styled.p`
+export const SubHeaderTitle = styled.p`
   font-weight: 400;
   font-size: 18px;
   color: ${({ theme }) => theme.colors.stormGray};
   margin: 0;
 
-    @media (max-width: ${({ theme }) => theme.breakpoints.large}px) {
+    @media (max-width: ${({ theme }) => theme.breakpoints.large}) {
       display: none;
     }
 `;
 
-export const TileSubHeaderInformation = styled.p`
+export const SubHeaderInformation = styled.p`
   font-weight: 400;
   font-size: 18px;
   color: ${({ theme }) => theme.colors.black};
   margin: 0;
   line-height: 120%;
 
-    @media (max-width: ${({ theme }) => theme.breakpoints.large}px) {
+    @media (max-width: ${({ theme }) => theme.breakpoints.large}) {
       font-size: 15px;
     }
 
-    @media (max-width: ${({ theme }) => theme.breakpoints.small}px) {
+    @media (max-width: ${({ theme }) => theme.breakpoints.small}) {
       font-size: 12px;
     }
 `;
 
-export const TileGenreContainer = styled.div`
+export const GenreContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   gap: 16px;
   align-items: center;
   margin: 0 0 24px 0;
 
-    @media (max-width: ${({ theme }) => theme.breakpoints.large}px) {
+    @media (max-width: ${({ theme }) => theme.breakpoints.large}) {
       margin: 0 0 18px 0;
       gap: 12px;
     }
 
-    @media (max-width: ${({ theme }) => theme.breakpoints.small}px) {
+    @media (max-width: ${({ theme }) => theme.breakpoints.small}) {
       margin: 0 0 8px 0;
       gap: 8px;
     }
 `;
 
-export const TileGenre = styled.p`
+export const Genre = styled.p`
   font-weight: 400;
   font-size: 14px;
   color: ${({ theme }) => theme.colors.woodsmoke};
@@ -162,112 +162,112 @@ export const TileGenre = styled.p`
   align-items: center;
   margin: 0;
 
-    @media (max-width: ${({ theme }) => theme.breakpoints.large}px) {
+    @media (max-width: ${({ theme }) => theme.breakpoints.large}) {
       font-size: 12px;
       padding: 6px 9px;
     }
 
-    @media (max-width: ${({ theme }) => theme.breakpoints.small}px) {
+    @media (max-width: ${({ theme }) => theme.breakpoints.small}) {
       font-size: 10px;
       padding: 4px 8px;
     }
 `;
 
-export const TileVotesContainer = styled.div`
+export const VotesContainer = styled.div`
   display: grid;
   grid-template-columns: auto auto 1fr;
   gap: 12px;
   align-items: center;
   margin: 0 0 24px 0;
 
-    @media (max-width: ${({ theme }) => theme.breakpoints.large}px) {
+    @media (max-width: ${({ theme }) => theme.breakpoints.large}) {
       gap: 10px;
     }
 
-    @media (max-width: ${({ theme }) => theme.breakpoints.small}px) {
+    @media (max-width: ${({ theme }) => theme.breakpoints.small}) {
       gap: 8px;
     }
 `;
 
-export const TileRatesContainer = styled.div`
+export const RatesContainer = styled.div`
   gap: 8px;
   display: grid;
   grid-template-columns: repeat(3, auto);
   align-items: center;
 
-    @media (max-width: ${({ theme }) => theme.breakpoints.large}px) {
+    @media (max-width: ${({ theme }) => theme.breakpoints.large}) {
       grid-template-columns: repeat(2, auto);
     }
 `;
 
-export const TileStarIcon = styled(Vector)`
+export const StarIcon = styled(Vector)`
   height: auto;
   width: 24px;
 
-    @media (max-width: ${({ theme }) => theme.breakpoints.large}px) {
+    @media (max-width: ${({ theme }) => theme.breakpoints.large}) {
       width: 20px;
     }
 
-    @media (max-width: ${({ theme }) => theme.breakpoints.small}px) {
+    @media (max-width: ${({ theme }) => theme.breakpoints.small}) {
       width: 16px;
     }
 `;
 
-export const TileActualRating = styled.span`
+export const ActualRating = styled.span`
   font-weight: 500;
   font-size: 22px;
   line-height: 130%;
 
-    @media (max-width: ${({ theme }) => theme.breakpoints.large}px) {
+    @media (max-width: ${({ theme }) => theme.breakpoints.large}) {
       font-weight: 600;
       font-size: 18px;
     }
 
-    @media (max-width: ${({ theme }) => theme.breakpoints.small}px) {
+    @media (max-width: ${({ theme }) => theme.breakpoints.small}) {
       font-size: 13px;
     }
 `;
 
-export const TileMaxRating = styled.span`
+export const MaxRating = styled.span`
   font-weight: 400;
   font-size: 14px;
   line-height: 120%;
 
-    @media (max-width: ${({ theme }) => theme.breakpoints.large}px) {
+    @media (max-width: ${({ theme }) => theme.breakpoints.large}) {
       display: none;
     }
 `;
 
-export const TileVoteAmount = styled.span`
+export const VoteAmount = styled.span`
   font-weight: 400;
   font-size: 14px;
   line-height: 120%;
 
-    @media (max-width: ${({ theme }) => theme.breakpoints.large}px) {
+    @media (max-width: ${({ theme }) => theme.breakpoints.large}) {
       color: ${({ theme }) => theme.colors.waterloo};
     }
 
-    @media (max-width: ${({ theme }) => theme.breakpoints.small}px) {
+    @media (max-width: ${({ theme }) => theme.breakpoints.small}) {
       font-size: 13px;
       line-height: 130%;
     }
 `;
 
-export const TileArticle = styled.article`
+export const Article = styled.article`
   font-weight: 400;
   font-size: 20px;
   line-height: 160%;
   color: ${({ theme }) => theme.colors.black};
   margin: 0;
 
-    @media (max-width: ${({ theme }) => theme.breakpoints.large}px) {
+    @media (max-width: ${({ theme }) => theme.breakpoints.large}) {
       font-size: 17px;
       grid-row: 3;
       grid-column: span 2;
       margin-top: 36px;
     }
 
-    @media (max-width: ${({ theme }) => theme.breakpoints.small}px) {
+    @media (max-width: ${({ theme }) => theme.breakpoints.small}) {
       font-size: 14px;
       margin-top: 24px;
     }
