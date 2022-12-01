@@ -2,14 +2,12 @@ import {
   Container,
   Details,
   InfoContent,
-  MovieWrapper,
   Poster,
   StyledRatings,
   Title,
   Wrapper,
   Year,
 } from "./styled";
-import Mulan from "./poster.jpg";
 import { Genre } from "./Genre";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
@@ -19,6 +17,7 @@ import {
 } from "../../../popularMoviesSlice";
 
 import { imageBaseUrl } from "../../../ApiValue";
+import noPoster from "./noPoster.png";
 
 export const MovieTile = () => {
   const dispatch = useDispatch();
@@ -41,7 +40,12 @@ export const MovieTile = () => {
           release_date,
         }) => (
           <Container key={id} id={id}>
-            <Poster src={`${imageBaseUrl}/w342${poster_path}`} alt=""></Poster>
+            <Poster
+              src={
+                poster_path ? `${imageBaseUrl}/w342${poster_path}` : noPoster
+              }
+              alt=""
+            ></Poster>
             <InfoContent>
               <Details>
                 <Title>{title}</Title>
