@@ -20,7 +20,7 @@ export const Container = styled.div`
   grid-template-rows: auto 1fr;
   border-radius: ${({ theme }) => theme.radius.small};
 
-  @media (max-width: 480px) {
+  @media (max-width: 767px) {
     width: 288px;
     height: 201px;
     display: grid;
@@ -34,7 +34,7 @@ export const Poster = styled.img`
   margin: 16px;
   border-radius: ${({ theme }) => theme.radius.small};
 
-  @media (max-width: 480px) {
+  @media (max-width: 767px) {
     margin-right: 0;
     width: 114px;
     height: 169px;
@@ -53,7 +53,7 @@ export const Details = styled.div`
   grid-template-columns: 1fr;
   grid-gap: 8px;
 
-  @media (max-width: 480px) {
+  @media (max-width: 767px) {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -69,7 +69,7 @@ export const Title = styled.h2`
   color: ${({ theme }) => theme.colors.black};
   margin: 0 0 0 16px;
 
-  @media (max-width: 480px) {
+  @media (max-width: 767px) {
     font-size: 16px;
     line-height: 20px;
   }
@@ -82,7 +82,7 @@ export const Year = styled.p`
   color: ${({ theme }) => theme.colors.darkGrey};
   margin: 0 0 0 16px;
 
-  @media (max-width: 480px) {
+  @media (max-width: 767px) {
     font-size: 13px;
     line-height: 16.9px;
   }
