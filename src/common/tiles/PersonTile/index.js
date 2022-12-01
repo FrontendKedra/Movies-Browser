@@ -5,10 +5,8 @@ import {
   fetchPopularPeople,
   selectPopularPeople,
 } from "../../../popularPeopleSlice";
-// import poster from "./poster.png";
 import { Container, Name, ProfileImage, Wrapper } from "./styled";
 import noPicture from "./noPicture.png";
-import { ReactComponent as NoImage } from "./noPersonImage.svg";
 
 export const PersonTile = () => {
   const dispatch = useDispatch();
@@ -27,7 +25,6 @@ export const PersonTile = () => {
             src={
               profile_path ? `${imageBaseUrl}/w342${profile_path}` : noPicture
             }
-            // src={`${imageBaseUrl}/w342${profile_path}`}
             alt=""
           ></ProfileImage>
           <Name>{name}</Name>
@@ -37,7 +34,7 @@ export const PersonTile = () => {
       {/* Przykładowa ikonka bez fotki  */}
       <Container>
         <ProfileImage src={noPicture} alt=""></ProfileImage>
-        <Name>Dupa blada</Name>
+        <Name>Jakieś długie imię</Name>
       </Container>
     </Wrapper>
   );
