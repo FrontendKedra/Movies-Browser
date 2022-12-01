@@ -8,8 +8,8 @@ export const theme = {
     waterloo: "#7E839A",
   },
   breakpoints: {
-    small: 480,
-    large: 992,
+    small: "480px",
+    large: "992px",
   },
   radius: {
     small: "5px",
