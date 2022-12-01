@@ -20,6 +20,7 @@ export const Container = styled.div`
 
 export const ProfileImage = styled.img`
   width: 177px;
+  height: 232.31px;
   display: block;
   flex-shrink: 0;
   border-radius: ${({ theme }) => theme.radius.small};
