@@ -1,8 +1,12 @@
-import { BigTile } from "./Components/common/BigTile";
+import { Header } from "./common/Header";
+import { MovieTile } from "./common/tiles/MovieTile";
 
 function App() {
   return (
-    <BigTile />
+    <div>
+      <Header />
+      <MovieTile />
+    </div>
   );
 }
 

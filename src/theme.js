@@ -1,20 +1,30 @@
 export const theme = {
   colors: {
-    black: "#000000",
     stormGray: "#74788B",
-    woodsmoke: "#18181B",
-    mystic: "#E4E6F0",
+    darkBlack: "#000000",
+    black: "#18181B",
+    darkGrey: "#7E839A",
+    grey: "#E4E6F0",
+    lightGrey: "#F5F5FA",
     white: "#FFFFFF",
-    waterloo: "#7E839A",
+    blue: "#0044CC",
+    lightBlue: "#D6E4FF",
+    yellow: "#FCD420",
   },
+
   breakpoints: {
     small: "480px",
     large: "992px",
+    mobileMin: 320,
+    mobileMax: 767,
   },
+
   radius: {
     small: "5px",
     navigationInput: "33px",
+    navigationLinks: "24px",
   },
+
   shadow: {
     mainShadow: "0px 4px 12px rgba(186, 199, 213, 0.5);",
   },
