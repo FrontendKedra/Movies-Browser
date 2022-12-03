@@ -116,4 +116,12 @@ export const LinkButton = styled.button`
       font-size: 10px;
       padding: 8px 12px;
     }
+
+    &:hover {
+      background-color: ${({ theme }) => theme.colors.blueRibbon};
+    }
+
+    &:active {
+      background-color: ${({ theme }) => theme.colors.lighterBlue};
+    }
 `;
