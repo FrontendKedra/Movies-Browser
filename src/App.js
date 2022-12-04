@@ -1,4 +1,5 @@
 import { Header } from "./common/Header";
+import { BigTile } from "./common/tiles/BigTile";
 import { MovieTile } from "./common/tiles/MovieTile";
 import { PersonTile } from "./common/tiles/PersonTile";
 import { MovieList } from "./features/movies/MovieList";
@@ -8,7 +9,8 @@ function App() {
   return (
     <div>
       <Header />
-      <PeoplePage />
+      {/* <PeoplePage /> */}
+      <BigTile />
       {/* <MovieList /> */}
       {/* <PersonTile /> */}
       {/* <MovieTile /> */}
