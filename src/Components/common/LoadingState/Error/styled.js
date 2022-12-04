@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { ReactComponent as Danger } from "./Icons/Danger.svg";
+import { ReactComponent as Danger } from "./icons/Danger.svg";
 
 export const Container = styled.div`
   display: grid;
@@ -73,6 +73,7 @@ export const ErrorMessage = styled.h2`
   font-weight: 500;
   font-size: 22px;
   line-height: 130%;
+  text-align: center;
   color: ${({ theme }) => theme.colors.black};
   margin: 0;
 
@@ -96,6 +97,7 @@ export const LinkButton = styled.button`
   line-height: 19px;
   color: ${({ theme }) => theme.colors.white};
   background-color: ${({ theme }) => theme.colors.blue};
+  border-radius: ${({ theme }) => theme.radius.small};
   display: flex;
   flex-direction: row;
   align-items: center;
