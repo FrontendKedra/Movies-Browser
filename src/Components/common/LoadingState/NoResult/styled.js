@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import { ReactComponent as Icon } from "./Icons/NoResult.svg";
+import { ReactComponent as Icon } from "./icons/NoResult.svg";
 
-export const Text = styled.header`
+export const Header = styled.header`
   font-weight: 600;
   font-size: 36px;
   line-height: 120%;
@@ -25,7 +25,7 @@ export const Text = styled.header`
     }
 `;
 
-export const ImageContainer = styled.div`
+export const Container = styled.div`
   display: grid;
   justify-items: center;
   align-items: center;
@@ -44,7 +44,7 @@ export const ImageContainer = styled.div`
     }
 `;
 
-export const NoResultImage = styled(Icon)`
+export const Image = styled(Icon)`
   width: 668px;
   height: 509px;
 
