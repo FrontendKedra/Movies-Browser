@@ -1,4 +1,5 @@
 import styled from "styled-components";
+
 export const Wrapper = styled.div`
   max-width: 1368px;
   margin: 0 auto;
@@ -8,4 +9,9 @@ export const Wrapper = styled.div`
   margin-top: 24px;
   justify-content: center;
   background-color: ${({ theme }) => theme.colors.lightGrey};
+`;
+export const ContentContainer = styled.div`
+  display: flex;
+  gap: 64px;
+  flex-direction: column;
 `;
