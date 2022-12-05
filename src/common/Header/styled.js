@@ -1,8 +1,7 @@
-import styled from "styled-components"
-import { NavLink } from "react-router-dom";
+import styled from "styled-components";
 
 export const HeaderArea = styled.div`
-  background-color: ${({ theme }) => theme.colors.black};
+  background-color: ${({ theme }) => theme.colors.darkBlack};
   color: ${({ theme }) => theme.colors.white};
   padding: 23px 0;
 
@@ -35,7 +34,8 @@ export const TextSide = styled.div`
   }
 `;
 
-export const Title = styled(NavLink)`
+export const Title = styled.a`
+  //dadać NavLink po podpięciu react-router
   margin: 0;
   text-decoration: none;
   color: ${({ theme }) => theme.colors.white};
@@ -78,7 +78,6 @@ export const ListItem = styled.li`
   margin: 0 8px;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.large}) {
-
     &:last-child {
       margin-right: 0px;
     }
@@ -88,15 +87,15 @@ export const ListItem = styled.li`
   }
 `;
 
-export const ListLink = styled(NavLink)`
+export const ListLink = styled.a`
+  //dadać NavLink po podpięciu react-router
   font-size: 14px;
   font-weight: 600;
   padding: 14px 24px;
-  color:${({ theme }) => theme.colors.white};
   text-transform: uppercase;
   text-decoration: none;
 
-  &.active{
+  &:active {
     border: 1px solid ${({ theme }) => theme.colors.white};
     border-radius: ${({ theme }) => theme.radius.navigationLinks};
   }
@@ -109,11 +108,9 @@ export const ListLink = styled(NavLink)`
     font-size: 12px;
   }
 
-  
   @media (min-width: ${({ theme }) => theme.breakpoints.large}) {
-    &.active:hover{
+    &.active:hover {
       border: 1px solid ${({ theme }) => theme.radius.navigationLinks};
-
     }
   }
 `;
@@ -149,11 +146,10 @@ export const SearchInput = styled.input`
   border: none;
   padding: 14px 12px 14px 45px;
   font-weight: 400;
-  
+
   ::placeholder {
     font-size: 13px;
     color: ${({ theme }) => theme.colors.darkGrey};
-
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.large}) {
@@ -164,4 +160,3 @@ export const SearchInput = styled.input`
     padding: 12px 12px 12px 38px;
   }
 `;
-

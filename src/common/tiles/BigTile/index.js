@@ -18,7 +18,7 @@ import {
   VoteAmount,
   Article,
 } from "./styled";
-import poster from "../../../images/poster.png";
+import poster from "./images/poster.png";
 
 export const BigTile = () => (
   <Container>

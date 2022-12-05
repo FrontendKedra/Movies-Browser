@@ -1,22 +1,22 @@
 export const theme = {
   colors: {
-    stormGray: "#74788B",
     darkBlack: "#000000",
     black: "#18181B",
-    white: "#FFFFFF",
-    grey: "#E4E6F0",
+    stormGray: "#74788B",
     darkGrey: "#7E839A",
+    grey: "#E4E6F0",
     lightGrey: "#F5F5FA",
     blue: "#0044CC",
     lightBlue: "#D6E4FF",
     yellow: "#FCD420",
+    white: "#FFFFFF",
   },
 
   breakpoints: {
     small: "480px",
     large: "992px",
-    mobileMin: 320,
-    mobileMax: 767,
+    mobileMin: "320px",
+    mobileMax: "767px",
   },
 
   radius: {

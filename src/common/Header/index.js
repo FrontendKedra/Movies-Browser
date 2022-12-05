@@ -21,17 +21,17 @@ export const Header = () => {
     <HeaderArea>
       <HeaderContainer>
         <TextSide>
-          <Title to="/">
+          <Title>
             <Icon src={camera} alt="" />
             Movies Browser
           </Title>
           <nav>
             <NavList>
               <ListItem>
-                <ListLink to="/movie-list">Movies</ListLink>
+                <ListLink>Movies</ListLink>
               </ListItem>
               <ListItem>
-                <ListLink to="/people">People</ListLink>
+                <ListLink>People</ListLink>
               </ListItem>
             </NavList>
           </nav>
