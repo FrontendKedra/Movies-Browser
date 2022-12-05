@@ -6,10 +6,10 @@ export const theme = {
     darkGrey: "#7E839A",
     grey: "#E4E6F0",
     lightGrey: "#F5F5FA",
-    white: "#FFFFFF",
     blue: "#0044CC",
     lightBlue: "#D6E4FF",
     yellow: "#FCD420",
+    white: "#FFFFFF",
   },
 
   breakpoints: {
