@@ -15,7 +15,7 @@ function* fetchPopularMoviesHandler() {
     );
     yield put(fetchPopularMoviesSuccess(movies));
   } catch (error) {
-    yield put(fetchPopularMoviesError);
+    yield put(fetchPopularMoviesError());
   }
 }
 
