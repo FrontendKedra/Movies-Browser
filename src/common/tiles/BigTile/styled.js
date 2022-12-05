@@ -139,8 +139,8 @@ export const GenreContainer = styled.div`
 export const Genre = styled.p`
   font-weight: 400;
   font-size: 14px;
-  color: ${({ theme }) => theme.colors.woodsmoke};
-  background-color: ${({ theme }) => theme.colors.mystic};
+  color: ${({ theme }) => theme.colors.black};
+  background-color: ${({ theme }) => theme.colors.grey};
   padding: 8px 12px;
   border-radius: ${({ theme }) => theme.radius.small};
   display: flex;
