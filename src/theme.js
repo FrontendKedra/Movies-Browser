@@ -8,6 +8,8 @@ export const theme = {
     lightGrey: "#F5F5FA",
     blue: "#0044CC",
     lightBlue: "#D6E4FF",
+    lighterBlue: "#0055ff",
+    blueRibbon: "#004de6",
     yellow: "#FCD420",
     white: "#FFFFFF",
   },
@@ -15,6 +17,7 @@ export const theme = {
   breakpoints: {
     small: "480px",
     large: "992px",
+    largest: "1380px",
     mobileMin: "320px",
     mobileMax: "767px",
   },
