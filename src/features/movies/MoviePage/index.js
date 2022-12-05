@@ -1,7 +1,6 @@
 import { BigTile } from "../../../common/tiles/BigTile";
-import { PersonTile } from "../../../common/tiles/PersonTile";
 import { Backdrop } from "./Backdrop";
-import { ContentContainer, PersonContainer, Title, Wrapper } from "./styled";
+import { ContentContainer } from "./styled";
 
 export const MoviePage = () => {
   return (

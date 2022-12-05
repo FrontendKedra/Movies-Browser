@@ -1,10 +1,7 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { PersonTile } from "../../../common/tiles/PersonTile";
-import {
-  fetchPopularPeople,
-  selectPopularPeople,
-} from "../../../popularPeopleSlice";
+import { fetchPopularPeople, selectPopularPeople } from "../popularPeopleSlice";
 import { Wrapper } from "./styled";
 
 export const PeoplePage = () => {

@@ -1,6 +1,7 @@
 import { call, put, takeLatest } from "redux-saga/effects";
-import { apiKey, baseUrl, language } from "./ApiValue";
-import { getApiDatabase } from "./getApiDatabase";
+import { apiKey, baseUrl, language } from "../../ApiValue";
+import { getApiDatabase } from "../../getApiDatabase";
+
 import {
   fetchPopularMovies,
   fetchPopularMoviesError,

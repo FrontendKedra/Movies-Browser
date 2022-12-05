@@ -2,10 +2,7 @@ import { ListTitle, Wrapper } from "./styled";
 
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
-import {
-  fetchPopularMovies,
-  selectPopularMovies,
-} from "../../../popularMoviesSlice";
+import { fetchPopularMovies, selectPopularMovies } from "../popularMoviesSlice";
 import { MovieTile } from "../../../common/tiles/MovieTile";
 
 export const MovieList = () => {
