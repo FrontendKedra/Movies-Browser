@@ -2,25 +2,19 @@ import {
   Container,
   Details,
   InfoContent,
-  MovieWrapper,
   Poster,
   StyledRatings,
   Title,
   Wrapper,
   Year,
 } from "./styled";
-import Mulan from "./poster.jpg";
 import { Genre } from "./Genre";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
-import {
-  fetchPopularMovies,
-  selectPopularMovies,
-} from "../../../popularMoviesSlice";
-
+import { fetchPopularMovies, selectPopularMovies } from "../../../popularMoviesSlice";
 import { imageBaseUrl } from "../../../ApiValue";
 
-export const MovieTile = () => {
+export const MovieList = () => {
   const dispatch = useDispatch();
 
   const movies = useSelector(selectPopularMovies);
