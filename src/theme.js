@@ -1,5 +1,7 @@
 export const theme = {
   colors: {
+    stormGray: "#74788B",
+    darkBlack: "#000000",
     black: "#18181B",
     white: "#FFFFFF",
     grey: "#E4E6F0",
@@ -13,12 +15,14 @@ export const theme = {
   breakpoints: {
     small: "480px",
     large: "992px",
+    mobileMin: 320,
+    mobileMax: 767,
   },
 
   radius: {
     small: "5px",
     navigationInput: "33px",
-    navigationLinks: "24px"
+    navigationLinks: "24px",
   },
 
   shadow: {
