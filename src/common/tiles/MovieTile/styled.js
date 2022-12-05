@@ -19,6 +19,7 @@ export const Container = styled.div`
   display: grid;
   grid-template-rows: auto 1fr;
   border-radius: ${({ theme }) => theme.radius.small};
+  box-shadow: ${({ theme }) => theme.shadow.mainShadow};
 
   @media (max-width: 767px) {
     width: 288px;

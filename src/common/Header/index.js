@@ -4,44 +4,43 @@ import {
   Icon,
   ListItem,
   ListLink,
-  NavList, 
-
+  NavList,
   SearchBar,
   SearchIcon,
   SearchInput,
   TextSide,
-  Title
+  Title,
 } from "./styled";
 import camera from "./icons/camera.svg";
 import search from "./icons/search.svg";
 
 export const Header = () => {
-
   return (
     <HeaderArea>
       <HeaderContainer>
         <TextSide>
-          <Title>
+          <Title to="/">
             <Icon src={camera} alt="" />
             Movies Browser
           </Title>
           <nav>
             <NavList>
               <ListItem>
-                <ListLink>Movies</ListLink>
+                <ListLink to="/movie-list">Movies</ListLink>
               </ListItem>
               <ListItem>
-                <ListLink>People</ListLink>
+                <ListLink to="/people">People</ListLink>
               </ListItem>
             </NavList>
           </nav>
         </TextSide>
         <SearchBar>
           <SearchIcon src={search} alt="" />
-          <SearchInput placeholder={"Search for movies/people..."}></SearchInput>
+          <SearchInput
+            placeholder={"Search for movies/people..."}
+          ></SearchInput>
         </SearchBar>
-      </HeaderContainer >
+      </HeaderContainer>
     </HeaderArea>
   );
 };
-
