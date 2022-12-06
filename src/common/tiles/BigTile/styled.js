@@ -7,7 +7,7 @@ w aplikacji(patrz index.js) */
 
 export const Container = styled.div`
   max-width: 1368px;
-  margin: auto;
+  margin: 56px auto;
   padding: 40px;
   display: grid;
   gap: 0 40px;
@@ -22,6 +22,7 @@ export const Container = styled.div`
   @media (max-width: ${({ theme }) => theme.breakpoints.small}) {
     grid-template-columns: minmax(auto, 114px) 1fr;
     gap: 0 16px;
+    margin: 16px auto;
   }
 `;
 

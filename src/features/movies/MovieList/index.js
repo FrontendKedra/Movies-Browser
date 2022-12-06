@@ -1,4 +1,4 @@
-import { ListTitle, Wrapper } from "./styled";
+import { ContentContainer, ListTitle, Wrapper } from "./styled";
 
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
@@ -15,9 +15,9 @@ export const MovieList = () => {
   }, [dispatch]);
 
   return (
-    <>
+    <Wrapper>
       <ListTitle> Popular movies</ListTitle>
-      <Wrapper>
+      <ContentContainer>
         {movies.map(
           ({
             id,
@@ -38,7 +38,7 @@ export const MovieList = () => {
             />
           )
         )}
-      </Wrapper>
-    </>
+      </ContentContainer>
+    </Wrapper>
   );
 };

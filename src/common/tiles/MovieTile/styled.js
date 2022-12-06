@@ -21,7 +21,7 @@ export const Container = styled.div`
   border-radius: ${({ theme }) => theme.radius.small};
   box-shadow: ${({ theme }) => theme.shadow.mainShadow};
 
-  @media (max-width: 767px) {
+  @media (max-width: 480px) {
     width: 288px;
     height: 201px;
     display: grid;
