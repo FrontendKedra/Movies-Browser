@@ -35,5 +35,22 @@ export const MovieTile = ({
         <StyledRatings rating={vote_average} votes={vote_count} />
       </InfoContent>
     </Container>
+
+    ///Poniżej kod do sprawdzenia PersonPage///
+
+    // <Container>
+    //   <Poster
+    //     src={poster_path ? `${imageBaseUrl}/w342${poster_path}` : noPoster}
+    //     alt=""
+    //   ></Poster>
+    //   <InfoContent>
+    //     <Details>
+    //       <Title>Cokolwiek</Title>
+    //       <Year>2022</Year>
+    //       <Genre />
+    //     </Details>
+    //     <StyledRatings rating={"1444"} votes={"6532423"} />
+    //   </InfoContent>
+    // </Container>
   );
 };
