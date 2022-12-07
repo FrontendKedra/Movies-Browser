@@ -17,11 +17,11 @@ export const ContentContainer = styled.div`
   flex-wrap: wrap;
   margin: 0 0 56px 0;
 
-  @media (max-width: 992px) {
+  @media (max-width: 767px) {
+    gap: 16px;
   }
 
   @media (max-width: 480px) {
-    gap: 16px;
     margin: 0 0 21px 0;
   }
 `;
