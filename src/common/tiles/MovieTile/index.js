@@ -32,7 +32,7 @@ export const MovieTile = ({
           <Year>{release_date}</Year>
           <Genre />
         </Details>
-        <StyledRatings rating={vote_average} votes={vote_count} />
+        <StyledRatings vote_average={vote_average} vote_count={vote_count} />
       </InfoContent>
     </Container>
 
