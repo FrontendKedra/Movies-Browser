@@ -33,8 +33,8 @@ export const MovieList = () => {
               poster_path={poster_path}
               title={title}
               release_date={release_date}
-              rating={vote_average}
-              votes={vote_count}
+              vote_average={vote_average}
+              vote_count={vote_count}
             />
           )
         )}
