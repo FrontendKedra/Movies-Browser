@@ -30,10 +30,10 @@ export const ListTitle = styled.h1`
   font-weight: 600;
   line-height: 1.2;
 
-  @media (max-width: 767px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobileMax}) {
     font-size: 24px;
   }
-  @media (max-width: 480px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.small}) {
     font-size: 18px;
     margin: 24px 0 0;
   }

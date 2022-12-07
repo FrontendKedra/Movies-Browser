@@ -7,7 +7,7 @@ export const Wrapper = styled.div`
   flex-direction: column;
   background-color: ${({ theme }) => theme.colors.lightGrey};
 
-  @media (max-width: 1380px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.largest}) {
     padding: 16px;
   }
 `;
@@ -17,11 +17,11 @@ export const ContentContainer = styled.div`
   flex-wrap: wrap;
   margin: 0 0 56px 0;
 
-  @media (max-width: 767px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobileMax}) {
     gap: 16px;
   }
 
-  @media (max-width: 480px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.small}) {
     margin: 0 0 21px 0;
   }
 `;
@@ -31,7 +31,7 @@ export const Header = styled.h2`
   font-size: 36px;
   font-weight: 600;
 
-  @media (max-width: 480px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.small}) {
     margin: 5px 0 12px;
   }
 `;

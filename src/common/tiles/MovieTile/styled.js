@@ -21,14 +21,14 @@ export const Container = styled.div`
   border-radius: ${({ theme }) => theme.radius.small};
   box-shadow: ${({ theme }) => theme.shadow.mainShadow};
 
-  @media (max-width: 767px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobileMax}) {
     width: 100%;
     height: auto;
     display: grid;
     grid-template-columns: auto 1fr;
   }
 
-  @media (max-width: 480px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.small}) {
     width: 100%;
     height: 201px;
     display: grid;
@@ -42,14 +42,14 @@ export const Poster = styled.img`
   margin: 16px;
   border-radius: ${({ theme }) => theme.radius.small};
 
-  @media (max-width: 767px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobileMax}) {
     width: 100%;
     height: 300px;
     display: grid;
     grid-template-columns: auto 1fr;
   }
 
-  @media (max-width: 480px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.small}) {
     margin-right: 0;
     width: 114px;
     height: 169px;
@@ -62,7 +62,7 @@ export const InfoContent = styled.div`
   justify-content: space-between;
   margin-right: 16px;
 
-  @media (max-width: 767px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobileMax}) {
     margin: 16px;
   }
 `;
@@ -72,7 +72,7 @@ export const Details = styled.div`
   grid-template-columns: 1fr;
   grid-gap: 8px;
 
-  @media (max-width: 480px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.small}) {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -88,11 +88,11 @@ export const Title = styled.h2`
   color: ${({ theme }) => theme.colors.black};
   margin: 0 0 0 16px;
 
-  @media (max-width: 767px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobileMax}) {
     font-size: 22px;
   }
 
-  @media (max-width: 480px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.small}) {
     font-size: 16px;
     line-height: 20px;
   }
@@ -105,7 +105,7 @@ export const Year = styled.p`
   color: ${({ theme }) => theme.colors.darkGrey};
   margin: 0 0 0 16px;
 
-  @media (max-width: 480px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.small}) {
     font-size: 13px;
     line-height: 16.9px;
   }
