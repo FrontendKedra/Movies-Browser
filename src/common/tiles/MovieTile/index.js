@@ -8,7 +8,6 @@ import {
   Year,
 } from "./styled";
 import { Genre } from "./Genre";
-
 import { imageBaseUrl } from "../../../ApiValue";
 import noPoster from "./noPoster.png";
 
