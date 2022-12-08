@@ -19,7 +19,7 @@ function App() {
         <Route path="/people">
           <PeoplePage />
         </Route>
-        <Route path="/profile">
+        <Route path="/profile/:id">
           <PersonPage />
         </Route>
         <Route path="/">

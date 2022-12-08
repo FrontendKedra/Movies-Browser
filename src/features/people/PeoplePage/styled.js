@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 export const Wrapper = styled.div`
   max-width: 1368px;
@@ -10,3 +11,7 @@ export const Wrapper = styled.div`
   justify-content: center;
   background-color: ${({ theme }) => theme.colors.lightGrey};
 `;
+
+export const StyledLink = styled(Link)`
+  text-decoration: none;
+`
