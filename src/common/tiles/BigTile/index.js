@@ -1,8 +1,8 @@
 import {
-  Container,
+  MainContainer,
   Image,
   TileContainer,
-  Title,
+  BigTileTitle,
   Year,
   SubHeaderContainer,
   SubHeader,
@@ -21,10 +21,10 @@ import {
 import poster from "./images/poster.png";
 
 export const BigTile = () => (
-  <Container>
+  <MainContainer>
     <Image src={poster} />
     <TileContainer>
-      <Title>Mulan</Title>
+      <BigTileTitle>Mulan</BigTileTitle>
       <Year>2020</Year>
       <SubHeaderContainer>
         <SubHeader>
@@ -58,5 +58,5 @@ export const BigTile = () => (
       father. A young Chinese maiden disguises herself as a male warrior in
       order to save her father.
     </Article>
-  </Container>
+  </MainContainer>
 );
