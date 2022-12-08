@@ -35,6 +35,7 @@ import {
   SubHeaderInformation,
   SubHeaderContainer,
   BigTileTitle,
+  MaxRating,
 } from "../../../common/tiles/BigTile/styled";
 import { SubHeaderDate, SubHeaderPerson, CastCrewHeader } from "./styled";
 
@@ -115,6 +116,7 @@ export const PersonPage = () => {
                   <RatingsContainer>
                     <StyledStar />
                     <Rate>{vote_average}</Rate>
+                    <MaxRating>/ 10</MaxRating>
                     <Votes>{vote_count} votes</Votes>
                   </RatingsContainer>
                 </InfoContent>
@@ -161,6 +163,7 @@ export const PersonPage = () => {
                   <RatingsContainer>
                     <StyledStar />
                     <Rate>{vote_average}</Rate>
+                    <MaxRating>/10</MaxRating>
                     <Votes>{vote_count} votes</Votes>
                   </RatingsContainer>
                 </InfoContent>
@@ -173,4 +176,4 @@ export const PersonPage = () => {
   );
 };
 
-//linijka 127 warunek wyswietlania crew, musimy zdecydowac czy ten warunek chcemy czy nie.
+//linijka 129 warunek wyswietlania crew, musimy zdecydowac czy ten warunek chcemy czy nie.
