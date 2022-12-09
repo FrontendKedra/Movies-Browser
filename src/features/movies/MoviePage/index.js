@@ -1,14 +1,43 @@
 import { BigTile } from "../../../common/tiles/BigTile";
+import { PersonTile } from "../../../common/tiles/PersonTile";
 import { Backdrop } from "./Backdrop";
-import { ContentContainer } from "./styled";
+import { ContentContainer, Header, Wrapper } from "./styled";
 
 export const MoviePage = () => {
   return (
     <div>
       <Backdrop />
-      <ContentContainer>
+      <Wrapper>
         <BigTile />
-      </ContentContainer>
+        <Header>Cast</Header>
+        <ContentContainer>
+          <PersonTile />
+          <PersonTile />
+          <PersonTile />
+          <PersonTile />
+          <PersonTile />
+          <PersonTile />
+          <PersonTile />
+          <PersonTile />
+          <PersonTile />
+          <PersonTile />
+          <PersonTile />
+        </ContentContainer>
+        <Header>Crew</Header>
+        <ContentContainer>
+          <PersonTile />
+          <PersonTile />
+          <PersonTile />
+          <PersonTile />
+          <PersonTile />
+          <PersonTile />
+          <PersonTile />
+          <PersonTile />
+          <PersonTile />
+          <PersonTile />
+          <PersonTile />
+        </ContentContainer>
+      </Wrapper>
     </div>
   );
 };

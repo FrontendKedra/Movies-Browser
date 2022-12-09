@@ -17,11 +17,11 @@ export const ContentContainer = styled.div`
   flex-wrap: wrap;
   margin: 0 0 56px 0;
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.large}) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobileMax}) {
+    gap: 16px;
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.small}) {
-    gap: 16px;
     margin: 0 0 21px 0;
   }
 `;
