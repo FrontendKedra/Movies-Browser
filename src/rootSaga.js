@@ -1,18 +1,18 @@
 import { all } from "redux-saga/effects";
 import { watchFetchPopularMovies } from "./features/movies/popularMoviesSaga";
-import { watchFetchPersonDetailsPage } from "./features/people/personPageDetailsSaga";
-import { watchFetchPersonPage } from "./features/people/PersonPage/personPageSaga";
+import { watchFetchPersonDetails } from "./features/people/personDetailsSaga";
+import { watchFetchPerson } from "./features/people/PersonPage/personSaga";
 import { watchFetchPopularPeople } from "./features/people/popularPeopleSaga";
-import { watchFetchMoviePageDetails } from "./features/movies/MoviePage/moviePageDetailsSaga";
-import { watchFetchMoviePage } from "./features/movies/MoviePage/moviePageSaga";
+import { watchFetchMovieDetails } from "./features/movies/MoviePage/movieDetailsSaga";
+import { watchFetchMovie } from "./features/movies/MoviePage/movieSaga";
 
 export default function* rootSaga() {
   yield all([
     watchFetchPopularMovies(),
     watchFetchPopularPeople(),
-    watchFetchPersonPage(),
-    watchFetchPersonDetailsPage(),
-    watchFetchMoviePageDetails(),
-    watchFetchMoviePage(),
+    watchFetchPerson(),
+    watchFetchPersonDetails(),
+    watchFetchMovieDetails(),
+    watchFetchMovie(),
   ]);
 }
