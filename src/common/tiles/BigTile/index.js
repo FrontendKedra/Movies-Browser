@@ -19,6 +19,7 @@ import {
   VoteAmount,
   Article,
 } from "./styled";
+import noPicture from "../PersonTile/noPicture.png";
 
 export const BigTile = ({
   id,
@@ -32,7 +33,10 @@ export const BigTile = ({
 }) => {
   return (
     <MainContainer key={id} id={id}>
-      <Image src={`${imageBaseUrl}/w342${poster_path}`} />
+      <Image
+        src={poster_path ? `${imageBaseUrl}/w342${poster_path}` : noPicture}
+        alt={`image of ${title}`}
+      />
       <TileContainer>
         <BigTileTitle>{title}</BigTileTitle>
         <Year>{release_date}</Year>

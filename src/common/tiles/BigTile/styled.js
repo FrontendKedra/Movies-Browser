@@ -1,10 +1,6 @@
 import styled from "styled-components";
 import { ReactComponent as Vector } from "./images/vector.svg";
 
-/*wszystkie styled componenty sa w tym pliku ustawione 
-chronoligcznie w takiej kolejnosci w jakiej wystepuja 
-w aplikacji(patrz index.js) */
-
 export const MainContainer = styled.div`
   max-width: 1368px;
   margin: auto;
@@ -259,6 +255,6 @@ export const Article = styled.article`
   }
   @media (max-width: ${({ theme }) => theme.breakpoints.small}) {
     font-size: 14px;
-    margin-top: 0px;
+    margin-top: 4px;
   }
 `;
