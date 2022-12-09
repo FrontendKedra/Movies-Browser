@@ -22,11 +22,8 @@ import {
   StyledStar,
   Votes,
 } from "../../../common/tiles/MovieTile/Ratings/styled";
-import {
-  fetchPersonDetailsPage,
-  selectPerson,
-} from "../personPageDetailsSlice";
-import { fetchPersonPage, selectCast, selectCrew } from "./personPageSlice";
+import { fetchPersonDetails, selectPerson } from "../personDetailsSlice";
+import { fetchPerson, selectCast, selectCrew } from "./personSlice";
 import {
   TileContainer,
   MainContainer,
@@ -38,6 +35,7 @@ import {
   MaxRating,
 } from "../../../common/tiles/BigTile/styled";
 import { SubHeaderDate, SubHeaderPerson, CastCrewHeader } from "./styled";
+import noProfile from "../../../common/tiles/PersonTile/noPicture.png";
 
 export const PersonPage = () => {
   const dispatch = useDispatch();
@@ -45,8 +43,8 @@ export const PersonPage = () => {
   const { id } = useParams();
 
   useEffect(() => {
-    dispatch(fetchPersonPage(id));
-    dispatch(fetchPersonDetailsPage(id));
+    dispatch(fetchPerson(id));
+    dispatch(fetchPersonDetails(id));
   }, [dispatch, id]);
 
   const cast = useSelector(selectCast);
@@ -58,7 +56,12 @@ export const PersonPage = () => {
       {person.map(
         ({ profile_path, name, birthday, place_of_birth, biography }) => (
           <MainContainer>
-            <Image src={`${imageBaseUrl}/w342${profile_path}`} />
+            <Image
+              src={
+                profile_path ? `${imageBaseUrl}/w342${profile_path}` : noProfile
+              }
+              alt={`image of ${name}`}
+            />
             <TileContainer>
               <BigTileTitle>{name}</BigTileTitle>
               <SubHeaderContainer>
@@ -76,102 +79,113 @@ export const PersonPage = () => {
           </MainContainer>
         )
       )}
-      <CastCrewHeader>
-        movies - cast {`(`}
-        {cast.length}
-        {`)`}
-      </CastCrewHeader>
-      <Wrapper>
-        {cast.map(
-          ({
-            poster_path,
-            id,
-            title,
-            character,
-            release_date,
-            vote_average,
-            vote_count,
-          }) => (
-            <>
-              <Container key={id}>
-                <Poster
-                  src={
-                    poster_path
-                      ? `${imageBaseUrl}/w342${poster_path}`
-                      : noPoster
-                  }
-                  alt=""
-                ></Poster>
-                <InfoContent>
-                  <Details>
-                    <Title>{title}</Title>
-                    <Year>
-                      {character} {character ? release_date : null}
-                    </Year>
-                    <GenreContainer>
-                      <GenreItem>Action</GenreItem>
-                      <GenreItem>Adventure</GenreItem>
-                    </GenreContainer>
-                  </Details>
-                  <RatingsContainer>
-                    <StyledStar />
-                    <Rate>{vote_average}</Rate>
-                    <MaxRating>/ 10</MaxRating>
-                    <Votes>{vote_count} votes</Votes>
-                  </RatingsContainer>
-                </InfoContent>
-              </Container>
-            </>
-          )
-        )}
-      </Wrapper>
-      <CastCrewHeader>
-        {crew.length > 0 ? `movies - crew  ${"("}${crew.length}${")"}` : null}
-      </CastCrewHeader>
-      <Wrapper>
-        {crew.map(
-          ({
-            job,
-            title,
-            vote_average,
-            vote_count,
-            release_date,
-            poster_path,
-            id,
-          }) => (
-            <>
-              <Container key={id}>
-                <Poster
-                  src={
-                    poster_path
-                      ? `${imageBaseUrl}/w342${poster_path}`
-                      : noPoster
-                  }
-                  alt=""
-                ></Poster>
-                <InfoContent>
-                  <Details>
-                    <Title>{title}</Title>
-                    <Year>
-                      {job} {job ? release_date : null}
-                    </Year>
-                    <GenreContainer>
-                      <GenreItem>Action</GenreItem>
-                      <GenreItem>Adventure</GenreItem>
-                    </GenreContainer>
-                  </Details>
-                  <RatingsContainer>
-                    <StyledStar />
-                    <Rate>{vote_average}</Rate>
-                    <MaxRating>/10</MaxRating>
-                    <Votes>{vote_count} votes</Votes>
-                  </RatingsContainer>
-                </InfoContent>
-              </Container>
-            </>
-          )
-        )}
-      </Wrapper>
+      {cast.length > 0 && (
+        <>
+          <CastCrewHeader>
+            movies - cast {`(`}
+            {cast.length}
+            {`)`}
+          </CastCrewHeader>
+          <Wrapper>
+            {cast.map(
+              ({
+                poster_path,
+                id,
+                title,
+                character,
+                release_date,
+                vote_average,
+                vote_count,
+              }) => (
+                <>
+                  <Container key={id}>
+                    <Poster
+                      src={
+                        poster_path
+                          ? `${imageBaseUrl}/w342${poster_path}`
+                          : noPoster
+                      }
+                      alt={`image of ${character}`}
+                    ></Poster>
+                    <InfoContent>
+                      <Details>
+                        <Title>{title}</Title>
+                        <Year>
+                          {character} {character ? release_date : null}
+                        </Year>
+                        <GenreContainer>
+                          <GenreItem>Action</GenreItem>
+                          <GenreItem>Adventure</GenreItem>
+                        </GenreContainer>
+                      </Details>
+                      <RatingsContainer>
+                        <StyledStar />
+                        <Rate>{vote_average}</Rate>
+                        <MaxRating>/ 10</MaxRating>
+                        <Votes>{vote_count} votes</Votes>
+                      </RatingsContainer>
+                    </InfoContent>
+                  </Container>
+                </>
+              )
+            )}
+          </Wrapper>
+        </>
+      )}
+
+      {crew.length > 0 && (
+        <>
+          <CastCrewHeader>
+            movies - crew {"("}
+            {crew.length}
+            {")"}
+          </CastCrewHeader>
+          <Wrapper>
+            {crew.map(
+              ({
+                job,
+                title,
+                vote_average,
+                vote_count,
+                release_date,
+                poster_path,
+                id,
+              }) => (
+                <>
+                  <Container key={id}>
+                    <Poster
+                      src={
+                        poster_path
+                          ? `${imageBaseUrl}/w342${poster_path}`
+                          : noPoster
+                      }
+                      alt={`image of ${job}`}
+                    ></Poster>
+                    <InfoContent>
+                      <Details>
+                        <Title>{title}</Title>
+                        <Year>
+                          {job} {job ? release_date : null}
+                        </Year>
+                        <GenreContainer>
+                          <GenreItem>Action</GenreItem>
+                          <GenreItem>Adventure</GenreItem>
+                        </GenreContainer>
+                      </Details>
+                      <RatingsContainer>
+                        <StyledStar />
+                        <Rate>{vote_average}</Rate>
+                        <MaxRating>/10</MaxRating>
+                        <Votes>{vote_count} votes</Votes>
+                      </RatingsContainer>
+                    </InfoContent>
+                  </Container>
+                </>
+              )
+            )}
+          </Wrapper>
+        </>
+      )}
     </>
   );
 };
