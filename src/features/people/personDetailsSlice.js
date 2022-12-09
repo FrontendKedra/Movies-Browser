@@ -28,10 +28,10 @@ export const {
   fetchPersonDetailsError,
 } = personDetails.actions;
 
-export const selectPersonStates = (state) => state.personDetails;
+export const selectPersonState = (state) => state.personDetails;
 
-export const selectPersonStatuss = (state) => selectPersonStates(state).status;
+export const selectPersonStatuss = (state) => selectPersonState(state).status;
 
-export const selectPerson = (state) => selectPersonStates(state).person;
+export const selectPerson = (state) => selectPersonState(state).person;
 
 export default personDetails.reducer;
