@@ -11,12 +11,5 @@ export const PersonTile = ({ id, profile_path, name }) => {
       ></ProfileImage>
       <Name>{name}</Name>
     </Container>
-
-    ///treść do tworzenia szkieletu siatki graficznej///
-
-    // <Container>
-    //   <ProfileImage src={noPicture}></ProfileImage>
-    //   <Name>Megg Creative</Name>
-    // </Container>
   );
 };
