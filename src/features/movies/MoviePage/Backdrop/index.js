@@ -3,7 +3,6 @@ import {
   Container,
   Content,
   Rate,
-  Rating,
   RatingContainer,
   StarIcon,
   Title,
@@ -22,12 +21,9 @@ export const Backdrop = () => {
         <Content>
           <Title>Mulan long title</Title>
           <RatingContainer>
-            <Rating>
-              <StarIcon />
-              <Rate>
-                <Vote>10</Vote> / 10
-              </Rate>
-            </Rating>
+            <StarIcon />
+            <Vote>10</Vote>
+            <Rate>/ 10</Rate>
             <Votes>135 votes</Votes>
           </RatingContainer>
         </Content>

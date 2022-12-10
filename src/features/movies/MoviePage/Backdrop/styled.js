@@ -43,45 +43,42 @@ export const Title = styled.h3`
 `;
 
 export const RatingContainer = styled.div`
-  
-  @media (max-width: ${({ theme }) => theme.breakpoints.large}) {
-    display: flex;
-    align-items: center;
-  }
-`;
-
-export const Rating = styled.div`
   margin-bottom: 18px;
-  display: flex;
-  align-items: center;
+  display: grid;
+  grid-template-columns: repeat(4, max-content);
+  grid-gap: 17px 8px;
+  align-items: end;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.large}) {
     margin: 0px 8px 0px 0px;
+    grid-column-gap: 5px;
   }
 `;
 
 export const StarIcon = styled(Star)`
   width: clamp(16px, 3vw, 40px);
   height: clamp(16px, 3vw, 40px);
-  margin-right:clamp(4px, 1vw, 8px);
-`;
-
-export const Rate = styled.p`
-  font-size: clamp(10px, 1vw, 16px);
-  margin: 0px;
 `;
 
 export const Vote = styled.span`
   font-weight: 500;
-  font-size: clamp(14px, 2vw, 30px);
-  margin-right: clamp(2px, 1vw, 7px);
+  font-size: clamp(14px, 3vw, 30px);
+  line-height: 1;
+  margin-right: 3px;
 `;
 
-export const Votes = styled.p`
-  margin: 0px;
-  font-size: clamp(10px, 1vw, 16px);
+export const Rate = styled.span`
+  font-size: clamp(10px, 2vw, 16px);
+`;
+
+export const Votes = styled(Rate)`
+  margin-left: 0;
+  grid-row: 2;
+  grid-column: 1 / 5;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.large}) {
-    align-self: flex-end;
+    margin-left: 3px;
+    grid-row: 1;
+    grid-column: 4;
   }
 `;
