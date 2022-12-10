@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 export const Wrapper = styled.div`
   max-width: 1368px;
@@ -7,7 +8,7 @@ export const Wrapper = styled.div`
   flex-direction: column;
   background-color: ${({ theme }) => theme.colors.lightGrey};
 
-  @media (max-width: 1380px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.largest}) {
     padding: 16px;
   }
 `;
@@ -19,7 +20,7 @@ export const ContentContainer = styled.div`
   gap: 20px;
   justify-content: flex-start;
 
-  @media (max-width: 480px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.small}) {
     margin: 12px auto 0;
   }
 `;
@@ -29,12 +30,16 @@ export const ListTitle = styled.h1`
   font-size: 36px;
   font-weight: 600;
   line-height: 1.2;
-
-  @media (max-width: ${({ theme }) => theme.breakpoints.mobileMax}) {
+  
+  @media (max-width: ${({ theme }) => theme.breakpoints.large}) {
     font-size: 24px;
   }
   @media (max-width: ${({ theme }) => theme.breakpoints.small}) {
     font-size: 18px;
     margin: 24px 0 0;
   }
+`;
+
+export const StyledLink = styled(Link)`
+  text-decoration: none;
 `;

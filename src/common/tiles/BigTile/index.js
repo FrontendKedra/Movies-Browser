@@ -1,8 +1,9 @@
+import { imageBaseUrl } from "../../../ApiValue";
 import {
-  Container,
+  MainContainer,
   Image,
   TileContainer,
-  Title,
+  BigTileTitle,
   Year,
   SubHeaderContainer,
   SubHeader,
@@ -18,45 +19,61 @@ import {
   VoteAmount,
   Article,
 } from "./styled";
-import poster from "./images/poster.png";
+import noPicture from "../PersonTile/noPicture.png";
 
-export const BigTile = () => (
-  <Container>
-    <Image src={poster} />
-    <TileContainer>
-      <Title>Mulan</Title>
-      <Year>2020</Year>
-      <SubHeaderContainer>
-        <SubHeader>
-          <SubHeaderTitle>Production:</SubHeaderTitle>
-          <SubHeaderInformation>
-            China, United States of America
-          </SubHeaderInformation>
-        </SubHeader>
-        <SubHeader>
-          <SubHeaderTitle>Release date:</SubHeaderTitle>
-          <SubHeaderInformation>24.10.2020</SubHeaderInformation>
-        </SubHeader>
-      </SubHeaderContainer>
-      <GenreContainer>
-        <Genre>Action</Genre>
-        <Genre>Drama</Genre>
-        <Genre>Adventure</Genre>
-      </GenreContainer>
-      <VotesContainer>
-        <RatesContainer>
-          <StarIcon />
-          <ActualRating>7,8</ActualRating>
-          <MaxRating>/ 10</MaxRating>
-        </RatesContainer>
-        <VoteAmount>335 votes</VoteAmount>
-      </VotesContainer>
-    </TileContainer>
-    <Article>
-      A young Chinese maiden disguises herself as a male warrior in order to
-      save her father. Disguises herself as a male warrior in order to save her
-      father. A young Chinese maiden disguises herself as a male warrior in
-      order to save her father.
-    </Article>
-  </Container>
-);
+export const BigTile = ({
+  id,
+  poster_path,
+  title,
+  release_date,
+  rating,
+  votes,
+  countries,
+  article,
+}) => {
+  return (
+    <MainContainer key={id} id={id}>
+      <Image
+        src={poster_path ? `${imageBaseUrl}/w342${poster_path}` : noPicture}
+        alt={`image of ${title}`}
+      />
+      <TileContainer>
+        <BigTileTitle>{title}</BigTileTitle>
+        <Year>{release_date}</Year>
+        <SubHeaderContainer>
+          <SubHeader>
+            {countries.length > 0 ? (
+              <SubHeaderTitle>Production:</SubHeaderTitle>
+            ) : null}
+            {countries.map(({ name }) => (
+              <>
+                <SubHeaderInformation>
+                  {name}
+                  {","}
+                </SubHeaderInformation>
+              </>
+            ))}
+          </SubHeader>
+          <SubHeader>
+            <SubHeaderTitle>Release date:</SubHeaderTitle>
+            <SubHeaderInformation>{release_date}</SubHeaderInformation>
+          </SubHeader>
+        </SubHeaderContainer>
+        <GenreContainer>
+          <Genre>Action</Genre>
+          <Genre>Drama</Genre>
+          <Genre>Adventure</Genre>
+        </GenreContainer>
+        <VotesContainer>
+          <RatesContainer>
+            <StarIcon />
+            <ActualRating>{rating}</ActualRating>
+            <MaxRating>/ 10</MaxRating>
+          </RatesContainer>
+          <VoteAmount>{votes} votes</VoteAmount>
+        </VotesContainer>
+      </TileContainer>
+      <Article>{article}</Article>
+    </MainContainer>
+  );
+};

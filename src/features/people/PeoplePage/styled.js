@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 export const Wrapper = styled.div`
   max-width: 1368px;
@@ -11,6 +12,7 @@ export const Wrapper = styled.div`
     padding: 16px;
   }
 `;
+
 export const PersonContainer = styled.div`
   margin: 0 auto;
   display: flex;
@@ -19,6 +21,7 @@ export const PersonContainer = styled.div`
   margin-top: 24px;
   justify-content: center;
 `;
+
 export const ListTitle = styled.h1`
   margin: 56px 0 0;
   font-size: 36px;
@@ -32,4 +35,8 @@ export const ListTitle = styled.h1`
     font-size: 18px;
     margin: 24px 0 0;
   }
+`;
+
+export const StyledLink = styled(Link)`
+  text-decoration: none;
 `;
