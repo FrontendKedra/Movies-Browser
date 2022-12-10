@@ -7,7 +7,11 @@ export const Wrapper = styled.div`
   background-color: ${({ theme }) => theme.colors.darkBlack};
   color: ${({ theme }) => theme.colors.white};
   margin-top: 0;
-  margin-bottom: 64px;
+  margin-bottom: 8px;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.small}) {
+    margin-bottom: 0;
+  }
 `;
 
 export const BackdropContainer = styled.div`

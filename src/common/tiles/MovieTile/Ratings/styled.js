@@ -7,7 +7,7 @@ export const RatingsContainer = styled.div`
   margin-bottom: 16px;
   margin-left: 16px;
 
-  @media (max-width: 480px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.small}) {
     font-size: 13px;
   }
 `;
@@ -25,7 +25,7 @@ export const Votes = styled.span`
 `;
 
 export const StyledStar = styled(Star)`
-  @media (max-width: 480px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.small}) {
     width: 16px;
     height: 15.25px;
   }

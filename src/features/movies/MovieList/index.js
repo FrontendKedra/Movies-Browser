@@ -1,4 +1,4 @@
-import { ListTitle, StyledLink, Wrapper } from "./styled";
+import { ContentContainer, ListTitle, StyledLink, Wrapper } from "./styled";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { fetchPopularMovies, selectPopularMovies } from "../popularMoviesSlice";
@@ -15,30 +15,31 @@ export const MovieList = () => {
 
   return (
     <>
-      <ListTitle> Popular movies</ListTitle>
       <Wrapper>
-        {movies.map(
-          ({
-            id,
-            title,
-            poster_path,
-            vote_average,
-            vote_count,
-            release_date,
-          }) => (
-            <StyledLink to={`/movie-page/${id}`}>
-              <MovieTile
-                key={id}
-                id={id}
-                poster_path={poster_path}
-                title={title}
-                release_date={release_date}
-                rating={vote_average}
-                votes={vote_count}
-              />
-            </StyledLink>
-          )
-        )}
+        <ListTitle> Popular movies</ListTitle>
+        <ContentContainer>
+          {movies.map(
+            ({
+              id,
+              title,
+              poster_path,
+              vote_average,
+              vote_count,
+              release_date,
+            }) => (
+              <StyledLink to={`/movie-page/${id}`}>
+                <MovieTile
+                  id={id}
+                  poster_path={poster_path}
+                  title={title}
+                  release_date={release_date}
+                  rating={vote_average}
+                  votes={vote_count}
+                />
+              </StyledLink>
+            )
+          )}
+        </ContentContainer>
       </Wrapper>
     </>
   );

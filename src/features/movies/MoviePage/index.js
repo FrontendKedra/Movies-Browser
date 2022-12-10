@@ -6,14 +6,13 @@ import { BigTile } from "../../../common/tiles/BigTile";
 import { Backdrop } from "./Backdrop";
 import { fetchMovieDetails, selectMovie } from "./movieDetailsSlice";
 import { fetchMovie, selectMovieCast, selectMovieCrew } from "./movieSlice";
-import { Character, ContentContainer, Header } from "./styled";
+import { Character, ContentContainer, Header, Wrapper } from "./styled";
 import {
   Container,
   Name,
   ProfileImage,
 } from "../../../common/tiles/PersonTile/styled";
 import noPicture from "../../../common/tiles/PersonTile/noPicture.png";
-import { Wrapper } from "../MovieList/styled";
 
 export const MoviePage = () => {
   const dispatch = useDispatch();
@@ -31,7 +30,7 @@ export const MoviePage = () => {
   return (
     <>
       <Backdrop />
-      <ContentContainer>
+      <Wrapper>
         {movie.map(
           ({
             id,
@@ -55,50 +54,49 @@ export const MoviePage = () => {
             />
           )
         )}
-      </ContentContainer>
-      {cast.length > 0 && (
-        <>
-          <Header>Cast</Header>
-          <Wrapper>
-            {cast.map(({ profile_path, name, character, id }) => (
-              <Container key={id} id={id}>
-                <ProfileImage
-                  src={
-                    profile_path
-                      ? `${imageBaseUrl}/w342${profile_path}`
-                      : noPicture
-                  }
-                  alt={`image of ${name}`}
-                ></ProfileImage>
-                <Name>{name}</Name>
-                <Character>{character}</Character>
-              </Container>
-            ))}
-          </Wrapper>
-        </>
-      )}
-
-      {crew.length > 0 && (
-        <>
-          <Header>Crew</Header>
-          <Wrapper>
-            {crew.map(({ profile_path, name, job, id }) => (
-              <Container key={id} id={id}>
-                <ProfileImage
-                  src={
-                    profile_path
-                      ? `${imageBaseUrl}/w342${profile_path}`
-                      : noPicture
-                  }
-                  alt={`image of ${name}`}
-                ></ProfileImage>
-                <Name>{name}</Name>
-                <Character>{job}</Character>
-              </Container>
-            ))}
-          </Wrapper>
-        </>
-      )}
+        {cast.length > 0 && (
+          <>
+            <Header>Cast</Header>
+            <ContentContainer>
+              {cast.map(({ profile_path, name, character, id }) => (
+                <Container key={id} id={id}>
+                  <ProfileImage
+                    src={
+                      profile_path
+                        ? `${imageBaseUrl}/w342${profile_path}`
+                        : noPicture
+                    }
+                    alt={`image of ${name}`}
+                  ></ProfileImage>
+                  <Name>{name}</Name>
+                  <Character>{character}</Character>
+                </Container>
+              ))}
+            </ContentContainer>
+          </>
+        )}
+        {crew.length > 0 && (
+          <>
+            <Header>Crew</Header>
+            <ContentContainer>
+              {crew.map(({ profile_path, name, job, id }) => (
+                <Container key={id} id={id}>
+                  <ProfileImage
+                    src={
+                      profile_path
+                        ? `${imageBaseUrl}/w342${profile_path}`
+                        : noPicture
+                    }
+                    alt={`image of ${name}`}
+                  ></ProfileImage>
+                  <Name>{name}</Name>
+                  <Character>{job}</Character>
+                </Container>
+              ))}
+            </ContentContainer>
+          </>
+        )}
+      </Wrapper>
     </>
   );
 };

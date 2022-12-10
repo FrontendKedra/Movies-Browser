@@ -3,7 +3,7 @@ import { ReactComponent as Vector } from "./images/vector.svg";
 
 export const MainContainer = styled.div`
   max-width: 1368px;
-  margin: auto;
+  margin: 56px auto;
   padding: 40px;
   display: grid;
   gap: 0 40px;
@@ -11,16 +11,17 @@ export const MainContainer = styled.div`
   box-shadow: ${({ theme }) => theme.shadow.mainShadow};
   background-color: ${({ theme }) => theme.colors.white};
   grid-template-rows: auto 1fr;
-
   @media (max-width: ${({ theme }) => theme.breakpoints.large}) {
     gap: 0 28px;
     grid-template-columns: minmax(auto, 215px) 1fr;
     padding: 28px;
+    margin: 36px auto;
   }
   @media (max-width: ${({ theme }) => theme.breakpoints.small}) {
     grid-template-columns: minmax(auto, 114px) 1fr;
     gap: 0 16px;
     padding: 16px;
+    margin: 16px auto;
   }
 `;
 
@@ -29,7 +30,6 @@ export const Image = styled.img`
   height: 464px;
   border-radius: ${({ theme }) => theme.radius.small};
   grid-row: span 2;
-
   @media (max-width: ${({ theme }) => theme.breakpoints.large}) {
     width: 215px;
     height: 319px;
@@ -41,7 +41,6 @@ export const Image = styled.img`
 `;
 
 export const TileContainer = styled.div`
-
   @media (max-width: ${({ theme }) => theme.breakpoints.large}) {
     grid-row: span 2;
   }
@@ -52,7 +51,6 @@ export const BigTileTitle = styled.header`
   font-size: 36px;
   color: ${({ theme }) => theme.colors.black};
   margin: 0 0 24px 0;
-
   @media (max-width: ${({ theme }) => theme.breakpoints.large}) {
     font-size: 24px;
     margin: 0 0 18px 0;
@@ -68,7 +66,6 @@ export const Year = styled.p`
   font-size: 22px;
   color: ${({ theme }) => theme.colors.black};
   margin: 0 0 24px 0;
-
   @media (max-width: ${({ theme }) => theme.breakpoints.large}) {
     font-size: 18px;
     margin: 0 0 18px 0;
@@ -84,7 +81,6 @@ export const SubHeaderContainer = styled.div`
   display: grid;
   gap: 8px;
   margin: 0 0 24px 0;
-
   @media (max-width: ${({ theme }) => theme.breakpoints.large}) {
     margin: 0 0 18px 0;
   }
@@ -105,7 +101,6 @@ export const SubHeaderTitle = styled.p`
   font-size: 18px;
   color: ${({ theme }) => theme.colors.stormGray};
   margin: 0;
-
   @media (max-width: ${({ theme }) => theme.breakpoints.large}) {
     display: none;
   }
@@ -117,7 +112,6 @@ export const SubHeaderInformation = styled.p`
   color: ${({ theme }) => theme.colors.black};
   margin: 0;
   line-height: 120%;
-
   @media (max-width: ${({ theme }) => theme.breakpoints.large}) {
     font-size: 15px;
   }
@@ -132,7 +126,6 @@ export const GenreContainer = styled.div`
   gap: 16px;
   align-items: center;
   margin: 0 0 24px 0;
-
   @media (max-width: ${({ theme }) => theme.breakpoints.large}) {
     margin: 0 0 18px 0;
     gap: 12px;
@@ -153,7 +146,6 @@ export const Genre = styled.p`
   display: flex;
   align-items: center;
   margin: 0;
-
   @media (max-width: ${({ theme }) => theme.breakpoints.large}) {
     font-size: 12px;
     padding: 6px 9px;
@@ -170,7 +162,6 @@ export const VotesContainer = styled.div`
   gap: 12px;
   align-items: center;
   margin: 0 0 24px 0;
-
   @media (max-width: ${({ theme }) => theme.breakpoints.large}) {
     gap: 10px;
   }
@@ -184,7 +175,6 @@ export const RatesContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(3, auto);
   align-items: center;
-
   @media (max-width: ${({ theme }) => theme.breakpoints.large}) {
     grid-template-columns: repeat(2, auto);
   }
@@ -193,7 +183,6 @@ export const RatesContainer = styled.div`
 export const StarIcon = styled(Vector)`
   height: auto;
   width: 24px;
-
   @media (max-width: ${({ theme }) => theme.breakpoints.large}) {
     width: 20px;
   }
@@ -206,7 +195,6 @@ export const ActualRating = styled.span`
   font-weight: 500;
   font-size: 22px;
   line-height: 130%;
-
   @media (max-width: ${({ theme }) => theme.breakpoints.large}) {
     font-weight: 600;
     font-size: 18px;
@@ -220,7 +208,6 @@ export const MaxRating = styled.span`
   font-weight: 400;
   font-size: 14px;
   line-height: 120%;
-
   @media (max-width: ${({ theme }) => theme.breakpoints.large}) {
     display: none;
   }
@@ -230,7 +217,6 @@ export const VoteAmount = styled.span`
   font-weight: 400;
   font-size: 14px;
   line-height: 120%;
-
   @media (max-width: ${({ theme }) => theme.breakpoints.large}) {
     color: ${({ theme }) => theme.colors.darkGrey};
   }
