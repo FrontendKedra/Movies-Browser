@@ -19,7 +19,11 @@ export const BlureFrames = styled.div`
   position: absolute;
   width: 100%;
   height: 100%;
-  box-shadow: inset 1em 1em 20px 6px black, inset -1em -1em 20px 6px black;
+  box-shadow: inset 0 0 55px 65px ${({ theme }) => theme.colors.darkBlack};
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.largest}) {
+    box-shadow: inset 0 0 4vw 5vw #000000;
+  }
 `;
 
 export const BackdropImg = styled.img`
