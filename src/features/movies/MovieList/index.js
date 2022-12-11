@@ -7,8 +7,8 @@ import {
   selectPopularMoviesStatus,
 } from "../popularMoviesSlice";
 import { MovieTile } from "../../../common/tiles/MovieTile";
-import { Loader } from "../../../common/States/Loader";
-import { Error } from "../../../common/States/Error";
+import { Loader } from "../../../common/states/Loader";
+import { Error } from "../../../common/states/Error";
 
 export const MovieList = () => {
   const dispatch = useDispatch();

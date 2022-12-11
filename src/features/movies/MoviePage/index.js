@@ -17,8 +17,8 @@ import {
   ProfileImage,
 } from "../../../common/tiles/PersonTile/styled";
 import noPicture from "../../../common/tiles/PersonTile/noPicture.png";
-import { Loader } from "../../../common/States/Loader";
-import { Error } from "../../../common/States/Error";
+import { Loader } from "../../../common/states/Loader";
+import { Error } from "../../../common/states/Error";
 
 export const MoviePage = () => {
   const dispatch = useDispatch();
