@@ -38,7 +38,7 @@ export const MovieList = () => {
                 vote_count,
                 release_date,
               }) => (
-                <StyledLink to={`/movie-page/${id}`}>
+                <StyledLink to={`/movie-page/${id}`} key={id}>
                   <MovieTile
                     id={id}
                     poster_path={poster_path}
