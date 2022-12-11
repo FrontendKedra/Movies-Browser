@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { NavLink } from "react-router-dom";
 
 export const HeaderArea = styled.div`
-  background-color: ${({ theme }) => theme.colors.black};
+  background-color: ${({ theme }) => theme.colors.darkBlack};
   color: ${({ theme }) => theme.colors.white};
   padding: 23px 0;
   @media (max-width: ${({ theme }) => theme.breakpoints.small}) {
