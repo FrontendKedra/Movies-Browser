@@ -1,13 +1,9 @@
 import styled from "styled-components";
 import { ReactComponent as Vector } from "./images/vector.svg";
 
-/*wszystkie styled componenty sa w tym pliku ustawione 
-chronoligcznie w takiej kolejnosci w jakiej wystepuja 
-w aplikacji(patrz index.js) */
-
-export const Container = styled.div`
+export const MainContainer = styled.div`
   max-width: 1368px;
-  margin: auto;
+  margin: 56px auto;
   padding: 40px;
   display: grid;
   gap: 0 40px;
@@ -18,10 +14,14 @@ export const Container = styled.div`
   @media (max-width: ${({ theme }) => theme.breakpoints.large}) {
     gap: 0 28px;
     grid-template-columns: minmax(auto, 215px) 1fr;
+    padding: 28px;
+    margin: 36px auto;
   }
   @media (max-width: ${({ theme }) => theme.breakpoints.small}) {
     grid-template-columns: minmax(auto, 114px) 1fr;
     gap: 0 16px;
+    padding: 16px;
+    margin: 16px auto;
   }
 `;
 
@@ -46,7 +46,7 @@ export const TileContainer = styled.div`
   }
 `;
 
-export const Title = styled.header`
+export const BigTileTitle = styled.header`
   font-weight: 600;
   font-size: 36px;
   color: ${({ theme }) => theme.colors.black};
@@ -91,8 +91,8 @@ export const SubHeaderContainer = styled.div`
 `;
 
 export const SubHeader = styled.div`
-  display: grid;
-  grid-template-columns: auto 1fr;
+  display: flex;
+  flex-wrap: wrap;
   gap: 10px;
 `;
 
@@ -232,14 +232,15 @@ export const Article = styled.article`
   line-height: 160%;
   color: ${({ theme }) => theme.colors.black};
   margin: 0;
+  
   @media (max-width: ${({ theme }) => theme.breakpoints.large}) {
     font-size: 17px;
     grid-row: 3;
     grid-column: span 2;
-    margin-top: 36px;
+    margin-top: 24px;
   }
   @media (max-width: ${({ theme }) => theme.breakpoints.small}) {
     font-size: 14px;
-    margin-top: 24px;
+    margin-top: 4px;
   }
 `;

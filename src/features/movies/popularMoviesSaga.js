@@ -1,4 +1,4 @@
-import { call, put, takeLatest } from "redux-saga/effects";
+import { call, delay, put, takeLatest } from "redux-saga/effects";
 import { apiKey, baseUrl, language } from "../../ApiValue";
 import { getApiDatabase } from "../../getApiDatabase";
 
@@ -10,6 +10,7 @@ import {
 
 function* fetchPopularMoviesHandler() {
   try {
+    yield delay(2000);
     const movies = yield call(
       getApiDatabase,
       `${baseUrl}/movie/popular${apiKey}${language}`
