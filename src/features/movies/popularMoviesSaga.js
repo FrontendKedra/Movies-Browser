@@ -8,12 +8,12 @@ import {
   fetchPopularMoviesSuccess,
 } from "./popularMoviesSlice";
 
-function* fetchPopularMoviesHandler() {
+function* fetchPopularMoviesHandler({ payload: page }) {
   try {
     yield delay(2000);
     const movies = yield call(
       getApiDatabase,
-      `${baseUrl}/movie/popular${apiKey}${language}`
+      `${baseUrl}/movie/popular${apiKey}${language}&page=${page}`
     );
     yield put(fetchPopularMoviesSuccess(movies));
   } catch (error) {
