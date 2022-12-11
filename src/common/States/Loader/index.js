@@ -1,8 +1,8 @@
 import { IconSpinner, Header, Container } from "./styled";
 
-export const Loader = () => (
+export const Loader = ({ title }) => (
   <>
-    <Header>Search results for “Mulan”</Header>
+    <Header>{title}</Header>
     <Container>
       <IconSpinner />
     </Container>
