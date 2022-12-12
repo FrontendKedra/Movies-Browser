@@ -10,6 +10,7 @@ import {
 } from "./movieDetailsSlice";
 import { fetchMovie, selectMovieCast, selectMovieCrew } from "./movieSlice";
 import { ContentContainer, Header, Wrapper } from "./styled";
+
 import { Loader } from "../../../common/states/Loader";
 import { Error } from "../../../common/states/Error";
 import { StyledLink } from "./styled";
@@ -74,19 +75,8 @@ export const MoviePage = () => {
                         name={name}
                         character={character}
                       />
-                      {/* <Container key={id} id={id}>
-                        <ProfileImage
-                          src={
-                            profile_path
-                              ? `${imageBaseUrl}/w342${profile_path}`
-                              : noPicture
-                          }
-                          alt={`portrait of ${name}`}
-                        ></ProfileImage>
-                        <Name>{name}</Name>
-                        <Character>{character}</Character>
-                      </Container> */}
                     </StyledLink>
+
                   ))}
                 </ContentContainer>
               </>
@@ -102,19 +92,7 @@ export const MoviePage = () => {
                         profile_path={profile_path}
                         name={name}
                         character={job}
-                      />
-                      {/* <Container key={id} id={id}>
-                        <ProfileImage
-                          src={
-                            profile_path
-                              ? `${imageBaseUrl}/w342${profile_path}`
-                              : noPicture
-                          }
-                          alt={`portrait of ${name}`}
-                        ></ProfileImage>
-                        <Name>{name}</Name>
-                        <Character>{job}</Character>
-                      </Container> */}
+                      />  
                     </StyledLink>
                   ))}
                 </ContentContainer>

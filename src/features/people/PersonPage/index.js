@@ -47,7 +47,9 @@ import {
 import noProfile from "../../../common/tiles/PersonTile/noPicture.png";
 import { Loader } from "../../../common/states/Loader";
 import { Error } from "../../../common/states/Error";
+
 import { StyledLink } from "../PeoplePage/styled";
+
 
 export const PersonPage = () => {
   const dispatch = useDispatch();

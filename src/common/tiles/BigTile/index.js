@@ -32,7 +32,7 @@ export const BigTile = ({
   article,
 }) => {
   return (
-    <MainContainer key={id} id={id}>
+    <MainContainer id={id}>
       <Image
         src={poster_path ? `${imageBaseUrl}/w342${poster_path}` : noPicture}
         alt={`poster of ${title}`}
