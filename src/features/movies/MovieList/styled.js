@@ -63,15 +63,16 @@ export const Button = styled.button`
   border-radius: 5px;
   font-size: 14px;
   line-height: 1.4;
-  background-color: ${({ theme }) => theme.colors.grey};
+  background-color: ${({ theme }) => theme.colors.lightBlue};
   margin-right: 12px;
   border: none;
   cursor: pointer;
 
   ${(props) =>
-    props.forward &&
+    props.disabled &&
     css`
-      background-color: ${({ theme }) => theme.colors.lightBlue};
+      background-color: ${({ theme }) => theme.colors.grey};
+      cursor: not-allowed;
     `}
 `;
 
