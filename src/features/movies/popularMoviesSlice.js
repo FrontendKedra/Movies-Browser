@@ -23,6 +23,11 @@ const popularMoviesSlice = createSlice({
       movies: [],
       totalPages: 0,
     }),
+    resetToInitialState: () => ({
+      status: "loading",
+      movies: [],
+      totalPages: 0,
+    }),
   },
 });
 
@@ -30,6 +35,7 @@ export const {
   fetchPopularMovies,
   fetchPopularMoviesSuccess,
   fetchPopularMoviesError,
+  resetToInitialState,
 } = popularMoviesSlice.actions;
 
 export const selectPopularMoviesState = (state) => state.popularMovies;

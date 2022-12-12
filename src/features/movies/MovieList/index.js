@@ -12,6 +12,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import {
   fetchPopularMovies,
+  resetToInitialState,
   selectPopularMovies,
   selectPopularMoviesStatus,
   selectPopularMoviesTotalPages,
@@ -21,7 +22,6 @@ import { Loader } from "../../../common/states/Loader";
 import { Error } from "../../../common/states/Error";
 import { ReactComponent as Previous } from "./previousArrow.svg";
 import { ReactComponent as Next } from "./nextArrow.svg";
-
 
 export const MovieList = () => {
   const dispatch = useDispatch();
@@ -34,6 +34,7 @@ export const MovieList = () => {
 
   useEffect(() => {
     dispatch(fetchPopularMovies(page));
+    return () => resetToInitialState();
   }, [dispatch, page]);
 
   return (

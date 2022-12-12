@@ -23,6 +23,11 @@ const personSlice = createSlice({
       cast: [],
       crew: [],
     }),
+    resetToInitialState: () => ({
+      status: "loading",
+      cast: [],
+      crew: [],
+    }),
   },
 });
 
@@ -30,12 +35,12 @@ export const {
   fetchPerson,
   fetchPersonSuccess,
   fetchPersonError,
+  resetToInitialState,
 } = personSlice.actions;
 
 export const selectPersonState = (state) => state.person;
 
-export const selectPersonStatus = (state) =>
-  selectPersonState(state).status;
+export const selectPersonStatus = (state) => selectPersonState(state).status;
 
 export const selectCrew = (state) => selectPersonState(state).crew;
 
