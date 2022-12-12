@@ -19,6 +19,7 @@ import {
 import noPicture from "../../../common/tiles/PersonTile/noPicture.png";
 import { Loader } from "../../../common/States/Loader";
 import { Error } from "../../../common/States/Error";
+import { StyledLink } from "../../people/PeoplePage/styled";
 
 export const MoviePage = () => {
   const dispatch = useDispatch();
@@ -72,18 +73,20 @@ export const MoviePage = () => {
                 <Header>Cast</Header>
                 <ContentContainer>
                   {cast.map(({ profile_path, name, character, id }) => (
-                    <Container key={id} id={id}>
-                      <ProfileImage
-                        src={
-                          profile_path
-                            ? `${imageBaseUrl}/w342${profile_path}`
-                            : noPicture
-                        }
-                        alt={`image of ${name}`}
-                      ></ProfileImage>
-                      <Name>{name}</Name>
-                      <Character>{character}</Character>
-                    </Container>
+                    <StyledLink to={`/profile/${id}`}>
+                      <Container key={id} id={id}>
+                        <ProfileImage
+                          src={
+                            profile_path
+                              ? `${imageBaseUrl}/w342${profile_path}`
+                              : noPicture
+                          }
+                          alt={`image of ${name}`}
+                        ></ProfileImage>
+                        <Name>{name}</Name>
+                        <Character>{character}</Character>
+                      </Container>
+                    </StyledLink>
                   ))}
                 </ContentContainer>
               </>
@@ -93,18 +96,20 @@ export const MoviePage = () => {
                 <Header>Crew</Header>
                 <ContentContainer>
                   {crew.map(({ profile_path, name, job, id }) => (
-                    <Container key={id} id={id}>
-                      <ProfileImage
-                        src={
-                          profile_path
-                            ? `${imageBaseUrl}/w342${profile_path}`
-                            : noPicture
-                        }
-                        alt={`image of ${name}`}
-                      ></ProfileImage>
-                      <Name>{name}</Name>
-                      <Character>{job}</Character>
-                    </Container>
+                    <StyledLink to={`/profile/${id}`}>
+                      <Container key={id} id={id}>
+                        <ProfileImage
+                          src={
+                            profile_path
+                              ? `${imageBaseUrl}/w342${profile_path}`
+                              : noPicture
+                          }
+                          alt={`image of ${name}`}
+                        ></ProfileImage>
+                        <Name>{name}</Name>
+                        <Character>{job}</Character>
+                      </Container>
+                    </StyledLink>
                   ))}
                 </ContentContainer>
               </>
