@@ -45,8 +45,8 @@ import {
   Wrapper,
 } from "./styled";
 import noProfile from "../../../common/tiles/PersonTile/noPicture.png";
-import { Loader } from "../../../common/States/Loader";
-import { Error } from "../../../common/States/Error";
+import { Loader } from "../../../common/states/Loader";
+import { Error } from "../../../common/states/Error";
 import { StyledLink } from "../PeoplePage/styled";
 
 export const PersonPage = () => {

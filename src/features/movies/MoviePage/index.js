@@ -1,7 +1,6 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import { imageBaseUrl } from "../../../ApiValue";
 import { BigTile } from "../../../common/tiles/BigTile";
 import { Backdrop } from "./Backdrop";
 import {
@@ -10,15 +9,9 @@ import {
   selectMovieStatus,
 } from "./movieDetailsSlice";
 import { fetchMovie, selectMovieCast, selectMovieCrew } from "./movieSlice";
-import { Character, ContentContainer, Header, Wrapper } from "./styled";
-import {
-  Container,
-  Name,
-  ProfileImage,
-} from "../../../common/tiles/PersonTile/styled";
-import noPicture from "../../../common/tiles/PersonTile/noPicture.png";
-import { Loader } from "../../../common/States/Loader";
-import { Error } from "../../../common/States/Error";
+import { ContentContainer, Header, Wrapper } from "./styled";
+import { Loader } from "../../../common/states/Loader";
+import { Error } from "../../../common/states/Error";
 import { StyledLink } from "./styled";
 import { PersonTile } from "../../../common/tiles/PersonTile";
 

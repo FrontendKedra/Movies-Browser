@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Loader } from "../../../common/States/Loader";
-import { Error } from "../../../common/States/Error";
+import { Loader } from "../../../common/states/Loader";
+import { Error } from "../../../common/states/Error";
 import { PersonTile } from "../../../common/tiles/PersonTile";
 import {
   fetchPopularPeople,
