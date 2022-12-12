@@ -10,7 +10,7 @@ import {
 
 function* fetchPopularMoviesHandler() {
   try {
-    yield delay(2000);
+    yield delay(1500);
     const movies = yield call(
       getApiDatabase,
       `${baseUrl}/movie/popular${apiKey}${language}`
