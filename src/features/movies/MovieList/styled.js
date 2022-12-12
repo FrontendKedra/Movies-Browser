@@ -42,6 +42,11 @@ export const ListTitle = styled.h1`
 
 export const StyledLink = styled(Link)`
   text-decoration: none;
+  margin: 0;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobileMax}) {
+    width: 100%;
+  }
 `;
 
 export const PageChanger = styled.div`

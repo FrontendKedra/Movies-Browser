@@ -39,11 +39,11 @@ export const Container = styled.div`
 export const Poster = styled.img`
   width: 292px;
   height: 434px;
-  margin: 16px;
+  margin: 16px 0 16px 16px;
   border-radius: ${({ theme }) => theme.radius.small};
 
   @media (max-width: ${({ theme }) => theme.breakpoints.mobileMax}) {
-    width: 100%;
+    width: 201px;
     height: 300px;
     display: grid;
     grid-template-columns: auto 1fr;
@@ -60,8 +60,6 @@ export const InfoContent = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  margin-right: 16px;
-
   @media (max-width: ${({ theme }) => theme.breakpoints.mobileMax}) {
     margin: 16px;
   }
@@ -76,7 +74,6 @@ export const Details = styled.div`
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    margin-top: 16px;
     grid-gap: 4px;
   }
 `;
