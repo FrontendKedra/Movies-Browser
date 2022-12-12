@@ -23,7 +23,7 @@ export const MovieTile = ({
     <Container key={id} id={id}>
       <Poster
         src={poster_path ? `${imageBaseUrl}/w342${poster_path}` : noPoster}
-        alt=""
+        alt={`poster of ${title}`}
       ></Poster>
       <InfoContent>
         <Details>

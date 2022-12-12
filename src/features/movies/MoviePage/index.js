@@ -81,7 +81,7 @@ export const MoviePage = () => {
                               ? `${imageBaseUrl}/w342${profile_path}`
                               : noPicture
                           }
-                          alt={`image of ${name}`}
+                          alt={`portrait of ${name}`}
                         ></ProfileImage>
                         <Name>{name}</Name>
                         <Character>{character}</Character>
@@ -104,7 +104,7 @@ export const MoviePage = () => {
                               ? `${imageBaseUrl}/w342${profile_path}`
                               : noPicture
                           }
-                          alt={`image of ${name}`}
+                          alt={`portrait of ${name}`}
                         ></ProfileImage>
                         <Name>{name}</Name>
                         <Character>{job}</Character>

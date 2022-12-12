@@ -81,7 +81,7 @@ export const PersonPage = () => {
                       ? `${imageBaseUrl}/w342${profile_path}`
                       : noProfile
                   }
-                  alt={`image of ${name}`}
+                  alt={`portrait of ${name}`}
                 />
                 <TileContainer>
                   <BigTileTitle>{name}</BigTileTitle>
@@ -128,7 +128,7 @@ export const PersonPage = () => {
                               ? `${imageBaseUrl}/w342${poster_path}`
                               : noPoster
                           }
-                          alt={`image of ${character}`}
+                          alt={`portrait of ${character}`}
                         ></Poster>
                         <InfoContent>
                           <Details>
@@ -181,7 +181,7 @@ export const PersonPage = () => {
                               ? `${imageBaseUrl}/w342${poster_path}`
                               : noPoster
                           }
-                          alt={`image of ${job}`}
+                          alt={`portrait of ${job}`}
                         ></Poster>
                         <InfoContent>
                           <Details>
