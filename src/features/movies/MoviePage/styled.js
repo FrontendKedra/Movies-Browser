@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
@@ -40,23 +41,6 @@ export const Header = styled.h2`
   }
 `;
 
-export const Character = styled.h2`
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 150%;
-  display: grid;
-  grid-template-columns: auto;
-  justify-content: center;
-  text-align: center;
-  margin-top: 8px;
-  color: ${({ theme }) => theme.colors.darkGrey};
-
-  @media (max-width: ${({ theme }) => theme.breakpoints.large}) {
-    font-size: 15px;
-    line-height: 140%;
-  }
-  @media (max-width: ${({ theme }) => theme.breakpoints.small}) {
-    font-size: 13px;
-    line-height: 130%;
-  }
+export const StyledLink = styled(Link)`
+  text-decoration: none;
 `;

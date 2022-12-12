@@ -19,7 +19,8 @@ import {
 import noPicture from "../../../common/tiles/PersonTile/noPicture.png";
 import { Loader } from "../../../common/States/Loader";
 import { Error } from "../../../common/States/Error";
-import { StyledLink } from "../../people/PeoplePage/styled";
+import { StyledLink } from "./styled";
+import { PersonTile } from "../../../common/tiles/PersonTile";
 
 export const MoviePage = () => {
   const dispatch = useDispatch();
@@ -73,8 +74,14 @@ export const MoviePage = () => {
                 <Header>Cast</Header>
                 <ContentContainer>
                   {cast.map(({ profile_path, name, character, id }) => (
-                    <StyledLink to={`/profile/${id}`}>
-                      <Container key={id} id={id}>
+                    <StyledLink to={`/profile/${id}`} key={id}>
+                      <PersonTile
+                        id={id}
+                        profile_path={profile_path}
+                        name={name}
+                        character={character}
+                      />
+                      {/* <Container key={id} id={id}>
                         <ProfileImage
                           src={
                             profile_path
@@ -85,7 +92,7 @@ export const MoviePage = () => {
                         ></ProfileImage>
                         <Name>{name}</Name>
                         <Character>{character}</Character>
-                      </Container>
+                      </Container> */}
                     </StyledLink>
                   ))}
                 </ContentContainer>
@@ -96,8 +103,14 @@ export const MoviePage = () => {
                 <Header>Crew</Header>
                 <ContentContainer>
                   {crew.map(({ profile_path, name, job, id }) => (
-                    <StyledLink to={`/profile/${id}`}>
-                      <Container key={id} id={id}>
+                    <StyledLink to={`/profile/${id}`} key={id}>
+                      <PersonTile
+                        id={id}
+                        profile_path={profile_path}
+                        name={name}
+                        character={job}
+                      />
+                      {/* <Container key={id} id={id}>
                         <ProfileImage
                           src={
                             profile_path
@@ -108,7 +121,7 @@ export const MoviePage = () => {
                         ></ProfileImage>
                         <Name>{name}</Name>
                         <Character>{job}</Character>
-                      </Container>
+                      </Container> */}
                     </StyledLink>
                   ))}
                 </ContentContainer>

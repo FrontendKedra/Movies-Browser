@@ -1,8 +1,8 @@
 import { imageBaseUrl } from "../../../ApiValue";
-import { Container, Name, ProfileImage } from "./styled";
+import { Character, Container, Name, ProfileImage } from "./styled";
 import noPicture from "./noPicture.png";
 
-export const PersonTile = ({ id, profile_path, name }) => {
+export const PersonTile = ({ id, profile_path, name, character }) => {
   return (
     <Container key={id} id={id}>
       <ProfileImage
@@ -10,6 +10,7 @@ export const PersonTile = ({ id, profile_path, name }) => {
         alt={`portrait of ${name}`}
       ></ProfileImage>
       <Name>{name}</Name>
+      <Character>{character}</Character>
     </Container>
   );
 };

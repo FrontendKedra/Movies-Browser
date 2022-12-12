@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { Link } from "react-router-dom";
 
 export const Wrapper = styled.div`
@@ -30,7 +30,7 @@ export const ListTitle = styled.h1`
   font-size: 36px;
   font-weight: 600;
   line-height: 1.2;
-  
+
   @media (max-width: ${({ theme }) => theme.breakpoints.large}) {
     font-size: 24px;
   }
@@ -42,4 +42,9 @@ export const ListTitle = styled.h1`
 
 export const StyledLink = styled(Link)`
   text-decoration: none;
+  margin: 0;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobileMax}) {
+    width: 100%;
+  }
 `;
