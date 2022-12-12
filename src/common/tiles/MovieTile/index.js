@@ -16,8 +16,8 @@ export const MovieTile = ({
   poster_path,
   title,
   release_date,
-  vote_average,
-  vote_count,
+  rating,
+  votes,
 }) => {
   return (
     <Container key={id} id={id}>
@@ -31,7 +31,7 @@ export const MovieTile = ({
           <Year>{release_date}</Year>
           <Genre />
         </Details>
-        <StyledRatings vote_average={vote_average} vote_count={vote_count} />
+        <StyledRatings rating={rating} votes={votes} />
       </InfoContent>
     </Container>
 
