@@ -3,7 +3,7 @@ import { ReactComponent as Vector } from "./images/vector.svg";
 
 export const MainContainer = styled.div`
   max-width: 1368px;
-  margin: 56px auto;
+  margin: 56px 0;
   padding: 40px;
   display: grid;
   gap: 0 40px;

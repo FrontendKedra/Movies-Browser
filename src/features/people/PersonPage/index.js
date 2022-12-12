@@ -36,7 +36,6 @@ import {
   SubHeaderInformation,
   SubHeaderContainer,
   BigTileTitle,
-  MaxRating,
 } from "../../../common/tiles/BigTile/styled";
 import {
   SubHeaderDate,
@@ -48,6 +47,7 @@ import {
 import noProfile from "../../../common/tiles/PersonTile/noPicture.png";
 import { Loader } from "../../../common/States/Loader";
 import { Error } from "../../../common/States/Error";
+import { StyledLink } from "../PeoplePage/styled";
 
 export const PersonPage = () => {
   const dispatch = useDispatch();
@@ -81,7 +81,7 @@ export const PersonPage = () => {
                       ? `${imageBaseUrl}/w342${profile_path}`
                       : noProfile
                   }
-                  alt={`image of ${name}`}
+                  alt={`portrait of ${name}`}
                 />
                 <TileContainer>
                   <BigTileTitle>{name}</BigTileTitle>
@@ -120,7 +120,7 @@ export const PersonPage = () => {
                     vote_average,
                     vote_count,
                   }) => (
-                    <>
+                    <StyledLink to={`/movie-page/${id}`}>
                       <Container key={id}>
                         <Poster
                           src={
@@ -128,7 +128,7 @@ export const PersonPage = () => {
                               ? `${imageBaseUrl}/w342${poster_path}`
                               : noPoster
                           }
-                          alt={`image of ${character}`}
+                          alt={`portrait of ${character}`}
                         ></Poster>
                         <InfoContent>
                           <Details>
@@ -144,12 +144,11 @@ export const PersonPage = () => {
                           <RatingsContainer>
                             <StyledStar />
                             <Rate>{vote_average}</Rate>
-                            <MaxRating>/ 10</MaxRating>
                             <Votes>{vote_count} votes</Votes>
                           </RatingsContainer>
                         </InfoContent>
                       </Container>
-                    </>
+                    </StyledLink>
                   )
                 )}
               </ContentContainer>
@@ -174,7 +173,7 @@ export const PersonPage = () => {
                     poster_path,
                     id,
                   }) => (
-                    <>
+                    <StyledLink to={`/movie-page/${id}`}>
                       <Container key={id}>
                         <Poster
                           src={
@@ -182,7 +181,7 @@ export const PersonPage = () => {
                               ? `${imageBaseUrl}/w342${poster_path}`
                               : noPoster
                           }
-                          alt={`image of ${job}`}
+                          alt={`portrait of ${job}`}
                         ></Poster>
                         <InfoContent>
                           <Details>
@@ -198,12 +197,11 @@ export const PersonPage = () => {
                           <RatingsContainer>
                             <StyledStar />
                             <Rate>{vote_average}</Rate>
-                            <MaxRating>/10</MaxRating>
                             <Votes>{vote_count} votes</Votes>
                           </RatingsContainer>
                         </InfoContent>
                       </Container>
-                    </>
+                    </StyledLink>
                   )
                 )}
               </ContentContainer>
