@@ -92,4 +92,5 @@ export const PageCounter = styled.div`
 export const Text = styled.span`
   font-weight: 400;
   color: ${({ theme }) => theme.colors.darkGrey};
+
 `;

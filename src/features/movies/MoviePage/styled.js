@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
@@ -39,3 +40,8 @@ export const Header = styled.h2`
     font-size: 20px;
   }
 `;
+
+export const StyledLink = styled(Link)`
+  text-decoration: none;
+`;
+

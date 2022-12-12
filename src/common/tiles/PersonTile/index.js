@@ -7,7 +7,7 @@ export const PersonTile = ({ id, profile_path, name, character }) => {
     <Container key={id} id={id}>
       <ProfileImage
         src={profile_path ? `${imageBaseUrl}/w342${profile_path}` : noPicture}
-        alt=""
+        alt={`portrait of ${name}`}
       ></ProfileImage>
       <Name>{name}</Name>
       <Character>{character}</Character>

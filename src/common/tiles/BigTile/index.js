@@ -35,7 +35,7 @@ export const BigTile = ({
     <MainContainer id={id}>
       <Image
         src={poster_path ? `${imageBaseUrl}/w342${poster_path}` : noPicture}
-        alt={`image of ${title}`}
+        alt={`poster of ${title}`}
       />
       <TileContainer>
         <BigTileTitle>{title}</BigTileTitle>

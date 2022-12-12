@@ -22,6 +22,7 @@ import { Error } from "../../../common/states/Error";
 import { ReactComponent as Previous } from "./previousArrow.svg";
 import { ReactComponent as Next } from "./nextArrow.svg";
 
+
 export const MovieList = () => {
   const dispatch = useDispatch();
 

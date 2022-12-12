@@ -13,6 +13,7 @@ import { ContentContainer, Header, Wrapper } from "./styled";
 
 import { Loader } from "../../../common/states/Loader";
 import { Error } from "../../../common/states/Error";
+import { StyledLink } from "./styled";
 import { PersonTile } from "../../../common/tiles/PersonTile";
 
 export const MoviePage = () => {
@@ -67,12 +68,15 @@ export const MoviePage = () => {
                 <Header>Cast</Header>
                 <ContentContainer>
                   {cast.map(({ profile_path, name, character, id }) => (
-                    <PersonTile
-                      id={id}
-                      profile_path={profile_path}
-                      name={name}
-                      character={character}
-                    />
+                    <StyledLink to={`/profile/${id}`} key={id}>
+                      <PersonTile
+                        id={id}
+                        profile_path={profile_path}
+                        name={name}
+                        character={character}
+                      />
+                    </StyledLink>
+
                   ))}
                 </ContentContainer>
               </>
@@ -82,12 +86,14 @@ export const MoviePage = () => {
                 <Header>Crew</Header>
                 <ContentContainer>
                   {crew.map(({ profile_path, name, job, id }) => (
-                    <PersonTile
-                      id={id}
-                      profile_path={profile_path}
-                      name={name}
-                      character={job}
-                    />
+                    <StyledLink to={`/profile/${id}`} key={id}>
+                      <PersonTile
+                        id={id}
+                        profile_path={profile_path}
+                        name={name}
+                        character={job}
+                      />  
+                    </StyledLink>
                   ))}
                 </ContentContainer>
               </>
