@@ -1,7 +1,6 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import { imageBaseUrl } from "../../../ApiValue";
 import { BigTile } from "../../../common/tiles/BigTile";
 import { Backdrop } from "./Backdrop";
 import {
@@ -10,15 +9,11 @@ import {
   selectMovieStatus,
 } from "./movieDetailsSlice";
 import { fetchMovie, selectMovieCast, selectMovieCrew } from "./movieSlice";
-import { Character, ContentContainer, Header, Wrapper } from "./styled";
-import {
-  Container,
-  Name,
-  ProfileImage,
-} from "../../../common/tiles/PersonTile/styled";
-import noPicture from "../../../common/tiles/PersonTile/noPicture.png";
+import { ContentContainer, Header, Wrapper } from "./styled";
+
 import { Loader } from "../../../common/states/Loader";
 import { Error } from "../../../common/states/Error";
+import { PersonTile } from "../../../common/tiles/PersonTile";
 
 export const MoviePage = () => {
   const dispatch = useDispatch();
@@ -72,18 +67,12 @@ export const MoviePage = () => {
                 <Header>Cast</Header>
                 <ContentContainer>
                   {cast.map(({ profile_path, name, character, id }) => (
-                    <Container key={id} id={id}>
-                      <ProfileImage
-                        src={
-                          profile_path
-                            ? `${imageBaseUrl}/w342${profile_path}`
-                            : noPicture
-                        }
-                        alt={`image of ${name}`}
-                      ></ProfileImage>
-                      <Name>{name}</Name>
-                      <Character>{character}</Character>
-                    </Container>
+                    <PersonTile
+                      id={id}
+                      profile_path={profile_path}
+                      name={name}
+                      character={character}
+                    />
                   ))}
                 </ContentContainer>
               </>
@@ -93,18 +82,12 @@ export const MoviePage = () => {
                 <Header>Crew</Header>
                 <ContentContainer>
                   {crew.map(({ profile_path, name, job, id }) => (
-                    <Container key={id} id={id}>
-                      <ProfileImage
-                        src={
-                          profile_path
-                            ? `${imageBaseUrl}/w342${profile_path}`
-                            : noPicture
-                        }
-                        alt={`image of ${name}`}
-                      ></ProfileImage>
-                      <Name>{name}</Name>
-                      <Character>{job}</Character>
-                    </Container>
+                    <PersonTile
+                      id={id}
+                      profile_path={profile_path}
+                      name={name}
+                      character={job}
+                    />
                   ))}
                 </ContentContainer>
               </>
