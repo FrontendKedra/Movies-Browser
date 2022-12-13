@@ -3,7 +3,6 @@ import { ReactComponent as Star } from "./star.svg";
 
 export const Wrapper = styled.section`
   background-color: ${({ theme }) => theme.colors.darkBlack};
-  margin-bottom: clamp(16px, 5vw, 64px);
   margin-top: 0px;
 `;
 
@@ -28,6 +27,7 @@ export const BlureFrames = styled.div`
 
 export const BackdropImg = styled.img`
   width: 100%;
+  object-fit: cover;
 `;
 
 export const Content = styled.div`
