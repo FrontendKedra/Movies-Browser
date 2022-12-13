@@ -18,6 +18,7 @@ export const MovieTile = ({
   release_date,
   rating,
   votes,
+  genre_ids,
 }) => {
   return (
     <Container key={id} id={id}>
@@ -29,27 +30,10 @@ export const MovieTile = ({
         <Details>
           <Title>{title}</Title>
           <Year>{release_date}</Year>
-          <Genre />
+          <Genre genre_ids={genre_ids} />
         </Details>
         <StyledRatings rating={rating} votes={votes} />
       </InfoContent>
     </Container>
-
-    ///Poniżej kod do sprawdzenia PersonPage///
-
-    // <Container>
-    //   <Poster
-    //     src={poster_path ? `${imageBaseUrl}/w342${poster_path}` : noPoster}
-    //     alt=""
-    //   ></Poster>
-    //   <InfoContent>
-    //     <Details>
-    //       <Title>Cokolwiek</Title>
-    //       <Year>2022</Year>
-    //       <Genre />
-    //     </Details>
-    //     <StyledRatings rating={"1444"} votes={"6532423"} />
-    //   </InfoContent>
-    // </Container>
   );
 };
