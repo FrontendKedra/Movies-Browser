@@ -29,7 +29,7 @@ export const Backdrop = ({
           <Title>{title}</Title>
           <RatingContainer>
             <StarIcon />
-            <Vote>{rating}</Vote>
+            <Vote>{rating.toFixed(1)}</Vote>
             <Rate>/ 10</Rate>
             <Votes>{votes} votes</Votes>
           </RatingContainer>
