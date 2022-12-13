@@ -22,6 +22,7 @@ import { Loader } from "../../../common/states/Loader";
 import { Error } from "../../../common/states/Error";
 import { ReactComponent as Previous } from "./previousArrow.svg";
 import { ReactComponent as Next } from "./nextArrow.svg";
+import { Search } from "../../Search";
 
 export const MovieList = () => {
   const dispatch = useDispatch();
@@ -45,6 +46,7 @@ export const MovieList = () => {
         <Error />
       ) : (
         <Wrapper>
+          <Search />
           <ListTitle> Popular movies</ListTitle>
           <ContentContainer>
             {movies.map(
