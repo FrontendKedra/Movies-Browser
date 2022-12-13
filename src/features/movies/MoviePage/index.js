@@ -38,7 +38,21 @@ export const MoviePage = () => {
         <Error />
       ) : (
         <>
-          <Backdrop />
+          {movie.map(
+            ({
+              title,
+              vote_average,
+              vote_count,
+              backdrop_path,
+            }) => (
+              <Backdrop
+                title={title}
+                rating={vote_average}
+                votes={vote_count}
+                backdrop_path={backdrop_path}
+              />
+            )
+          )}
           <Wrapper>
             {movie.map(
               ({
@@ -51,16 +65,16 @@ export const MoviePage = () => {
                 vote_count,
                 overview,
               }) => (
-                <BigTile
-                  id={id}
-                  poster_path={poster_path}
-                  title={title}
-                  release_date={release_date}
-                  rating={vote_average}
-                  votes={vote_count}
-                  countries={production_countries}
-                  article={overview}
-                />
+                  <BigTile
+                    id={id}
+                    poster_path={poster_path}
+                    title={title}
+                    release_date={release_date}
+                    rating={vote_average}
+                    votes={vote_count}
+                    countries={production_countries}
+                    article={overview}
+                  />
               )
             )}
             {cast.length > 0 && (
@@ -92,7 +106,7 @@ export const MoviePage = () => {
                         profile_path={profile_path}
                         name={name}
                         character={job}
-                      />  
+                      />
                     </StyledLink>
                   ))}
                 </ContentContainer>
