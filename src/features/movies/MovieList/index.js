@@ -21,7 +21,7 @@ import { Loader } from "../../../common/states/Loader";
 import { Error } from "../../../common/states/Error";
 import { ReactComponent as Previous } from "./previousArrow.svg";
 import { ReactComponent as Next } from "./nextArrow.svg";
-
+import { fetchGenres } from "../../../common/tiles/MovieTile/Genre/genreSlice";
 
 export const MovieList = () => {
   const dispatch = useDispatch();
@@ -34,6 +34,7 @@ export const MovieList = () => {
 
   useEffect(() => {
     dispatch(fetchPopularMovies(page));
+    dispatch(fetchGenres());
   }, [dispatch, page]);
 
   return (
@@ -54,9 +55,11 @@ export const MovieList = () => {
                 vote_average,
                 vote_count,
                 release_date,
+                genre_ids,
               }) => (
                 <StyledLink to={`/movie-page/${id}`} key={id}>
                   <MovieTile
+                    genre_ids={genre_ids}
                     id={id}
                     poster_path={poster_path}
                     title={title}
