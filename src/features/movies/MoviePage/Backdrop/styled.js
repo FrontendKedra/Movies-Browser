@@ -12,17 +12,17 @@ export const Container = styled.div`
   margin: 0 auto;
   display: flex;
   align-items: flex-end;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.largest}) {
+    margin: 0 6vw;
+  }
 `;
 
-export const BlureFrames = styled.div`
+export const BlureFrame = styled.div`
   position: absolute;
   width: 100%;
   height: 100%;
-  box-shadow: inset 0 0 55px 65px ${({ theme }) => theme.colors.darkBlack};
-
-  @media (max-width: ${({ theme }) => theme.breakpoints.largest}) {
-    box-shadow: inset 0 0 4vw 5vw #000000;
-  }
+  box-shadow: inset 0 0 3vw 2.5vw ${({ theme }) => theme.colors.darkBlack};
 `;
 
 export const BackdropImg = styled.img`

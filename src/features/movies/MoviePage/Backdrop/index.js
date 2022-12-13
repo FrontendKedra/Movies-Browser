@@ -1,7 +1,7 @@
 import { imageBaseUrl } from "../../../../ApiValue"
 import {
   BackdropImg,
-  BlureFrames,
+  BlureFrame,
   Container,
   Content,
   Rate,
@@ -22,7 +22,7 @@ export const Backdrop = ({
   return (
     <Wrapper>
       <Container>
-        <BlureFrames />
+        <BlureFrame />
         <BackdropImg  src={`${imageBaseUrl}/w1280${backdrop_path}`}
         alt={`poster of ${title}`} />
         <Content>
