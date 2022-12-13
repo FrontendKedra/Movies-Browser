@@ -40,13 +40,13 @@ export const MoviePage = () => {
         <>
           {movie.map(
             ({
-              title,
+              original_title,
               vote_average,
               vote_count,
               backdrop_path,
             }) => (
               <Backdrop
-                title={title}
+                title={original_title}
                 rating={vote_average}
                 votes={vote_count}
                 backdrop_path={backdrop_path}
@@ -90,7 +90,6 @@ export const MoviePage = () => {
                         character={character}
                       />
                     </StyledLink>
-
                   ))}
                 </ContentContainer>
               </>
