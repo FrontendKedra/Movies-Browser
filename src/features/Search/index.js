@@ -29,7 +29,7 @@ export const Search = () => {
   };
 
   return (
-    <SearchContainer onSubmit={onFormSubmit}>
+    <SearchContainer onChange={onFormSubmit}>
       <input
         placeholder="search for movies"
         value={query || ""}

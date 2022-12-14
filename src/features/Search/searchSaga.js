@@ -1,4 +1,4 @@
-import { call, put, takeLatest } from "redux-saga/effects";
+import { call, debounce, put } from "redux-saga/effects";
 import { apiKey, baseUrl, language } from "../../ApiValue";
 import { getApiDatabase } from "../../getApiDatabase";
 import {
@@ -20,5 +20,5 @@ function* fetchSearchQueryHandler({ payload: query }) {
 }
 
 export function* watchFetchSearchQuery() {
-  yield takeLatest(fetchSearch.type, fetchSearchQueryHandler);
+  yield debounce(3000, fetchSearch.type, fetchSearchQueryHandler);
 }
