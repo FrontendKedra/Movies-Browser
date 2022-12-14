@@ -22,14 +22,14 @@ export const Search = () => {
     history.push(`${location.pathname}?${searchParams.toString()}`);
   };
 
-  const onFormSubmit = (event) => {
+  const onFormChange = (event) => {
     event.preventDefault();
 
     dispatch(fetchSearch(query));
   };
 
   return (
-    <SearchContainer onChange={onFormSubmit}>
+    <SearchContainer onChange={onFormChange}>
       <input
         placeholder="search for movies"
         value={query || ""}
