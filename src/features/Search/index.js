@@ -1,17 +1,17 @@
+import { useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { useHistory, useLocation } from "react-router-dom";
-import { fetchSearch } from "./searchSlice";
+import { fetchSearch, setQuery } from "./searchSlice";
 import { SearchContainer } from "./styled";
 import useQueryParameter from "./useQueryParameter";
 import { useReplaceQueryParameter } from "./useReplaceQueryParameter";
 
 export const Search = () => {
   const dispatch = useDispatch();
-  const location = useLocation();
-  const history = useHistory();
 
   const query = useQueryParameter("search");
   const replaceQueryParam = useReplaceQueryParameter();
+
+  console.log(query);
 
   const onInputChange = ({ target }) => {
     replaceQueryParam({
@@ -20,14 +20,14 @@ export const Search = () => {
     });
   };
 
-  const onFormChange = (event) => {
+  const onFormSubmit = (event) => {
     event.preventDefault();
 
     dispatch(fetchSearch(query));
   };
 
   return (
-    <SearchContainer onChange={onFormChange}>
+    <SearchContainer onSubmit={onFormSubmit}>
       <input
         placeholder="search for movies"
         value={query || ""}
