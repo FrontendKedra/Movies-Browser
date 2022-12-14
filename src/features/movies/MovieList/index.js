@@ -45,16 +45,20 @@ export const MovieList = () => {
     <>
       <Search />
       {stateOfLoading === "loading" ? (
-        <Loader title="Loading popular movies..." />
+        <Loader title="Loading..." />
       ) : stateOfLoading === "error" ? (
         <Error />
       ) : (
         <Wrapper>
-          <ListTitle>
-            {query
-              ? `Search results for "${query}" (${totalResults})`
-              : "Popular movies"}
-          </ListTitle>
+          {!movies.length ? (
+            <NoResult query={query} />
+          ) : (
+            <ListTitle>
+              {query
+                ? `Search results for "${query}" (${totalResults})`
+                : "Popular movies"}
+            </ListTitle>
+          )}
 
           <ContentContainer>
             {movies.map(
