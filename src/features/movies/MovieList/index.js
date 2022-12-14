@@ -12,10 +12,10 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import {
   fetchPopularMovies,
-  resetToInitialState,
   selectPopularMovies,
   selectPopularMoviesStatus,
   selectPopularMoviesTotalPages,
+  selectPopularMoviesTotalResults,
 } from "../popularMoviesSlice";
 import { MovieTile } from "../../../common/tiles/MovieTile";
 import { Loader } from "../../../common/states/Loader";
@@ -23,31 +23,39 @@ import { Error } from "../../../common/states/Error";
 import { ReactComponent as Previous } from "./previousArrow.svg";
 import { ReactComponent as Next } from "./nextArrow.svg";
 import { Search } from "../../Search";
+import useQueryParameter from "../../Search/useQueryParameter";
+import { NoResult } from "../../../common/states/NoResult";
 
 export const MovieList = () => {
   const dispatch = useDispatch();
 
   const movies = useSelector(selectPopularMovies);
   const stateOfLoading = useSelector(selectPopularMoviesStatus);
+  const query = useQueryParameter("search");
 
   const [page, setPage] = useState(1);
   const totalPages = useSelector(selectPopularMoviesTotalPages);
+  const totalResults = useSelector(selectPopularMoviesTotalResults);
 
   useEffect(() => {
-    dispatch(fetchPopularMovies(page));
-    return () => resetToInitialState();
-  }, [dispatch, page]);
+    dispatch(fetchPopularMovies({ page, query }));
+  }, [dispatch, page, query]);
 
   return (
     <>
+      <Search />
       {stateOfLoading === "loading" ? (
         <Loader title="Loading popular movies..." />
       ) : stateOfLoading === "error" ? (
         <Error />
       ) : (
         <Wrapper>
-          <Search />
-          <ListTitle> Popular movies</ListTitle>
+          <ListTitle>
+            {query
+              ? `Search results for "${query}" (${totalResults})`
+              : "Popular movies"}
+          </ListTitle>
+
           <ContentContainer>
             {movies.map(
               ({
