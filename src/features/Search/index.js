@@ -2,24 +2,22 @@ import { useDispatch } from "react-redux";
 import { useHistory, useLocation } from "react-router-dom";
 import { fetchSearch } from "./searchSlice";
 import { SearchContainer } from "./styled";
+import useQueryParameter from "./useQueryParameter";
+import { useReplaceQueryParameter } from "./useReplaceQueryParameter";
 
 export const Search = () => {
   const dispatch = useDispatch();
   const location = useLocation();
   const history = useHistory();
 
-  const searchParams = new URLSearchParams(location.search);
-  const query = searchParams.get("query");
+  const query = useQueryParameter("search");
+  const replaceQueryParam = useReplaceQueryParameter();
 
   const onInputChange = ({ target }) => {
-    const searchParams = new URLSearchParams(location.search);
-
-    if (target.value.trim() === "") {
-      searchParams.delete("query");
-    } else {
-      searchParams.set("query", target.value);
-    }
-    history.push(`${location.pathname}?${searchParams.toString()}`);
+    replaceQueryParam({
+      key: "search",
+      value: target.value.trim() !== undefined ? target.value : undefined,
+    });
   };
 
   const onFormChange = (event) => {
