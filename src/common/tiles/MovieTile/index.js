@@ -10,6 +10,7 @@ import {
 import { Genre } from "./Genre";
 import { imageBaseUrl } from "../../../ApiValue";
 import noPoster from "./noPoster.png";
+import { MovieStyledLink } from "../generisStyles/styled";
 
 export const MovieTile = ({
   id,
@@ -19,21 +20,40 @@ export const MovieTile = ({
   rating,
   votes,
   genre_ids,
+  character,
+  job,
+  year,
 }) => {
   return (
-    <Container key={id} id={id}>
-      <Poster
-        src={poster_path ? `${imageBaseUrl}/w342${poster_path}` : noPoster}
-        alt={`poster of ${title}`}
-      ></Poster>
-      <InfoContent>
-        <Details>
-          <Title>{title}</Title>
-          <Year>{release_date}</Year>
-          <Genre genre_ids={genre_ids} />
-        </Details>
-        <StyledRatings rating={rating} votes={votes} />
-      </InfoContent>
-    </Container>
+    <MovieStyledLink to={`/movie-page/${id}`} key={id}>
+      <Container>
+        <Poster
+          src={poster_path ? `${imageBaseUrl}/w342${poster_path}` : noPoster}
+          alt={`poster of ${title}`}
+        ></Poster>
+        <InfoContent>
+          <Details>
+            {title && <Title>{title}</Title>}
+
+            {release_date && <Year>{release_date}</Year>}
+
+            {character && (
+              <Year>
+                {character} {year}
+              </Year>
+            )}
+
+            {job && (
+              <Year>
+                {job} {year}
+              </Year>
+            )}
+
+            {genre_ids && <Genre genre_ids={genre_ids} />}
+          </Details>
+          <StyledRatings rating={rating} votes={votes} />
+        </InfoContent>
+      </Container>
+    </MovieStyledLink>
   );
 };
