@@ -1,5 +1,4 @@
 import styled, { css } from "styled-components";
-import { Link } from "react-router-dom";
 
 export const Wrapper = styled.div`
   max-width: 1368px;
@@ -37,15 +36,6 @@ export const ListTitle = styled.h1`
   @media (max-width: ${({ theme }) => theme.breakpoints.small}) {
     font-size: 18px;
     margin: 24px 0 0;
-  }
-`;
-
-export const StyledLink = styled(Link)`
-  text-decoration: none;
-  margin: 0;
-
-  @media (max-width: ${({ theme }) => theme.breakpoints.mobileMax}) {
-    width: 100%;
   }
 `;
 

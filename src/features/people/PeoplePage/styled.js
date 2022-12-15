@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { Link } from "react-router-dom";
 
 export const Wrapper = styled.div`
   max-width: 1368px;
@@ -35,8 +34,4 @@ export const ListTitle = styled.h1`
     font-size: 18px;
     margin: 24px 0 0;
   }
-`;
-
-export const StyledLink = styled(Link)`
-  text-decoration: none;
 `;

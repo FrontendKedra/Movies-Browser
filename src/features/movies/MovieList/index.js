@@ -4,7 +4,6 @@ import {
   ListTitle,
   PageChanger,
   PageCounter,
-  StyledLink,
   Text,
   Wrapper,
 } from "./styled";
@@ -57,7 +56,6 @@ export const MovieList = () => {
                 release_date,
                 genre_ids,
               }) => (
-                <StyledLink to={`/movie-page/${id}`} key={id}>
                   <MovieTile
                     genre_ids={genre_ids}
                     id={id}
@@ -67,7 +65,6 @@ export const MovieList = () => {
                     rating={vote_average}
                     votes={vote_count}
                   />
-                </StyledLink>
               )
             )}
           </ContentContainer>
