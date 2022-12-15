@@ -51,7 +51,9 @@ export const MovieTile = ({
 
             {genre_ids && <Genre genre_ids={genre_ids} />}
           </Details>
-          <StyledRatings rating={rating} votes={votes} />
+          {rating && votes ? (
+            <StyledRatings rating={rating} votes={votes} />
+          ) : null}
         </InfoContent>
       </Container>
     </MovieStyledLink>

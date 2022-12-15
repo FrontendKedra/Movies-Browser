@@ -39,7 +39,7 @@ export const BigTile = ({
   profile_path,
 }) => {
   return (
-    <MainContainer id={id}>
+    <MainContainer key={id}>
       {poster_path && (
         <Image
           src={poster_path ? `${imageBaseUrl}/w342${poster_path}` : noPoster}
@@ -51,7 +51,7 @@ export const BigTile = ({
         <Image
           src={profile_path ? `${imageBaseUrl}/w342${profile_path}` : noPicture}
           alt={`portrait of ${title}`}
-        ></Image>
+        />
       )}
 
       <TileContainer>
@@ -87,13 +87,13 @@ export const BigTile = ({
             <SubHeaderPerson>
               {birthday && (
                 <>
-                  <SubHeaderDate>date of birth:</SubHeaderDate>
+                  <SubHeaderDate>Date of birth:</SubHeaderDate>
                   <SubHeaderInformation>{birthday}</SubHeaderInformation>
                 </>
               )}
               {place_of_birth && (
                 <>
-                  <SubHeaderDate>place of birth:</SubHeaderDate>
+                  <SubHeaderDate>Place of birth:</SubHeaderDate>
                   <SubHeaderInformation>{place_of_birth}</SubHeaderInformation>
                 </>
               )}
@@ -113,7 +113,7 @@ export const BigTile = ({
           <VotesContainer>
             <RatesContainer>
               <StarIcon />
-              <ActualRating>{rating}</ActualRating>
+              <ActualRating>{rating.toFixed(1)}</ActualRating>
               <MaxRating>/ 10</MaxRating>
             </RatesContainer>
             <VoteAmount>{votes} votes</VoteAmount>
