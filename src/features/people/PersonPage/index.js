@@ -24,6 +24,7 @@ import {
 import { fetchPersonDetails, selectPerson } from "../personDetailsSlice";
 import {
   fetchPerson,
+  resetToInitialState,
   selectCast,
   selectCrew,
   selectPersonStatus,
@@ -50,7 +51,6 @@ import { Error } from "../../../common/states/Error";
 
 import { StyledLink } from "../PeoplePage/styled";
 
-
 export const PersonPage = () => {
   const dispatch = useDispatch();
 
@@ -59,6 +59,8 @@ export const PersonPage = () => {
   useEffect(() => {
     dispatch(fetchPerson(id));
     dispatch(fetchPersonDetails(id));
+
+    return () => resetToInitialState();
   }, [dispatch, id]);
 
   const cast = useSelector(selectCast);
