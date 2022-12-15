@@ -34,6 +34,12 @@ export const Container = styled.div`
     display: grid;
     grid-template-columns: auto 1fr;
   }
+    &:hover {      
+      box-shadow: ${({ theme }) => theme.shadow.hoverShadow};
+    }
+    &:active {
+      box-shadow: ${({ theme }) => theme.shadow.activeShadow};
+    }
 `;
 
 export const Poster = styled.img`

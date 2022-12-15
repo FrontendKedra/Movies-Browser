@@ -9,25 +9,19 @@ export const MovieStyledLink = styled(Link)`
     width: 100%;
   }
     &:hover {
-        border: 1px solid ${({ theme }) => theme.colors.blue};
-        border-radius: 5px;
+        transform: scale(1.03);
     }
     &:active {
-        border: 2px solid ${({ theme }) => theme.colors.lightBlue};
-        border-radius: 5px;
-        transition: 0.3s;
+        transform: scale(1.05);
     }
 `;
 
 export const PeopleStyledLink = styled(Link)`
   text-decoration: none;
     &:hover {
-        border: 1px solid ${({ theme }) => theme.colors.blue};
-        border-radius: 5px;
-        }
+        transform: scale(1.03);
+    }
     &:active {
-        border: 2px solid ${({ theme }) => theme.colors.lightBlue};
-        border-radius: 5px;
-        transition: 0.3s;
+        transform: scale(1.05);
     }
 `;
