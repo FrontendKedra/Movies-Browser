@@ -20,9 +20,6 @@ export const searchSlice = createSlice({
       movies: [],
       totalResults: 0,
     }),
-    setQuery: (state, { payload: query }) => {
-      state.query = query;
-    },
   },
 });
 
@@ -33,7 +30,6 @@ export const selectSearchState = (state) => state.search;
 
 export const selectSearchMovies = (state) => selectSearchState(state).movies;
 export const selectSearchStatus = (state) => selectSearchState(state).status;
-export const selectSearchQuery = (state) => selectSearchState(state).query;
 export const selectSearchTotalResults = (state) =>
   selectSearchState(state).totalResults;
 
