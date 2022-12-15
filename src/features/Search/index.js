@@ -1,9 +1,8 @@
-import { useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { fetchSearch, setQuery } from "./searchSlice";
+import { fetchSearch } from "./searchSlice";
 import { SearchContainer } from "./styled";
-import useQueryParameter from "./useQueryParameter";
-import { useReplaceQueryParameter } from "./useReplaceQueryParameter";
+import useQueryParameter from "../useQueryParameter";
+import { useReplaceQueryParameter } from "../useReplaceQueryParameter";
 
 export const Search = () => {
   const dispatch = useDispatch();
@@ -11,12 +10,10 @@ export const Search = () => {
   const query = useQueryParameter("search");
   const replaceQueryParam = useReplaceQueryParameter();
 
-  console.log(query);
-
   const onInputChange = ({ target }) => {
     replaceQueryParam({
       key: "search",
-      value: target.value.trim() !== undefined ? target.value : undefined,
+      value: target.value.trim(),
     });
   };
 
