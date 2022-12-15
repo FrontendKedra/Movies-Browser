@@ -22,7 +22,7 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   
-  @media (max-width: 992px /* ${({ theme }) => theme.breakpoints.mobileMax} */) {
+  @media (max-width:${({ theme }) => theme.breakpoints.large}) {
     padding: 8px;
   }
 `;
@@ -39,15 +39,15 @@ export const Name = styled.p`
   margin: 12px 0px 0px 0px;
   line-height: 1.3;
   color: ${({ theme }) => theme.colors.black};
-  /* flex: 1 1 auto; */
+  flex: 1 1 auto;
 	text-align: center;
 	
-  @media (max-width: 992px /* ${({ theme }) => theme.breakpoints.mobileMax} */) {
+  @media (max-width:${({ theme }) => theme.breakpoints.large}) {
     font-size: 16px;
     margin: 8px 0px 0px 0px;
   }
 
-  @media (max-width: 480px /* ${({ theme }) => theme.breakpoints.small} */) {
+  @media (max-width:${({ theme }) => theme.breakpoints.small}) {
 		font-size: 14px;
   }
 `;
@@ -67,12 +67,7 @@ export const Info = styled.p`
 		text-align: center;
   `}
 
-/*   @media (max-width: ${({ theme }) => theme.breakpoints.large}) {
-    font-size: 15px;
-    line-height: 140%;
-  } */
-
-  @media (max-width: 480px /* ${({ theme }) => theme.breakpoints.small} */) {
+  @media (max-width:${({ theme }) => theme.breakpoints.small}) {
     font-size: 13px;
     margin: 5px 0 0 0;
   }

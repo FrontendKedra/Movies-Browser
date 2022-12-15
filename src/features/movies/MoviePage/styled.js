@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
-  max-width: 1368px;
+  max-width: ${({ theme }) => theme.breakpoints.largest};
   margin: 0 auto;
   background-color: ${({ theme }) => theme.colors.lightGrey};
   
@@ -12,23 +12,23 @@ export const Wrapper = styled.div`
 `;
 
 export const ContentContainer = styled.div`
-  margin: 0 0 56px 0;
+  margin: 0px 0px 56px 0px;
   display: grid;
   grid-template-columns: repeat(6, 1fr); 
   grid-gap: 24px;
 
-  @media (max-width: 1280px /* ${({ theme }) => theme.breakpoints.extraLarge} */) {
+  @media (max-width:${({ theme }) => theme.breakpoints.largest}) {
     grid-template-columns: repeat(5, 1fr);
   }
-  @media (max-width: 992px /* ${({ theme }) => theme.breakpoints.larger} */) {
+  @media (max-width:${({ theme }) => theme.breakpoints.large}) {
     grid-template-columns: repeat(4, 1fr);
   }
-  @media (max-width: 767px /* ${({ theme }) => theme.breakpoints.medium} */) {
+  @media (max-width:${({ theme }) => theme.breakpoints.mobileMax}) {
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 16px;
   }
-  @media (max-width: 480px /* ${({ theme }) => theme.breakpoints.small} */) {
-    margin: 0 0 21px 0;
+  @media (max-width:${({ theme }) => theme.breakpoints.small}) {
+    margin: 0px 0px 21px 0px;
     grid-template-columns: 1fr 1fr;
   }
 `;
