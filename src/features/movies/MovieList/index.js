@@ -25,6 +25,7 @@ import { ReactComponent as Next } from "./nextArrow.svg";
 import { Search } from "../../Search";
 import useQueryParameter from "../../useQueryParameter";
 import { NoResult } from "../../../common/states/NoResult";
+import { fetchGenres } from "../../../common/tiles/MovieTile/Genre/genreSlice";
 
 export const MovieList = () => {
   const dispatch = useDispatch();
@@ -39,7 +40,9 @@ export const MovieList = () => {
 
   useEffect(() => {
     dispatch(fetchPopularMovies({ page, query }));
+    dispatch(fetchGenres());
   }, [dispatch, page, query]);
+
 
   return (
     <>
@@ -68,9 +71,11 @@ export const MovieList = () => {
                     vote_average,
                     vote_count,
                     release_date,
+                    genre_ids,
                   }) => (
                     <StyledLink to={`/movie-page/${id}`} key={id}>
                       <MovieTile
+                        genre_ids={genre_ids}
                         id={id}
                         poster_path={poster_path}
                         title={title}
@@ -114,6 +119,7 @@ export const MovieList = () => {
               </PageChanger>
             </>
           )}
+
         </Wrapper>
       )}
     </>

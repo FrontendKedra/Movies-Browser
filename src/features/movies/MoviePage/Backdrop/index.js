@@ -1,5 +1,7 @@
+import { imageBaseUrl } from "../../../../ApiValue"
 import {
-  BlureFrames,
+  BackdropImg,
+  BlureFrame,
   Container,
   Content,
   Rate,
@@ -10,21 +12,26 @@ import {
   Votes,
   Wrapper,
 } from "./styled";
-import { BackdropImg } from "./styled";
 
-export const Backdrop = () => {
+export const Backdrop = ({
+  title,
+  rating,
+  votes,
+  backdrop_path,
+}) => {
   return (
     <Wrapper>
       <Container>
-        <BlureFrames />
-        <BackdropImg src={"https://image.tmdb.org/t/p/w1280/bQXAqRx2Fgc46uCVWgoPz5L5Dtr.jpg"} alt="" />
+        <BlureFrame />
+        <BackdropImg  src={`${imageBaseUrl}/w1280${backdrop_path}`}
+        alt={`poster of ${title}`} />
         <Content>
-          <Title>Mulan long title</Title>
+          <Title>{title}</Title>
           <RatingContainer>
             <StarIcon />
-            <Vote>10</Vote>
+            <Vote>{rating.toFixed(1)}</Vote>
             <Rate>/ 10</Rate>
-            <Votes>135 votes</Votes>
+            <Votes>{votes} votes</Votes>
           </RatingContainer>
         </Content>
       </Container>
