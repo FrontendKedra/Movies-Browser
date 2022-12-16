@@ -1,12 +1,4 @@
-import {
-  Button,
-  ContentContainer,
-  ListTitle,
-  PageChanger,
-  PageCounter,
-  Text,
-  Wrapper,
-} from "./styled";
+import { ContentContainer, ListTitle, Wrapper } from "./styled";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import {
@@ -19,12 +11,11 @@ import {
 import { MovieTile } from "../../../common/tiles/MovieTile";
 import { Loader } from "../../../common/states/Loader";
 import { Error } from "../../../common/states/Error";
-import { ReactComponent as Previous } from "./previousArrow.svg";
-import { ReactComponent as Next } from "./nextArrow.svg";
 import { Search } from "../../Search";
 import useQueryParameter from "../../useQueryParameter";
 import { NoResult } from "../../../common/states/NoResult";
 import { fetchGenres } from "../../../common/tiles/MovieTile/Genre/genreSlice";
+import { Pagination } from "../../../common/Pagination";
 
 export const MovieList = () => {
   const dispatch = useDispatch();
@@ -84,36 +75,11 @@ export const MovieList = () => {
                   )
                 )}
               </ContentContainer>
-              <PageChanger>
-                <Button disabled={page === 1} onClick={() => setPage(1)}>
-                  <Previous /> First
-                </Button>
-                <Button disabled={page === 1} onClick={() => setPage(page - 1)}>
-                  <Previous /> Previous
-                </Button>
-                <PageCounter>
-                  {" "}
-                  <Text>Page</Text> {page} <Text>of</Text>
-                  {totalPages}
-                </PageCounter>
-                <Button
-                  disabled={page === totalPages}
-                  onClick={() => setPage(page + 1)}
-                  forward
-                >
-                  Next
-                  <Next />
-                </Button>
-                <Button
-                  disabled={page === totalPages}
-                  onClick={() => setPage(totalPages)}
-                  forward
-                >
-                  {" "}
-                  Last
-                  <Next />
-                </Button>
-              </PageChanger>
+              <Pagination
+                totalPages={totalPages}
+                page={page}
+                setPage={setPage}
+              />
             </>
           )}
         </Wrapper>
