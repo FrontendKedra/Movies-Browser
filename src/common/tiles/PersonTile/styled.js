@@ -1,29 +1,17 @@
-import styled from "styled-components";
-
-export const Wrapper = styled.div`
-  max-width: 1368px;
-  margin: 0 auto;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  margin-top: 24px;
-  justify-content: center;
-  background-color: ${({ theme }) => theme.colors.lightGrey};
-`;
+import styled, { css } from "styled-components";
 
 export const Container = styled.div`
-  width: 208px;
-  height: 339px;
+  padding: 16px;
+  word-break: break-word;
+  width: 100%;
+  height: 100%;
   background-color: ${({ theme }) => theme.colors.white};
   border-radius: ${({ theme }) => theme.radius.small};
-  padding: 16px;
+  box-shadow: ${({ theme }) => theme.shadow.mainShadow};
   display: flex;
   flex-direction: column;
-  box-shadow: ${({ theme }) => theme.shadow.mainShadow};
-
-  @media (max-width: ${({ theme }) => theme.breakpoints.mobileMax}) {
-    width: 136px;
-    height: 245px;
+  
+  @media (max-width:${({ theme }) => theme.breakpoints.large}) {
     padding: 8px;
   }
     &:hover {      
@@ -35,51 +23,47 @@ export const Container = styled.div`
 `;
 
 export const ProfileImage = styled.img`
-  width: 177px;
-  height: 232.31px;
-  display: block;
-  flex-shrink: 0;
+  width: 100%;
   border-radius: ${({ theme }) => theme.radius.small};
-  object-position: top;
-  object-fit: cover;
-
-  @media (max-width: ${({ theme }) => theme.breakpoints.mobileMax}) {
-    width: 120px;
-    height: 178px;
-  }
+  aspect-ratio: 2/3;
 `;
 
 export const Name = styled.p`
   font-size: 22px;
-  font-weight: 500;
+  font-weight: 500px;
+  margin: 12px 0px 0px 0px;
+  line-height: 1.3;
   color: ${({ theme }) => theme.colors.black};
-  text-align: center;
-  margin-bottom: 0;
-  line-height: 28.6px;
+  flex: 1 1 auto;
+	text-align: center;
+	
+  @media (max-width:${({ theme }) => theme.breakpoints.large}) {
+    font-size: 16px;
+    margin: 8px 0px 0px 0px;
+  }
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.mobileMax}) {
-    font-size: 14px;
-    line-height: 18.2px;
+  @media (max-width:${({ theme }) => theme.breakpoints.small}) {
+		font-size: 14px;
   }
 `;
 
-export const Character = styled.h2`
+export const Info = styled.p`
   font-weight: 400;
-  font-size: 18px;
-  line-height: 150%;
-  display: grid;
-  grid-template-columns: auto;
-  justify-content: center;
-  text-align: center;
-  margin-top: 8px;
-  color: ${({ theme }) => theme.colors.darkGrey};
+  display: none;
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.large}) {
-    font-size: 15px;
-    line-height: 140%;
-  }
-  @media (max-width: ${({ theme }) => theme.breakpoints.small}) {
+  ${({ big }) => big && css`
+    font-size: 18px;
+    font-weight: 400;
+		line-height: 1.3;
+		color: ${({ theme }) => theme.colors.darkGrey};
+		margin: 8px 0px 0px 0px;	
+    display: block;
+		flex: 1 1 auto;
+		text-align: center;
+  `}
+
+  @media (max-width:${({ theme }) => theme.breakpoints.small}) {
     font-size: 13px;
-    line-height: 130%;
+    margin: 5px 0 0 0;
   }
 `;

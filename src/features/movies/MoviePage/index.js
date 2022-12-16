@@ -79,6 +79,7 @@ export const MoviePage = () => {
                 <ContentContainer>
                   {cast.map(({ profile_path, name, character, id }) => (
                     <PersonTile
+                      big
                       id={id}
                       profile_path={profile_path}
                       name={name}
@@ -94,6 +95,7 @@ export const MoviePage = () => {
                 <ContentContainer>
                   {crew.map(({ profile_path, name, job, id }) => (
                     <PersonTile
+                      big
                       id={id}
                       profile_path={profile_path}
                       name={name}

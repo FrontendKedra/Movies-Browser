@@ -1,19 +1,19 @@
 import { imageBaseUrl } from "../../../ApiValue";
-import { Character, Container, Name, ProfileImage } from "./styled";
+import { Container, ProfileImage, Name, Info } from "./styled";
 import noPicture from "./noPicture.png";
 import { PeopleStyledLink } from "../generisStyles/styled";
 
-export const PersonTile = ({ id, profile_path, name, character }) => {
+export const PersonTile = ({ id, profile_path, name, big, character }) => {
   return (
-    <PeopleStyledLink to={`/profile/${id}`} key={id}>
+    <PeopleStyledLink to={`/profile/${id}`} key={id} >
       <Container>
         <ProfileImage
           src={profile_path ? `${imageBaseUrl}/w342${profile_path}` : noPicture}
           alt={`portrait of ${name}`}
-        ></ProfileImage>
+        />
         {name && <Name>{name}</Name>}
-        {character && <Character>{character}</Character>}
+        {character && <Info big={big}>{character}</Info>}
       </Container>
-    </PeopleStyledLink>
+    </PeopleStyledLink >
   );
 };
