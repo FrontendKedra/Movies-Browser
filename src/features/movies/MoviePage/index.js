@@ -84,8 +84,7 @@ export const MoviePage = () => {
                   {cast.map(({ profile_path, name, character, id }) => (
                     <StyledLink to={`/profile/${id}`} key={id}>
                       <PersonTile
-                        large
-                        /* id={id} */
+                        big
                         profile_path={profile_path}
                         name={name}
                         character={character}
@@ -102,8 +101,7 @@ export const MoviePage = () => {
                   {crew.map(({ profile_path, name, job, id }) => (
                     <StyledLink to={`/profile/${id}`} key={id}>
                       <PersonTile
-                        large
-                        /* id={id} */
+                        big
                         profile_path={profile_path}
                         name={name}
                         character={job}
