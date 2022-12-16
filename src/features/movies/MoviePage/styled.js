@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
@@ -46,7 +45,4 @@ export const Header = styled.h2`
   }
 `;
 
-export const StyledLink = styled(Link)`
-  text-decoration: none;
-`;
 

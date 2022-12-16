@@ -14,6 +14,12 @@ export const Container = styled.div`
   @media (max-width:${({ theme }) => theme.breakpoints.large}) {
     padding: 8px;
   }
+    &:hover {      
+      box-shadow: ${({ theme }) => theme.shadow.hoverShadow};
+    }
+    &:active {
+      box-shadow: ${({ theme }) => theme.shadow.activeShadow};
+    }
 `;
 
 export const ProfileImage = styled.img`

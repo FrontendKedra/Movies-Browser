@@ -21,7 +21,7 @@ export const GenreItem = styled.div`
   align-items: center;
   padding: 8px 16px;
   margin-right: 8px;
-
+  color: ${({ theme }) => theme.colors.black};
   background-color: ${({ theme }) => theme.colors.lightGrey};
   border-radius: ${({ theme }) => theme.radius.small};
 

@@ -6,6 +6,7 @@ import personReducer from "./features/people/PersonPage/personSlice";
 import personDetailsReducer from "./features/people/personDetailsSlice";
 import movieDetailsReducer from "./features/movies/MoviePage/movieDetailsSlice";
 import movieReducer from "./features/movies/MoviePage/movieSlice";
+import searchReducer from "./features/Search/searchSlice";
 import genreReducer from "./common/tiles/MovieTile/Genre/genreSlice";
 import rootSaga from "./rootSaga";
 
@@ -19,6 +20,7 @@ const store = configureStore({
     personDetails: personDetailsReducer,
     movieDetails: movieDetailsReducer,
     movie: movieReducer,
+    search: searchReducer,
     genres: genreReducer,
   },
   middleware: [sagaMiddleware],
