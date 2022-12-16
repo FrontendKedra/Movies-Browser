@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Loader } from "../../../common/states/Loader";
 import { Error } from "../../../common/states/Error";
@@ -7,17 +7,23 @@ import {
   fetchPopularPeople,
   selectPopularPeople,
   selectPopularPeopleStatus,
+  selectPopularPeopleTotalPages,
 } from "../popularPeopleSlice";
 import { Wrapper, PersonContainer, ListTitle } from "./styled";
+import { Pagination } from "../../../common/Pagination";
 
 export const PeoplePage = () => {
   const dispatch = useDispatch();
 
   const people = useSelector(selectPopularPeople);
   const stateOfLoading = useSelector(selectPopularPeopleStatus);
+
+  const [page, setPage] = useState(1);
+  const totalPages = useSelector(selectPopularPeopleTotalPages);
+
   useEffect(() => {
-    dispatch(fetchPopularPeople());
-  }, [dispatch]);
+    dispatch(fetchPopularPeople(page));
+  }, [dispatch, page]);
 
   return (
     <>
@@ -38,6 +44,7 @@ export const PeoplePage = () => {
               />
             ))}
           </PersonContainer>
+          <Pagination page={page} setPage={setPage} totalPages={totalPages} />
         </Wrapper>
       )}
     </>
