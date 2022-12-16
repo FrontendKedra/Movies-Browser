@@ -1,3 +1,7 @@
+import { useDispatch } from "react-redux";
+import { fetchSearch } from "./searchSlice";
+import useQueryParameter from "../../features/useQueryParameter";
+import { useReplaceQueryParameter } from "../../features/useReplaceQueryParameter";
 import {
   HeaderArea,
   HeaderContainer,
@@ -15,6 +19,25 @@ import camera from "./icons/camera.svg";
 import search from "./icons/search.svg";
 
 export const Header = () => {
+
+  const dispatch = useDispatch();
+
+  const query = useQueryParameter("search");
+  const replaceQueryParam = useReplaceQueryParameter();
+
+  const onInputChange = ({ target }) => {
+    replaceQueryParam({
+      key: "search",
+      value: target.value.trim(),
+    });
+  };
+
+  const onFormSubmit = (event) => {
+    event.preventDefault();
+
+    dispatch(fetchSearch(query));
+  };
+
   return (
     <HeaderArea>
       <HeaderContainer>
@@ -37,8 +60,12 @@ export const Header = () => {
         <SearchBar>
           <SearchIcon src={search} alt="" />
           <SearchInput
-            placeholder={"Search for movies/people..."}
-          ></SearchInput>
+            placeholder={"Search for movies..."}
+            value={query || ""}
+            onChange={onInputChange}
+            onSubmit={onFormSubmit}
+          >
+          </SearchInput>
         </SearchBar>
       </HeaderContainer>
     </HeaderArea>

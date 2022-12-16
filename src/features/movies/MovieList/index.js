@@ -21,7 +21,6 @@ import { Loader } from "../../../common/states/Loader";
 import { Error } from "../../../common/states/Error";
 import { ReactComponent as Previous } from "./previousArrow.svg";
 import { ReactComponent as Next } from "./nextArrow.svg";
-import { Search } from "../../Search";
 import useQueryParameter from "../../useQueryParameter";
 import { NoResult } from "../../../common/states/NoResult";
 import { fetchGenres } from "../../../common/tiles/MovieTile/Genre/genreSlice";
@@ -44,7 +43,6 @@ export const MovieList = () => {
 
   return (
     <>
-      <Search />
       {stateOfLoading === "loading" ? (
         <Loader title="Loading..." />
       ) : stateOfLoading === "error" ? (
