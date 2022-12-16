@@ -31,6 +31,7 @@ export const PeoplePage = () => {
           <PersonContainer>
             {people.map(({ profile_path, id, name }) => (
               <PersonTile
+                key={id}
                 id={id}
                 profile_path={profile_path}
                 name={name}

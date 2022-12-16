@@ -25,7 +25,6 @@ import noPicture from "../PersonTile/noPicture.png";
 import noPoster from "../MovieTile/noPoster.png";
 
 export const BigTile = ({
-  id,
   poster_path,
   title,
   release_date,
@@ -39,7 +38,7 @@ export const BigTile = ({
   profile_path,
 }) => {
   return (
-    <MainContainer key={id}>
+    <MainContainer>
       {poster_path && (
         <Image
           src={poster_path ? `${imageBaseUrl}/w342${poster_path}` : noPoster}

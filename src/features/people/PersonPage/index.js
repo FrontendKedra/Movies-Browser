@@ -53,7 +53,6 @@ export const PersonPage = () => {
             }) => (
               <BigTile
                 title={name}
-                id={id}
                 profile_path={profile_path}
                 article={biography}
                 place_of_birth={place_of_birth}
@@ -74,6 +73,7 @@ export const PersonPage = () => {
                   ({
                     poster_path,
                     id,
+                    credit_id,
                     title,
                     character,
                     release_date,
@@ -82,6 +82,7 @@ export const PersonPage = () => {
                     genre_ids,
                   }) => (
                     <MovieTile
+                      key={credit_id}
                       id={id}
                       title={title}
                       rating={vote_average}
@@ -114,9 +115,11 @@ export const PersonPage = () => {
                     release_date,
                     poster_path,
                     id,
+                    credit_id,
                     genre_ids,
                   }) => (
                     <MovieTile
+                      key={credit_id}
                       id={id}
                       title={title}
                       rating={vote_average}

@@ -77,15 +77,18 @@ export const MoviePage = () => {
               <>
                 <Header>Cast</Header>
                 <ContentContainer>
-                  {cast.map(({ profile_path, name, character, id }) => (
-                    <PersonTile
-                      big
-                      id={id}
-                      profile_path={profile_path}
-                      name={name}
-                      character={character}
-                    />
-                  ))}
+                  {cast.map(
+                    ({ profile_path, name, character, id, credit_id }) => (
+                      <PersonTile
+                        key={credit_id}
+                        big
+                        id={id}
+                        profile_path={profile_path}
+                        name={name}
+                        character={character}
+                      />
+                    )
+                  )}
                 </ContentContainer>
               </>
             )}
@@ -93,8 +96,9 @@ export const MoviePage = () => {
               <>
                 <Header>Crew</Header>
                 <ContentContainer>
-                  {crew.map(({ profile_path, name, job, id }) => (
+                  {crew.map(({ profile_path, name, job, id, credit_id }) => (
                     <PersonTile
+                      key={credit_id}
                       big
                       id={id}
                       profile_path={profile_path}

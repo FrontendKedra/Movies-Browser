@@ -12,7 +12,7 @@ export const Genre = ({ genre_ids }) => {
   return (
     <GenreContainer>
       {filteredGenres.map((genre) =>
-        genre.map(({ name }) => <GenreItem>{name}</GenreItem>)
+        genre.map(({ name }) => <GenreItem key={genre_ids}>{name}</GenreItem>)
       )}
     </GenreContainer>
   );

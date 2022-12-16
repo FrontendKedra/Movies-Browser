@@ -72,6 +72,7 @@ export const MovieList = () => {
                     genre_ids,
                   }) => (
                     <MovieTile
+                      key={id}
                       genre_ids={genre_ids}
                       id={id}
                       poster_path={poster_path}
