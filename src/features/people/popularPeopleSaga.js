@@ -7,13 +7,14 @@ import {
   fetchPopularPeopleSuccess,
 } from "./popularPeopleSlice";
 
-function* fetchPopularPeopleHandler({ payload: page }) {
+function* fetchPopularPeopleHandler({ payload: page, query }) {
+  const path =
+    query === null
+      ? `${baseUrl}/person/popular${apiKey}${language}&page=${page}`
+      : `${baseUrl}/search/person${apiKey}${language}&query=${query}&page=${page}`;
   try {
     delay(1500);
-    const people = yield call(
-      getApiDatabase,
-      `${baseUrl}/person/popular${apiKey}${language}&page=${page}`
-    );
+    const people = yield call(getApiDatabase, path);
     yield put(fetchPopularPeopleSuccess(people));
   } catch (error) {
     yield put(fetchPopularPeopleError());
