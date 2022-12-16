@@ -4,7 +4,6 @@ import {
   ListTitle,
   PageChanger,
   PageCounter,
-  StyledLink,
   Text,
   Wrapper,
 } from "./styled";
@@ -43,7 +42,6 @@ export const MovieList = () => {
     dispatch(fetchGenres());
   }, [dispatch, page, query]);
 
-
   return (
     <>
       <Search />
@@ -73,17 +71,15 @@ export const MovieList = () => {
                     release_date,
                     genre_ids,
                   }) => (
-                    <StyledLink to={`/movie-page/${id}`} key={id}>
-                      <MovieTile
-                        genre_ids={genre_ids}
-                        id={id}
-                        poster_path={poster_path}
-                        title={title}
-                        release_date={release_date}
-                        rating={vote_average}
-                        votes={vote_count}
-                      />
-                    </StyledLink>
+                    <MovieTile
+                      genre_ids={genre_ids}
+                      id={id}
+                      poster_path={poster_path}
+                      title={title}
+                      release_date={release_date}
+                      rating={vote_average}
+                      votes={vote_count}
+                    />
                   )
                 )}
               </ContentContainer>
@@ -119,7 +115,6 @@ export const MovieList = () => {
               </PageChanger>
             </>
           )}
-
         </Wrapper>
       )}
     </>

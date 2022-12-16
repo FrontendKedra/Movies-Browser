@@ -13,7 +13,6 @@ import { ContentContainer, Header, Wrapper } from "./styled";
 
 import { Loader } from "../../../common/states/Loader";
 import { Error } from "../../../common/states/Error";
-import { StyledLink } from "./styled";
 import { PersonTile } from "../../../common/tiles/PersonTile";
 
 export const MoviePage = () => {
@@ -39,12 +38,7 @@ export const MoviePage = () => {
       ) : (
         <>
           {movie.map(
-            ({
-              original_title,
-              vote_average,
-              vote_count,
-              backdrop_path,
-            }) => (
+            ({ original_title, vote_average, vote_count, backdrop_path }) => (
               <Backdrop
                 title={original_title}
                 rating={vote_average}
@@ -64,17 +58,19 @@ export const MoviePage = () => {
                 vote_average,
                 vote_count,
                 overview,
+                genres,
               }) => (
-                  <BigTile
-                    id={id}
-                    poster_path={poster_path}
-                    title={title}
-                    release_date={release_date}
-                    rating={vote_average}
-                    votes={vote_count}
-                    countries={production_countries}
-                    article={overview}
-                  />
+                <BigTile
+                  id={id}
+                  poster_path={poster_path}
+                  title={title}
+                  release_date={release_date}
+                  rating={vote_average}
+                  votes={vote_count}
+                  countries={production_countries}
+                  article={overview}
+                  genres={genres}
+                />
               )
             )}
             {cast.length > 0 && (
@@ -82,14 +78,12 @@ export const MoviePage = () => {
                 <Header>Cast</Header>
                 <ContentContainer>
                   {cast.map(({ profile_path, name, character, id }) => (
-                    <StyledLink to={`/profile/${id}`} key={id}>
-                      <PersonTile
-                        id={id}
-                        profile_path={profile_path}
-                        name={name}
-                        character={character}
-                      />
-                    </StyledLink>
+                    <PersonTile
+                      id={id}
+                      profile_path={profile_path}
+                      name={name}
+                      character={character}
+                    />
                   ))}
                 </ContentContainer>
               </>
@@ -99,14 +93,12 @@ export const MoviePage = () => {
                 <Header>Crew</Header>
                 <ContentContainer>
                   {crew.map(({ profile_path, name, job, id }) => (
-                    <StyledLink to={`/profile/${id}`} key={id}>
-                      <PersonTile
-                        id={id}
-                        profile_path={profile_path}
-                        name={name}
-                        character={job}
-                      />
-                    </StyledLink>
+                    <PersonTile
+                      id={id}
+                      profile_path={profile_path}
+                      name={name}
+                      character={job}
+                    />
                   ))}
                 </ContentContainer>
               </>

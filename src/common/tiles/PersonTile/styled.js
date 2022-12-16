@@ -26,6 +26,12 @@ export const Container = styled.div`
     height: 245px;
     padding: 8px;
   }
+    &:hover {      
+      box-shadow: ${({ theme }) => theme.shadow.hoverShadow};
+    }
+    &:active {
+      box-shadow: ${({ theme }) => theme.shadow.activeShadow};
+    }
 `;
 
 export const ProfileImage = styled.img`
