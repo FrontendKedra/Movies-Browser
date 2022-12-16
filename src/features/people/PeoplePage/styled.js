@@ -2,13 +2,10 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 export const Wrapper = styled.div`
-  max-width:${({ theme }) => theme.breakpoints.largest};
+  max-width: 1368px;
+  padding: 16px;
   margin: 0 auto;
   background-color: ${({ theme }) => theme.colors.lightGrey};
-
-  @media (max-width: ${({ theme }) => theme.breakpoints.largest}) {
-    padding: 16px;
-  }
 `;
 
 export const PersonContainer = styled.div`
@@ -34,7 +31,7 @@ export const PersonContainer = styled.div`
 `;
 
 export const ListTitle = styled.h1`
-  margin: 56px 0px 34px 0px; 
+  margin: 40px 0px 34px 0px; 
   font-size: 36px;
   font-weight: 600;
   line-height: 1.2;
