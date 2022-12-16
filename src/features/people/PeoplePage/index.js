@@ -7,10 +7,13 @@ import {
   fetchPopularPeople,
   selectPopularPeople,
   selectPopularPeopleStatus,
+  selectPopularPeopleToatalResults,
   selectPopularPeopleTotalPages,
 } from "../popularPeopleSlice";
 import { Wrapper, PersonContainer, ListTitle } from "./styled";
 import { Pagination } from "../../../common/Pagination";
+import { NoResult } from "../../../common/states/NoResult";
+import useQueryParameter from "../../useQueryParameter";
 
 export const PeoplePage = () => {
   const dispatch = useDispatch();
@@ -21,30 +24,49 @@ export const PeoplePage = () => {
   const [page, setPage] = useState(1);
   const totalPages = useSelector(selectPopularPeopleTotalPages);
 
+  const query = useQueryParameter("search");
+
+  const totalResults = useSelector(selectPopularPeopleToatalResults);
+
   useEffect(() => {
-    dispatch(fetchPopularPeople(page));
-  }, [dispatch, page]);
+    dispatch(fetchPopularPeople({ page, query }));
+  }, [dispatch, page, query]);
 
   return (
     <>
       {stateOfLoading === "loading" ? (
-        <Loader title="Loading popular people..." />
+        <Loader title="Loading..." />
       ) : stateOfLoading === "error" ? (
         <Error />
       ) : (
         <Wrapper>
-          <ListTitle>Popular people</ListTitle>
-          <PersonContainer>
-            {people.map(({ profile_path, id, name }) => (
-              <PersonTile
-                key={id}
-                id={id}
-                profile_path={profile_path}
-                name={name}
+          {!people.length ? (
+            <NoResult query={query} />
+          ) : (
+            <>
+              <ListTitle>
+                {" "}
+                {query
+                  ? `Search results for "${query}" (${totalResults})`
+                  : "Popular people"}
+              </ListTitle>
+              <PersonContainer>
+                {people.map(({ profile_path, id, name }) => (
+                  <PersonTile
+                    key={id}
+                    id={id}
+                    profile_path={profile_path}
+                    name={name}
+                  />
+                ))}
+              </PersonContainer>
+              <Pagination
+                page={page}
+                setPage={setPage}
+                totalPages={totalPages}
               />
-            ))}
-          </PersonContainer>
-          <Pagination page={page} setPage={setPage} totalPages={totalPages} />
+            </>
+          )}
         </Wrapper>
       )}
     </>
