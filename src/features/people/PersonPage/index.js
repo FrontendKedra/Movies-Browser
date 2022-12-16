@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import { fetchPersonDetails, selectPerson } from "../personDetailsSlice";
 import {
   fetchPerson,
+  resetToInitialState,
   selectCast,
   selectCrew,
   selectPersonStatus,
@@ -24,6 +25,8 @@ export const PersonPage = () => {
     dispatch(fetchPerson(id));
     dispatch(fetchPersonDetails(id));
     dispatch(fetchGenres());
+
+    return () => resetToInitialState();
   }, [dispatch, id]);
 
   const cast = useSelector(selectCast);
