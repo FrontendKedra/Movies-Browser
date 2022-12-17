@@ -14,12 +14,20 @@ export const Wrapper = styled.div`
 
 export const ContentContainer = styled.div`
   margin: 24px auto 0;
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
   gap: 20px;
-  justify-content: flex-start;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.larger}) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobileMax}) {
+    grid-template-columns: repeat(2, 1fr);
+  }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.small}) {
+    grid-template-columns: 1fr;
     margin: 12px auto 0;
   }
 `;
@@ -82,5 +90,4 @@ export const PageCounter = styled.div`
 export const Text = styled.span`
   font-weight: 400;
   color: ${({ theme }) => theme.colors.darkGrey};
-
 `;
