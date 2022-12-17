@@ -21,7 +21,7 @@ export const Backdrop = ({
 }) => {
   return (
     <>
-      {backdrop_path ? (
+      {backdrop_path && (
         <Wrapper>
           <Container>
             <BlureFrame />
@@ -38,7 +38,7 @@ export const Backdrop = ({
             </Content>
           </Container>
         </Wrapper>
-      ) : null }
+      )}
     </>
   );
 };
