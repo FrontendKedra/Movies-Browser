@@ -5,7 +5,6 @@ export const Wrapper = styled.div`
   max-width: 1368px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
   gap: 20px;
   margin-top: 24px;
   justify-content: center;
