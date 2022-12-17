@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const SearchContainer = styled.form`
-  margin-top: 40px;
+  margin-top: 0px;
 `;
 
 export const SearchInput = styled.input`
