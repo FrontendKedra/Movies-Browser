@@ -11,7 +11,6 @@ export const Pagination = ({ page, setPage, totalPages }) => (
       <Previous /> Previous
     </Button>
     <PageCounter>
-      {" "}
       <Text>Page</Text> {page} <Text>of</Text>
       {totalPages}
     </PageCounter>
@@ -28,7 +27,6 @@ export const Pagination = ({ page, setPage, totalPages }) => (
       onClick={() => setPage(totalPages)}
       forward
     >
-      {" "}
       Last
       <Next />
     </Button>

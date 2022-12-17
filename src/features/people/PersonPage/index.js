@@ -10,8 +10,8 @@ import {
   selectPersonStatus,
 } from "./personSlice";
 import { ContentContainer, Header, Wrapper } from "./styled";
-import { Loader } from "../../../common/States/Loader";
-import { Error } from "../../../common/States/Error";
+import { Loader } from "../../../common/states/Loader";
+import { Error } from "../../../common/states/Error";
 import { BigTile } from "../../../common/tiles/BigTile";
 import { MovieTile } from "../../../common/tiles/MovieTile";
 import { fetchGenres } from "../../../common/tiles/MovieTile/Genre/genreSlice";
