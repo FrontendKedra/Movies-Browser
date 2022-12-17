@@ -12,7 +12,7 @@ import {
 } from "./styled";
 import camera from "./icons/camera.svg";
 import search from "./icons/search.svg";
-import { Search } from "../../features/Search";
+import { Search } from "../Search";
 
 export const Header = () => {
   return (
