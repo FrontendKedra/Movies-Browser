@@ -7,7 +7,6 @@ import {
   NavList,
   SearchBar,
   SearchIcon,
-  SearchInput,
   TextSide,
   Title,
 } from "./styled";
@@ -37,12 +36,9 @@ export const Header = () => {
         </TextSide>
         <SearchBar>
           <SearchIcon src={search} alt="" />
-          <SearchInput
-            placeholder={"Search for movies/people..."}
-          ></SearchInput>
+          <Search placeholder={"search for movies/people"} />
         </SearchBar>
       </HeaderContainer>
-      <Search />
     </HeaderArea>
   );
 };

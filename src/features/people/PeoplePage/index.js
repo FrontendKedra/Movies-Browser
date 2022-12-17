@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Loader } from "../../../common/states/Loader";
-import { Error } from "../../../common/states/Error";
+import { Loader } from "../../../common/States/Loader";
+import { Error } from "../../../common/States/Error";
 import { PersonTile } from "../../../common/tiles/PersonTile";
 import {
   fetchPopularPeople,
@@ -12,7 +12,7 @@ import {
 } from "../popularPeopleSlice";
 import { Wrapper, PersonContainer, ListTitle } from "./styled";
 import { Pagination } from "../../../common/Pagination";
-import { NoResult } from "../../../common/states/NoResult";
+import { NoResult } from "../../../common/States/NoResult";
 import useQueryParameter from "../../useQueryParameter";
 
 export const PeoplePage = () => {

@@ -11,8 +11,8 @@ import {
 import { fetchMovie, selectMovieCast, selectMovieCrew } from "./movieSlice";
 import { ContentContainer, Header, Wrapper } from "./styled";
 
-import { Loader } from "../../../common/states/Loader";
-import { Error } from "../../../common/states/Error";
+import { Loader } from "../../../common/States/Loader";
+import { Error } from "../../../common/States/Error";
 import { PersonTile } from "../../../common/tiles/PersonTile";
 
 export const MoviePage = () => {

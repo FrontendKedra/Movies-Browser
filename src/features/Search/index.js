@@ -1,6 +1,6 @@
 import { useDispatch } from "react-redux";
 import { fetchSearch } from "./searchSlice";
-import { SearchContainer } from "./styled";
+import { SearchContainer, SearchInput } from "./styled";
 import useQueryParameter from "../useQueryParameter";
 import { useReplaceQueryParameter } from "../useReplaceQueryParameter";
 
@@ -25,7 +25,7 @@ export const Search = () => {
 
   return (
     <SearchContainer onSubmit={onFormSubmit}>
-      <input
+      <SearchInput
         placeholder="search for movies"
         value={query || ""}
         onChange={onInputChange}
