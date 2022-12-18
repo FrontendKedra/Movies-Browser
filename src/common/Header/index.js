@@ -1,5 +1,3 @@
-import { useDispatch } from "react-redux";
-import { fetchSearch } from "./searchSlice";
 import { useLocation } from "react-router";
 import useQueryParameter from "../../features/useQueryParameter";
 import { useReplaceQueryParameter } from "../../features/useReplaceQueryParameter";
@@ -21,7 +19,6 @@ import search from "./icons/search.svg";
 
 export const Header = () => {
 
-  const dispatch = useDispatch();
   const location = useLocation();
 
   const query = useQueryParameter("search");
@@ -32,12 +29,6 @@ export const Header = () => {
       key: "search",
       value: target.value.trim(),
     });
-  };
-
-  const onFormSubmit = (event) => {
-    event.preventDefault();
-
-    dispatch(fetchSearch(query));
   };
 
   return (
@@ -71,9 +62,7 @@ export const Header = () => {
             }
             value={query || ""}
             onChange={onInputChange}
-            onSubmit={onFormSubmit}
-          >
-          </SearchInput>
+          />
         </SearchBar>
       </HeaderContainer>
     </HeaderArea>
