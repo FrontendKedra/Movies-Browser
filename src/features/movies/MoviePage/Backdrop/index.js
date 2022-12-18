@@ -20,21 +20,25 @@ export const Backdrop = ({
   backdrop_path,
 }) => {
   return (
-    <Wrapper>
-      <Container>
-        <BlureFrame />
-        <BackdropImg  src={`${imageBaseUrl}/w1280${backdrop_path}`}
-        alt={`poster of ${title}`} />
-        <Content>
-          <Title>{title}</Title>
-          <RatingContainer>
-            <StarIcon />
-            <Vote>{rating.toFixed(1)}</Vote>
-            <Rate>/ 10</Rate>
-            <Votes>{votes} votes</Votes>
-          </RatingContainer>
-        </Content>
-      </Container>
-    </Wrapper>
+    <>
+      {backdrop_path && (
+        <Wrapper>
+          <Container>
+            <BlureFrame />
+            <BackdropImg src={`${imageBaseUrl}/w1280${backdrop_path}`}
+              alt={`poster of ${title}`} />
+            <Content>
+              <Title>{title}</Title>
+              <RatingContainer>
+                <StarIcon />
+                <Vote>{rating.toFixed(1)}</Vote>
+                <Rate>/ 10</Rate>
+                <Votes>{votes} votes</Votes>
+              </RatingContainer>
+            </Content>
+          </Container>
+        </Wrapper>
+      )}
+    </>
   );
 };

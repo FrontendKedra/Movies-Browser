@@ -1,3 +1,6 @@
+import { useLocation } from "react-router";
+import useQueryParameter from "../../features/useQueryParameter";
+import { useReplaceQueryParameter } from "../../features/useReplaceQueryParameter";
 import {
   HeaderArea,
   HeaderContainer,
@@ -7,14 +10,27 @@ import {
   NavList,
   SearchBar,
   SearchIcon,
+  SearchInput,
   TextSide,
   Title,
 } from "./styled";
 import camera from "./icons/camera.svg";
 import search from "./icons/search.svg";
-import { Search } from "../Search";
 
 export const Header = () => {
+
+  const location = useLocation();
+
+  const query = useQueryParameter("search");
+  const replaceQueryParam = useReplaceQueryParameter();
+
+  const onInputChange = ({ target }) => {
+    replaceQueryParam({
+      key: "search",
+      value: target.value.trim(),
+    });
+  };
+
   return (
     <HeaderArea>
       <HeaderContainer>
@@ -36,7 +52,17 @@ export const Header = () => {
         </TextSide>
         <SearchBar>
           <SearchIcon src={search} alt="" />
-          <Search placeholder={"search for movies/people"} />
+          <SearchInput
+            placeholder={
+              `Search for ${location.pathname === "/people" ||
+                location.pathname.indexOf("/profile") === 0
+                ? "people..."
+                : "movies..."
+              }`
+            }
+            value={query || ""}
+            onChange={onInputChange}
+          />
         </SearchBar>
       </HeaderContainer>
     </HeaderArea>

@@ -6,7 +6,6 @@ import personReducer from "./features/people/PersonPage/personSlice";
 import personDetailsReducer from "./features/people/personDetailsSlice";
 import movieDetailsReducer from "./features/movies/MoviePage/movieDetailsSlice";
 import movieReducer from "./features/movies/MoviePage/movieSlice";
-
 import genreReducer from "./common/tiles/MovieTile/Genre/genreSlice";
 import rootSaga from "./rootSaga";
 
