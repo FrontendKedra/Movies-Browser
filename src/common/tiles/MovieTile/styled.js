@@ -1,15 +1,6 @@
 import styled from "styled-components";
 import { Ratings } from "./Ratings";
 
-export const Wrapper = styled.div`
-  max-width: 1368px;
-  margin: 0 auto;
-  gap: 20px;
-  margin-top: 24px;
-  justify-content: center;
-  background-color: ${({ theme }) => theme.colors.lightGrey};
-`;
-
 export const Container = styled.div`
   background-color: ${({ theme }) => theme.colors.white};
   width: 100%;
@@ -20,11 +11,9 @@ export const Container = styled.div`
   box-shadow: ${({ theme }) => theme.shadow.mainShadow};
 
   @media (max-width: ${({ theme }) => theme.breakpoints.small}) {
-    width: 100%;
-    height: 100%;
-    display: grid;
     grid-template-columns: auto 1fr;
   }
+  
   &:hover {
     box-shadow: ${({ theme }) => theme.shadow.hoverShadow};
   }
@@ -71,9 +60,6 @@ export const Details = styled.div`
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.small}) {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
     grid-gap: 4px;
     margin-bottom: 8px;
   }

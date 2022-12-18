@@ -3,8 +3,6 @@ import styled, { css } from "styled-components";
 export const Wrapper = styled.div`
   max-width: 1368px;
   margin: 0 auto;
-  display: flex;
-  flex-direction: column;
   background-color: ${({ theme }) => theme.colors.lightGrey};
 
   @media (max-width: ${({ theme }) => theme.breakpoints.largest}) {
@@ -16,7 +14,7 @@ export const ContentContainer = styled.div`
   margin: 24px auto 0;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
+  gap: 24px;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.larger}) {
     grid-template-columns: repeat(3, 1fr);
