@@ -3,8 +3,6 @@ import styled from "styled-components";
 export const Wrapper = styled.div`
   max-width: 1368px;
   margin: 0 auto;
-  display: flex;
-  flex-direction: column;
   background-color: ${({ theme }) => theme.colors.lightGrey};
 
   @media (max-width: ${({ theme }) => theme.breakpoints.largest}) {
@@ -14,12 +12,20 @@ export const Wrapper = styled.div`
 
 export const ContentContainer = styled.div`
   margin: 24px auto 0;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: flex-start;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.larger}) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobileMax}) {
+    grid-template-columns: repeat(2, 1fr);
+  }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.small}) {
+    grid-template-columns: 1fr;
     margin: 12px auto 0;
   }
 `;

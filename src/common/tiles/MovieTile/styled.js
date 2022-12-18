@@ -1,64 +1,41 @@
 import styled from "styled-components";
 import { Ratings } from "./Ratings";
 
-export const Wrapper = styled.div`
-  max-width: 1368px;
-  margin: 0 auto;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  margin-top: 24px;
-  justify-content: center;
-  background-color: ${({ theme }) => theme.colors.lightGrey};
-`;
-
 export const Container = styled.div`
   background-color: ${({ theme }) => theme.colors.white};
-  width: 324px;
-  height: 650px;
+  width: 100%;
+  height: 100%;
   display: grid;
   grid-template-rows: auto 1fr;
   border-radius: ${({ theme }) => theme.radius.small};
   box-shadow: ${({ theme }) => theme.shadow.mainShadow};
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.mobileMax}) {
-    width: 100%;
-    height: auto;
-    display: grid;
-    grid-template-columns: auto 1fr;
-  }
-
   @media (max-width: ${({ theme }) => theme.breakpoints.small}) {
-    width: 100%;
-    height: 201px;
-    display: grid;
     grid-template-columns: auto 1fr;
   }
-    &:hover {      
-      box-shadow: ${({ theme }) => theme.shadow.hoverShadow};
-    }
-    &:active {
-      box-shadow: ${({ theme }) => theme.shadow.activeShadow};
-    }
+  
+  &:hover {
+    box-shadow: ${({ theme }) => theme.shadow.hoverShadow};
+  }
+  &:active {
+    box-shadow: ${({ theme }) => theme.shadow.activeShadow};
+  }
 `;
 
 export const Poster = styled.img`
-  width: 292px;
-  height: 434px;
-  margin: 16px 0 16px 16px;
+  width: 90%;
+  height: auto;
+  margin: 16px;
   border-radius: ${({ theme }) => theme.radius.small};
 
   @media (max-width: ${({ theme }) => theme.breakpoints.mobileMax}) {
-    width: 201px;
-    height: 300px;
     display: grid;
     grid-template-columns: auto 1fr;
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.small}) {
     margin-right: 0;
-    width: 114px;
-    height: 169px;
+    width: 136px;
   }
 `;
 
@@ -66,8 +43,9 @@ export const InfoContent = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  
   @media (max-width: ${({ theme }) => theme.breakpoints.mobileMax}) {
-    margin: 16px;
+    margin: 16px 0;
   }
 `;
 
@@ -75,12 +53,15 @@ export const Details = styled.div`
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: 8px;
+  margin-bottom: 16px;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.largest}) {
+    margin-bottom: 12px;
+  }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.small}) {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
     grid-gap: 4px;
+    margin-bottom: 8px;
   }
 `;
 
