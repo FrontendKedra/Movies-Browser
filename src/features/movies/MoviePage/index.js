@@ -7,8 +7,10 @@ import {
   fetchMovieDetails,
   selectMovie,
   selectMovieStatus,
+  selectMovieCast,
+  selectMovieCrew,
 } from "./movieDetailsSlice";
-import { fetchMovie, selectMovieCast, selectMovieCrew } from "./movieSlice";
+// import { fetchMovie, selectMovieCast, selectMovieCrew } from "./movieSlice";
 import { ContentContainer, Header, Wrapper } from "./styled";
 
 import { Loader } from "../../../common/states/Loader";
@@ -20,12 +22,13 @@ export const MoviePage = () => {
   const { id } = useParams();
 
   useEffect(() => {
-    dispatch(fetchMovie(id));
+    // dispatch(fetchMovie(id));
     dispatch(fetchMovieDetails(id));
   }, [dispatch, id]);
 
   const movie = useSelector(selectMovie);
   const cast = useSelector(selectMovieCast);
+  console.log(cast);
   const crew = useSelector(selectMovieCrew);
   const stateOfLoading = useSelector(selectMovieStatus);
 
