@@ -1,5 +1,4 @@
-import { all } from "axios";
-import { call, delay, put, takeEvery } from "redux-saga/effects";
+import { call, delay, put, takeEvery, all } from "redux-saga/effects";
 import { apiKey, baseUrl, language } from "../../../ApiValue";
 import { getApiDatabase } from "../../../getApiDatabase";
 import {
