@@ -6,7 +6,7 @@ export const Wrapper = styled.div`
   background-color: ${({ theme }) => theme.colors.lightGrey};
 
   @media (max-width: ${({ theme }) => theme.breakpoints.largest}) {
-    padding: 16px;
+    padding: 0 16px 16px 16px;
   }
 `;
 
