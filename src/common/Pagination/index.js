@@ -12,10 +12,10 @@ export const Pagination = ({ page, setPage, totalPages }) => (
     </Button>
     <PageCounter>
       <Text>Page</Text> {page} <Text>of</Text>
-      {totalPages}
+      {(totalPages > 500 ? 500 : totalPages)}
     </PageCounter>
     <Button
-      disabled={page === totalPages}
+      disabled={page === (totalPages > 500 ? 500 : totalPages)}
       onClick={() => setPage(page + 1)}
       forward
     >
@@ -23,8 +23,8 @@ export const Pagination = ({ page, setPage, totalPages }) => (
       <Next />
     </Button>
     <Button
-      disabled={page === totalPages}
-      onClick={() => setPage(totalPages)}
+      disabled={page === (totalPages > 500 ? 500 : totalPages)}
+      onClick={() => setPage(totalPages > 500 ? 500 : totalPages)}
       forward
     >
       Last
