@@ -23,6 +23,7 @@ import {
 } from "./styled";
 import noPicture from "../PersonTile/noPicture.png";
 import noPoster from "../MovieTile/noPoster.png";
+import { useState, useEffect } from "react";
 
 export const BigTile = ({
   poster_path,
@@ -37,6 +38,22 @@ export const BigTile = ({
   genres,
   profile_path,
 }) => {
+  const dateOfRelase = new Date(release_date);
+  const dayOfBirth = new Date(birthday);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    window.addEventListener("resize", setStan);
+
+    return () => {
+      window.removeEventListener("resize", setStan);
+    }
+  }, []);
+
+  const setStan = () => {
+    window.innerWidth > 480 ? setIsMobile(false) : setIsMobile(true);
+  };
+
   return (
     <MainContainer>
       {poster_path && (
@@ -56,7 +73,7 @@ export const BigTile = ({
       <TileContainer>
         {title && <BigTileTitle>{title}</BigTileTitle>}
 
-        {release_date && <Year>{release_date}</Year>}
+        {release_date && <Year>{(release_date).slice(0, 4)}</Year>}
         <SubHeaderContainer>
           {countries && release_date ? (
             <>
@@ -76,7 +93,7 @@ export const BigTile = ({
               {release_date ? (
                 <SubHeader>
                   <SubHeaderTitle>Release date:</SubHeaderTitle>
-                  <SubHeaderInformation>{release_date}</SubHeaderInformation>
+                  <SubHeaderInformation>{dateOfRelase.toLocaleDateString('pl-PL')}</SubHeaderInformation>
                 </SubHeader>
               ) : null}
             </>
@@ -86,8 +103,8 @@ export const BigTile = ({
             <SubHeaderPerson>
               {birthday && (
                 <>
-                  <SubHeaderDate>Date of birth:</SubHeaderDate>
-                  <SubHeaderInformation>{birthday}</SubHeaderInformation>
+                  <SubHeaderDate>{isMobile ? "Birth:" : "Date of birth:"}</SubHeaderDate>
+                  <SubHeaderInformation>{dayOfBirth.toLocaleDateString('pl-PL')}</SubHeaderInformation>
                 </>
               )}
               {place_of_birth && (
