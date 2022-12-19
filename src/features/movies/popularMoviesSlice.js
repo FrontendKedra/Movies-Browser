@@ -28,12 +28,6 @@ const popularMoviesSlice = createSlice({
       totalPages: 0,
       totalResults: 0,
     }),
-    resetToInitialState: () => ({
-      status: "loading",
-      movies: [],
-      totalPages: 0,
-      totalResults: 0,
-    }),
   },
 });
 
@@ -48,10 +42,8 @@ export const selectPopularMoviesState = (state) => state.popularMovies;
 
 export const selectPopularMoviesStatus = (state) =>
   selectPopularMoviesState(state).status;
-
 export const selectPopularMovies = (state) =>
   selectPopularMoviesState(state).movies;
-
 export const selectPopularMoviesTotalPages = (state) =>
   selectPopularMoviesState(state).totalPages;
 export const selectPopularMoviesTotalResults = (state) =>
