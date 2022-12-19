@@ -23,9 +23,9 @@ export const Container = styled.div`
 `;
 
 export const Poster = styled.img`
-  width: 90%;
+  width: 100%;
   height: auto;
-  margin: 16px;
+  padding: 16px;
   border-radius: ${({ theme }) => theme.radius.small};
 
   @media (max-width: ${({ theme }) => theme.breakpoints.mobileMax}) {
@@ -34,7 +34,7 @@ export const Poster = styled.img`
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.small}) {
-    margin-right: 0;
+    padding-right: 0px;
     width: 136px;
   }
 `;
