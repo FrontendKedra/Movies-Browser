@@ -1,4 +1,4 @@
-import { call, delay, put, takeLatest } from "redux-saga/effects";
+import { call, delay, put, takeLatest, all } from "redux-saga/effects";
 import { apiKey, baseUrl, language } from "../../../ApiValue";
 import { getApiDatabase } from "../../../getApiDatabase";
 import {
@@ -8,13 +8,16 @@ import {
 } from "./personSlice";
 
 function* fetchPersonHandler({ payload: id }) {
+  const personPath = `${baseUrl}/person/${id}/movie_credits${apiKey}${language}`;
+  const detailsPath = `${baseUrl}/person/${id}${apiKey}${language}`;
   try {
     delay(1500);
-    const person = yield call(
-      getApiDatabase,
-      `${baseUrl}/person/${id}/movie_credits${apiKey}${language}`
-    );
-    yield put(fetchPersonSuccess(person));
+    const [person, details] = yield all([
+      call(getApiDatabase, personPath),
+      call(getApiDatabase, detailsPath),
+    ]);
+
+    yield put(fetchPersonSuccess({ person, details }));
   } catch (error) {
     yield put(fetchPersonError());
   }
