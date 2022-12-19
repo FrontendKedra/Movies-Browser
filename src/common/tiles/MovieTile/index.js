@@ -35,17 +35,17 @@ export const MovieTile = ({
           <Details>
             {title && <Title>{title}</Title>}
 
-            {release_date && <Year>{release_date}</Year>}
+            {release_date && <Year>{(release_date).slice(0, 4)}</Year>}
 
             {character && (
               <Year>
-                {character} {year}
+                {character} {`(${(year).slice(0, 4)})`}
               </Year>
             )}
 
             {job && (
               <Year>
-                {job} {year}
+                {job} {`(${(year).slice(0, 4)})`}
               </Year>
             )}
 
