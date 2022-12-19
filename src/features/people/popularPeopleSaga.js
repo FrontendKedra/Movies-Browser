@@ -1,4 +1,4 @@
-import { call, delay, put, takeLatest } from "redux-saga/effects";
+import { call, debounce, put } from "redux-saga/effects";
 import { apiKey, baseUrl, language } from "../../ApiValue";
 import { getApiDatabase } from "../../getApiDatabase";
 import {
@@ -14,7 +14,6 @@ function* fetchPopularPeopleHandler({ payload: { page, query } }) {
       : `${baseUrl}/search/person${apiKey}${language}&query=${query}&page=${page}`;
 
   try {
-    delay(1500);
     const people = yield call(getApiDatabase, path);
     yield put(fetchPopularPeopleSuccess(people));
   } catch (error) {
@@ -23,5 +22,5 @@ function* fetchPopularPeopleHandler({ payload: { page, query } }) {
 }
 
 export function* watchFetchPopularPeople() {
-  yield takeLatest(fetchPopularPeople.type, fetchPopularPeopleHandler);
+  yield debounce(2000, fetchPopularPeople.type, fetchPopularPeopleHandler);
 }

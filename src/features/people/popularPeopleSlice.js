@@ -40,13 +40,10 @@ export const selectPopularPeopleState = (state) => state.popularPeople;
 
 export const selectPopularPeopleStatus = (state) =>
   selectPopularPeopleState(state).status;
-
 export const selectPopularPeople = (state) =>
   selectPopularPeopleState(state).people;
-
 export const selectPopularPeopleToatalResults = (state) =>
   selectPopularPeopleState(state).totalResults;
-
 export const selectPopularPeopleTotalPages = (state) =>
   selectPopularPeopleState(state).totalPages;
 

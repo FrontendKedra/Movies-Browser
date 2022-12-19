@@ -17,16 +17,12 @@ import useQueryParameter from "../../useQueryParameter";
 
 export const PeoplePage = () => {
   const dispatch = useDispatch();
-
   const people = useSelector(selectPopularPeople);
   const stateOfLoading = useSelector(selectPopularPeopleStatus);
-
   const [page, setPage] = useState(1);
   const totalPages = useSelector(selectPopularPeopleTotalPages);
-
-  const query = useQueryParameter("search");
-
   const totalResults = useSelector(selectPopularPeopleToatalResults);
+  const query = useQueryParameter("search");
 
   useEffect(() => {
     dispatch(fetchPopularPeople({ page, query }));

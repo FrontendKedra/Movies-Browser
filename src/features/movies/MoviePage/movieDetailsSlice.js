@@ -42,7 +42,6 @@ export const {
 export const selectMovieState = (state) => state.movieDetails;
 
 export const selectMovieStatus = (state) => selectMovieState(state).status;
-
 export const selectMovie = (state) => selectMovieState(state).movie;
 export const selectMovieCast = (state) => selectMovieState(state).cast;
 export const selectMovieCrew = (state) => selectMovieState(state).crew;

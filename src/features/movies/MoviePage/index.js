@@ -11,23 +11,24 @@ import {
   selectMovieCrew,
 } from "./movieDetailsSlice";
 import { ContentContainer, Header, Wrapper } from "./styled";
-
 import { Loader } from "../../../common/states/Loader";
 import { Error } from "../../../common/states/Error";
 import { PersonTile } from "../../../common/tiles/PersonTile";
+import useQueryParameter from "../../useQueryParameter";
+import { MovieList } from "../MovieList";
 
 export const MoviePage = () => {
   const dispatch = useDispatch();
   const { id } = useParams();
-
-  useEffect(() => {
-    dispatch(fetchMovieDetails(id));
-  }, [dispatch, id]);
-
   const movie = useSelector(selectMovie);
   const cast = useSelector(selectMovieCast);
   const crew = useSelector(selectMovieCrew);
   const stateOfLoading = useSelector(selectMovieStatus);
+  const query = useQueryParameter("search");
+
+  useEffect(() => {
+    query === null && dispatch(fetchMovieDetails(id));
+  }, [dispatch, id, query]);
 
   return (
     <>
@@ -35,7 +36,7 @@ export const MoviePage = () => {
         <Loader title="Loading..." />
       ) : stateOfLoading === "error" ? (
         <Error />
-      ) : (
+      ) : query === null ? (
         <>
           {movie.map(
             ({ original_title, vote_average, vote_count, backdrop_path }) => (
@@ -111,6 +112,8 @@ export const MoviePage = () => {
             )}
           </Wrapper>
         </>
+      ) : (
+        <MovieList />
       )}
     </>
   );

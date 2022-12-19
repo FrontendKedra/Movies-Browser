@@ -18,11 +18,9 @@ import { Pagination } from "../../../common/Pagination";
 
 export const MovieList = () => {
   const dispatch = useDispatch();
-
   const movies = useSelector(selectPopularMovies);
   const stateOfLoading = useSelector(selectPopularMoviesStatus);
   const query = useQueryParameter("search");
-
   const [page, setPage] = useState(1);
   const totalPages = useSelector(selectPopularMoviesTotalPages);
   const totalResults = useSelector(selectPopularMoviesTotalResults);
