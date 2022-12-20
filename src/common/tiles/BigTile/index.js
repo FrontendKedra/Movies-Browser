@@ -81,12 +81,14 @@ export const BigTile = ({
                 countries.length > 0 ? (
                   <SubHeader>
                     <SubHeaderTitle>Production:</SubHeaderTitle>
-                    {countries.map(({ name }) => (
-                      <SubHeaderInformation>
-                        {name}
-                        {","}
+                    <SubHeaderInformation>
+                      {countries.map(country => (
+                        <>
+                          {country.name}
+                          {countries.indexOf(country) !== countries.length - 1 && ", "}
+                        </>
+                      ))}
                       </SubHeaderInformation>
-                    ))}
                   </SubHeader>
                 ) : null
               ) : null}
