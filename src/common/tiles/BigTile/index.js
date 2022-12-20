@@ -10,7 +10,6 @@ import {
   SubHeaderTitle,
   SubHeaderInformation,
   SubHeaderDate,
-  SubHeaderPerson,
   GenreContainer,
   Genre,
   VotesContainer,
@@ -20,9 +19,11 @@ import {
   MaxRating,
   VoteAmount,
   Article,
+  Paragraf,
 } from "./styled";
 import noPicture from "../PersonTile/noPicture.png";
 import noPoster from "../MovieTile/noPoster.png";
+import { useState, useEffect } from "react";
 
 export const BigTile = ({
   poster_path,
@@ -37,16 +38,33 @@ export const BigTile = ({
   genres,
   profile_path,
 }) => {
+  const dateOfRelease = new Date(release_date);
+  const dayOfBirth = new Date(birthday);
+  const [isMobile, setIsMobile] = useState(false);
+
+  const setMobileState = () => {
+    window.innerWidth > 480 ? setIsMobile(false) : setIsMobile(true);
+  };
+
+  useEffect(() => {
+    
+    window.addEventListener("resize", setMobileState);
+
+    return () => {
+      window.removeEventListener("resize", setMobileState);
+    }
+  }, []);
+
   return (
     <MainContainer>
-      {poster_path && (
+      {poster_path !== undefined && (
         <Image
           src={poster_path ? `${imageBaseUrl}/w342${poster_path}` : noPoster}
           alt={`poster of ${title}`}
         />
       )}
 
-      {profile_path && (
+      {profile_path !== undefined && (
         <Image
           src={profile_path ? `${imageBaseUrl}/w342${profile_path}` : noPicture}
           alt={`portrait of ${title}`}
@@ -56,7 +74,7 @@ export const BigTile = ({
       <TileContainer>
         {title && <BigTileTitle>{title}</BigTileTitle>}
 
-        {release_date && <Year>{release_date}</Year>}
+        {release_date && <Year>{(release_date).slice(0, 4)}</Year>}
         <SubHeaderContainer>
           {countries && release_date ? (
             <>
@@ -64,39 +82,41 @@ export const BigTile = ({
                 countries.length > 0 ? (
                   <SubHeader>
                     <SubHeaderTitle>Production:</SubHeaderTitle>
-                    {countries.map(({ name }) => (
-                      <SubHeaderInformation>
-                        {name}
-                        {","}
-                      </SubHeaderInformation>
-                    ))}
+                    <SubHeaderInformation>
+                      {countries.map(country => (
+                        <>
+                          {country.name}
+                          {countries.indexOf(country) !== countries.length - 1 && ", "}
+                        </>
+                      ))}
+                    </SubHeaderInformation>
                   </SubHeader>
                 ) : null
               ) : null}
               {release_date ? (
                 <SubHeader>
                   <SubHeaderTitle>Release date:</SubHeaderTitle>
-                  <SubHeaderInformation>{release_date}</SubHeaderInformation>
+                  <SubHeaderInformation>{dateOfRelease.toLocaleDateString('pl-PL')}</SubHeaderInformation>
                 </SubHeader>
               ) : null}
             </>
           ) : null}
 
           {birthday || place_of_birth ? (
-            <SubHeaderPerson>
+            <div>
               {birthday && (
-                <>
-                  <SubHeaderDate>Date of birth:</SubHeaderDate>
-                  <SubHeaderInformation>{birthday}</SubHeaderInformation>
-                </>
+                <Paragraf>
+                  <SubHeaderDate>{isMobile ? "Birth:" : "Date of birth:"}</SubHeaderDate>
+                  <SubHeaderInformation>{dayOfBirth.toLocaleDateString('pl-PL')}</SubHeaderInformation>
+                </Paragraf>
               )}
               {place_of_birth && (
-                <>
+                <Paragraf>
                   <SubHeaderDate>Place of birth:</SubHeaderDate>
                   <SubHeaderInformation>{place_of_birth}</SubHeaderInformation>
-                </>
+                </Paragraf>
               )}
-            </SubHeaderPerson>
+            </div>
           ) : null}
         </SubHeaderContainer>
 
