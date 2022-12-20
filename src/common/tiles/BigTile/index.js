@@ -38,21 +38,22 @@ export const BigTile = ({
   genres,
   profile_path,
 }) => {
-  const dateOfRelase = new Date(release_date);
+  const dateOfRelease = new Date(release_date);
   const dayOfBirth = new Date(birthday);
   const [isMobile, setIsMobile] = useState(false);
 
+  const setMobileState = () => {
+    window.innerWidth > 480 ? setIsMobile(false) : setIsMobile(true);
+  };
+
   useEffect(() => {
+    
     window.addEventListener("resize", setMobileState);
 
     return () => {
       window.removeEventListener("resize", setMobileState);
     }
   }, []);
-
-  const setMobileState = () => {
-    window.innerWidth > 480 ? setIsMobile(false) : setIsMobile(true);
-  };
 
   return (
     <MainContainer>
@@ -88,14 +89,14 @@ export const BigTile = ({
                           {countries.indexOf(country) !== countries.length - 1 && ", "}
                         </>
                       ))}
-                      </SubHeaderInformation>
+                    </SubHeaderInformation>
                   </SubHeader>
                 ) : null
               ) : null}
               {release_date ? (
                 <SubHeader>
                   <SubHeaderTitle>Release date:</SubHeaderTitle>
-                  <SubHeaderInformation>{dateOfRelase.toLocaleDateString('pl-PL')}</SubHeaderInformation>
+                  <SubHeaderInformation>{dateOfRelease.toLocaleDateString('pl-PL')}</SubHeaderInformation>
                 </SubHeader>
               ) : null}
             </>
