@@ -56,14 +56,14 @@ export const BigTile = ({
 
   return (
     <MainContainer>
-      {poster_path && (
+      {poster_path !== undefined && (
         <Image
           src={poster_path ? `${imageBaseUrl}/w342${poster_path}` : noPoster}
           alt={`poster of ${title}`}
         />
       )}
 
-      {profile_path && (
+      {profile_path !== undefined && (
         <Image
           src={profile_path ? `${imageBaseUrl}/w342${profile_path}` : noPicture}
           alt={`portrait of ${title}`}
