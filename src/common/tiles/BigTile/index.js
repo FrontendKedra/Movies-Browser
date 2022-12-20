@@ -43,14 +43,14 @@ export const BigTile = ({
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    window.addEventListener("resize", setStan);
+    window.addEventListener("resize", setMobileState);
 
     return () => {
-      window.removeEventListener("resize", setStan);
+      window.removeEventListener("resize", setMobileState);
     }
   }, []);
 
-  const setStan = () => {
+  const setMobileState = () => {
     window.innerWidth > 480 ? setIsMobile(false) : setIsMobile(true);
   };
 
