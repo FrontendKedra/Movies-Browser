@@ -10,9 +10,11 @@ export const MovieStyledLink = styled(Link)`
   }
     &:hover {
         transform: scale(1.03);
+        transition: 0.3s;
     }
     &:active {
         transform: scale(1.05);
+        transition: 0.3s;
     }
 `;
 
@@ -20,8 +22,10 @@ export const PeopleStyledLink = styled(Link)`
   text-decoration: none;
     &:hover {
         transform: scale(1.03);
+        transition: 0.3s;
     }
     &:active {
         transform: scale(1.05);
+        transition: 0.3s;
     }
 `;
