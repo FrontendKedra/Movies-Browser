@@ -14,6 +14,7 @@ export const Pagination = ({ page, setPage, totalPages }) => (
       disabled={page === 1}
       onClick={() => setPage(1)}
     >
+      <ArrowIcon mobile="true" />
       <ArrowIcon />
       <ButtonText>First</ButtonText>
     </Button>
@@ -31,6 +32,7 @@ export const Pagination = ({ page, setPage, totalPages }) => (
       <Span>{(totalPages > 500 ? 500 : totalPages)}</Span>
     </PageCounter>
     <Button
+      next
       disabled={page === (totalPages > 500 ? 500 : totalPages)}
       onClick={() => setPage(page + 1)}
     >
@@ -38,10 +40,12 @@ export const Pagination = ({ page, setPage, totalPages }) => (
       <ArrowIconNext />
     </Button>
     <Button
+      next
       disabled={page === (totalPages > 500 ? 500 : totalPages)}
       onClick={() => setPage(totalPages > 500 ? 500 : totalPages)}
     >
       <ButtonText>Last</ButtonText>
+      <ArrowIconNext mobile="true" />
       <ArrowIconNext />
     </Button>
   </PageChanger>
