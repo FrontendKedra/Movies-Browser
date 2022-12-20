@@ -10,32 +10,32 @@ export const Wrapper = styled.div`
 export const PersonContainer = styled.div`
   margin: 0px 0px 56px 0px;
   display: grid;
-  grid-template-columns: repeat(6, 1fr); 
+  grid-template-columns: repeat(6, 1fr);
   grid-gap: 24px;
 
-  @media (max-width:${({ theme }) => theme.breakpoints.largest}) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.largest}) {
     grid-template-columns: repeat(5, 1fr);
   }
-  @media (max-width:${({ theme }) => theme.breakpoints.large}) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.large}) {
     grid-template-columns: repeat(4, 1fr);
   }
-  @media (max-width:${({ theme }) => theme.breakpoints.mobileMax}) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobileMax}) {
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 16px;
   }
-  @media (max-width:${({ theme }) => theme.breakpoints.small}) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.small}) {
     margin: 0px 0px 21px 0px;
     grid-template-columns: 1fr 1fr;
   }
 `;
 
 export const ListTitle = styled.h1`
-  margin: 40px 0px 34px 0px; 
+  margin: 40px 0px 34px 0px;
   font-size: 36px;
   font-weight: 600;
   line-height: 1.2;
 
-  @media (max-width:${({ theme }) => theme.breakpoints.large}) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.large}) {
     font-size: 24px;
     margin: 40px 0px 27px 0px;
   }

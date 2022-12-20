@@ -1,4 +1,4 @@
-import { call, delay, put, takeLatest } from "redux-saga/effects";
+import { call, put, takeEvery, all } from "redux-saga/effects";
 import { apiKey, baseUrl, language } from "../../../ApiValue";
 import { getApiDatabase } from "../../../getApiDatabase";
 import {
@@ -8,18 +8,20 @@ import {
 } from "./movieDetailsSlice";
 
 function* fetchMovieDetailsHandler({ payload: id }) {
+  const movieDetailsPath = `${baseUrl}/movie/${id}${apiKey}${language}`;
+  const moviePath = `${baseUrl}/movie/${id}/credits${apiKey}${language}`;
+
   try {
-    delay(1500);
-    const movieDetails = yield call(
-      getApiDatabase,
-      `${baseUrl}/movie/${id}${apiKey}${language}`
-    );
-    yield put(fetchMovieDetailsSuccess(movieDetails));
+    const [movieDetails, movie] = yield all([
+      call(getApiDatabase, movieDetailsPath),
+      call(getApiDatabase, moviePath),
+    ]);
+    yield put(fetchMovieDetailsSuccess({ movieDetails, movie }));
   } catch (error) {
     yield put(fetchMovieDetailsError());
   }
 }
 
 export function* watchFetchMovieDetails() {
-  yield takeLatest(fetchMovieDetails.type, fetchMovieDetailsHandler);
+  yield takeEvery(fetchMovieDetails.type, fetchMovieDetailsHandler);
 }

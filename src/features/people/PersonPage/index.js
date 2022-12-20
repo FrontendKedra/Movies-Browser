@@ -1,12 +1,11 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import { fetchPersonDetails, selectPerson } from "../personDetailsSlice";
 import {
   fetchPerson,
-  resetToInitialState,
   selectCast,
   selectCrew,
+  selectPerson,
   selectPersonStatus,
 } from "./personSlice";
 import { ContentContainer, Header, Wrapper } from "./styled";
@@ -15,32 +14,30 @@ import { Error } from "../../../common/states/Error";
 import { BigTile } from "../../../common/tiles/BigTile";
 import { MovieTile } from "../../../common/tiles/MovieTile";
 import { fetchGenres } from "../../../common/tiles/MovieTile/Genre/genreSlice";
+import useQueryParameter from "../../useQueryParameter";
+import { PeoplePage } from "../PeoplePage";
 
 export const PersonPage = () => {
   const dispatch = useDispatch();
-
   const { id } = useParams();
-
-  useEffect(() => {
-    dispatch(fetchPerson(id));
-    dispatch(fetchPersonDetails(id));
-    dispatch(fetchGenres());
-
-    return () => resetToInitialState();
-  }, [dispatch, id]);
-
   const cast = useSelector(selectCast);
   const crew = useSelector(selectCrew);
   const person = useSelector(selectPerson);
   const stateOfLoading = useSelector(selectPersonStatus);
+  const query = useQueryParameter("search");
+
+  useEffect(() => {
+    query === null && dispatch(fetchPerson(id));
+    dispatch(fetchGenres());
+  }, [dispatch, id, query]);
 
   return (
     <>
       {stateOfLoading === "loading" ? (
-        <Loader title="Loading...Please wait" />
+        <Loader title="Loading..." />
       ) : stateOfLoading === "error" ? (
         <Error />
-      ) : (
+      ) : query === null ? (
         <Wrapper>
           {person.map(
             ({
@@ -135,6 +132,8 @@ export const PersonPage = () => {
             </>
           )}
         </Wrapper>
+      ) : (
+        <PeoplePage />
       )}
     </>
   );
