@@ -1,4 +1,4 @@
-import styled, { css } from "styled-components";
+import styled, { css, keyframes } from "styled-components";
 import { ReactComponent as arrow } from "./images/previousArrow.svg";
 import { ReactComponent as arrowNext } from "./images/nextArrow.svg";
 
@@ -14,6 +14,24 @@ export const PageChanger = styled.div`
   @media (max-width: ${({ theme }) => theme.breakpoints.small}) {
     margin: 32px 0px 15px 0px;
   } 
+`;
+
+const move = keyframes`
+  0% {
+    transform: translateX(0px);
+  }
+  25% {
+    transform: translateX(-3px);
+  }
+  50% {
+    transform: translateX(0px);
+  }
+  75% {
+    transform: translateX(3px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
 `;
 
 export const Button = styled.button`
@@ -67,11 +85,17 @@ export const ArrowIcon = styled(arrow)`
     color: ${({ theme }) => theme.colors.darkGrey};
   }
 
+  @media (min-width: ${({ theme }) => theme.breakpoints.small}) {
+    ${Button}:hover & {
+      animation: ${move} 1s linear infinite;
+    }
+  }
   @media (max-width: ${({ theme }) => theme.breakpoints.large}) {
     margin: 0px;
     width: 5px;
     height: 8px;
   }
+
   ${({ mobile }) => mobile && css`
     display: none;
       
@@ -88,7 +112,12 @@ export const ArrowIconNext = styled(arrowNext)`
     color: ${({ theme }) => theme.colors.darkGrey};
   }
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.larde}) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.small}) {
+    ${Button}:hover & {
+      animation: ${move} 1s linear infinite;
+    }
+  }
+  @media (max-width: ${({ theme }) => theme.breakpoints.large}) {
     margin: 0px;
     width: 5px;
     height: 8px;
