@@ -51,6 +51,7 @@ export const BigTileTitle = styled.header`
   font-size: 36px;
   color: ${({ theme }) => theme.colors.black};
   margin: 0 0 24px 0;
+  word-break: break-word;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.large}) {
     font-size: 24px;
@@ -106,11 +107,14 @@ export const SubHeaderTitle = styled.p`
   margin: 0;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.large}) {
-    display: none;
+    font-size: 15px;
   }
+  @media (max-width: ${({ theme }) => theme.breakpoints.small}) {
+    display: none;
+  } 
 `;
 
-export const SubHeaderInformation = styled.p`
+export const SubHeaderInformation = styled.span`
   font-weight: 400;
   font-size: 18px;
   color: ${({ theme }) => theme.colors.black};
@@ -125,11 +129,11 @@ export const SubHeaderInformation = styled.p`
   }
 `;
 
-export const SubHeaderDate = styled.p`
+export const SubHeaderDate = styled.span`
   font-weight: 400;
   font-size: 18px;
   color: ${({ theme }) => theme.colors.stormGray};
-  margin: 0;
+  margin: 0px 10px 0px 0px;
   line-height: 120%;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.large}) {
@@ -137,22 +141,14 @@ export const SubHeaderDate = styled.p`
   }
   @media (max-width: ${({ theme }) => theme.breakpoints.small}) {
     font-size: 12px;
+    margin: 0px 4px 0px 0px;
   }
 `;
 
-export const SubHeaderPerson = styled.div`
-  display: grid;
-  grid-template-columns: auto 1fr;
+export const Paragraf = styled.p`
+  margin: 0px 0px 8px 0px;
+  display: flex;
   flex-wrap: wrap;
-  gap: 10px;
-  
-  @media (max-width: ${({ theme }) => theme.breakpoints.large}) {
-    gap: 8px;
-  }
-  @media (max-width: ${({ theme }) => theme.breakpoints.small}) {
-    display: flex;
-    flex-wrap: wrap;
-  }
 `;
 
 export const GenreContainer = styled.div`

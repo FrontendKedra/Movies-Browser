@@ -10,7 +10,6 @@ import {
   SubHeaderTitle,
   SubHeaderInformation,
   SubHeaderDate,
-  SubHeaderPerson,
   GenreContainer,
   Genre,
   VotesContainer,
@@ -20,6 +19,7 @@ import {
   MaxRating,
   VoteAmount,
   Article,
+  Paragraf,
 } from "./styled";
 import noPicture from "../PersonTile/noPicture.png";
 import noPoster from "../MovieTile/noPoster.png";
@@ -100,20 +100,20 @@ export const BigTile = ({
           ) : null}
 
           {birthday || place_of_birth ? (
-            <SubHeaderPerson>
+            <div>
               {birthday && (
-                <>
+                <Paragraf>
                   <SubHeaderDate>{isMobile ? "Birth:" : "Date of birth:"}</SubHeaderDate>
                   <SubHeaderInformation>{dayOfBirth.toLocaleDateString('pl-PL')}</SubHeaderInformation>
-                </>
+                </Paragraf>
               )}
               {place_of_birth && (
-                <>
+                <Paragraf>
                   <SubHeaderDate>Place of birth:</SubHeaderDate>
                   <SubHeaderInformation>{place_of_birth}</SubHeaderInformation>
-                </>
+                </Paragraf>
               )}
-            </SubHeaderPerson>
+            </div>
           ) : null}
         </SubHeaderContainer>
 
