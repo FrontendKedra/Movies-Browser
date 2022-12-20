@@ -34,7 +34,7 @@ export const PersonPage = () => {
   return (
     <>
       {stateOfLoading === "loading" ? (
-        <Loader title="Loading...Please wait" />
+        <Loader title="Loading..." />
       ) : stateOfLoading === "error" ? (
         <Error />
       ) : query === null ? (
