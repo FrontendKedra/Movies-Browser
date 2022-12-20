@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { ReactComponent as Vector } from "./images/vector.svg";
+import { ReactComponent as Vector } from "./vector.svg";
 
 export const MainContainer = styled.div`
   max-width: 1368px;
