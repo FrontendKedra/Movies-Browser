@@ -1,46 +1,63 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
+import { ReactComponent as arrow } from "./images/previousArrow.svg";
+import { ReactComponent as arrowNext } from "./images/nextArrow.svg";
 
 export const PageChanger = styled.div`
+  margin: 40px 0px 87px 0px;
   display: flex;
-  margin: 40px 0 103px;
   justify-content: center;
+  align-items: center;
 `;
 
 export const Button = styled.button`
-  display: flex;
-  gap: 8px;
-  align-items: center;
-  padding: 8px 16px;
-  border-radius: 5px;
   font-size: 14px;
-  line-height: 1.4;
-  background-color: ${({ theme }) => theme.colors.lightBlue};
+  padding: 8px 16px;
   margin-right: 12px;
+  border-radius: 5px;
+  border: none;
+  background-color: ${({ theme }) => theme.colors.lightBlue};
+  display: flex;
+  align-items: center;
+  gap: 8px;
   border: none;
   cursor: pointer;
 
-  ${(props) =>
-    props.disabled &&
-    css`
-      background-color: ${({ theme }) => theme.colors.grey};
-      cursor: not-allowed;
-    `}
+  &:disabled{
+    background: ${({ theme }) => theme.colors.grey};
+    color: ${({ theme }) => theme.colors.black};
+    pointer-events: none;
+  }
+`;
+
+export const ButtonText = styled.span`
+  line-height: 16px;
+`;
+
+export const ArrowIcon = styled(arrow)`
+  color: ${({ theme }) => theme.colors.blue};
+
+  ${Button}:disabled & {
+    color: ${({ theme }) => theme.colors.darkGrey};
+  }
+`;
+
+export const ArrowIconNext = styled(arrowNext)`
+  color: ${({ theme }) => theme.colors.blue};
+  
+  ${Button}:disabled & {
+    color: ${({ theme }) => theme.colors.darkGrey};
+  }
 `;
 
 export const PageCounter = styled.div`
-  margin-left: 12px;
-  margin-right: 24px;
-  padding: 8px 16px;
-  justify-content: center;
-  font-size: 16px;
-  font-weight: 600;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  color: ${({ theme }) => theme.colors.black};
-`;
-
-export const Text = styled.span`
+  padding: 8px 8px 8px 14px;
   font-weight: 400;
   color: ${({ theme }) => theme.colors.darkGrey};
+`;
+
+export const Span = styled.span`
+  font-weight: 600;
+  margin: 0px 8px;
+  color: ${({ theme }) => theme.colors.black};
+
 `;
