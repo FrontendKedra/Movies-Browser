@@ -5,7 +5,7 @@ import { PeopleStyledLink } from "../generisStyles/styled";
 
 export const PersonTile = ({ id, profile_path, name, big, character }) => {
   return (
-    <PeopleStyledLink to={`/profile/${id}`} key={id} >
+    <PeopleStyledLink to={`/people/profile/${id}`} key={id} >
       <Container>
         <ProfileImage
           src={profile_path ? `${imageBaseUrl}/w342${profile_path}` : noPicture}

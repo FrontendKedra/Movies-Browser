@@ -1,12 +1,5 @@
 import styled from "styled-components";
 
-export const Wrapper = styled.div`
-  max-width: 1368px;
-  padding: 16px;
-  margin: 0 auto;
-  background-color: ${({ theme }) => theme.colors.lightGrey};
-`;
-
 export const PersonContainer = styled.div`
   margin: 0px 0px 56px 0px;
   display: grid;
