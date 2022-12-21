@@ -11,7 +11,7 @@ import {
 import { MovieTile } from "../../../common/tiles/MovieTile";
 import { Loader } from "../../../common/states/Loader";
 import { Error } from "../../../common/states/Error";
-import useQueryParameter from "../../useQueryParameter";
+import useQueryParameter from "../../../useQueryParameter";
 import { NoResult } from "../../../common/states/NoResult";
 import { fetchGenres } from "../../../common/tiles/MovieTile/Genre/genreSlice";
 import { Pagination } from "../../../common/Pagination";
