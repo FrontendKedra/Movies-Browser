@@ -1,6 +1,6 @@
 import { useLocation } from "react-router";
-import useQueryParameter from "../../features/useQueryParameter";
-import { useReplaceQueryParameter } from "../../features/useReplaceQueryParameter";
+import useQueryParameter from "../../useQueryParameter";
+import { useReplaceQueryParameter } from "../../useReplaceQueryParameter";
 import {
   HeaderArea,
   HeaderContainer,
@@ -27,7 +27,7 @@ export const Header = () => {
   const onInputChange = ({ target }) => {
     replaceQueryParam({
       key: "search",
-      value: target.value.trim(),
+      value: target.value.trim() !== "" ? target.value : "",
     });
   };
 

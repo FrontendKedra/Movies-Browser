@@ -13,7 +13,7 @@ import {
 import { Wrapper, PersonContainer, ListTitle } from "./styled";
 import { Pagination } from "../../../common/Pagination";
 import { NoResult } from "../../../common/states/NoResult";
-import useQueryParameter from "../../useQueryParameter";
+import useQueryParameter from "../../../useQueryParameter";
 
 export const PeoplePage = () => {
   const dispatch = useDispatch();

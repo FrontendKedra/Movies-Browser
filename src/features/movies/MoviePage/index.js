@@ -14,7 +14,7 @@ import { ContentContainer, Header, Wrapper } from "./styled";
 import { Loader } from "../../../common/states/Loader";
 import { Error } from "../../../common/states/Error";
 import { PersonTile } from "../../../common/tiles/PersonTile";
-import useQueryParameter from "../../useQueryParameter";
+import useQueryParameter from "../../../useQueryParameter";
 import { MovieList } from "../MovieList";
 
 export const MoviePage = () => {
@@ -39,8 +39,9 @@ export const MoviePage = () => {
       ) : query === null ? (
         <>
           {movie.map(
-            ({ original_title, vote_average, vote_count, backdrop_path }) => (
+            ({ original_title, vote_average, vote_count, backdrop_path, id}) => (
               <Backdrop
+                key={id}
                 title={original_title}
                 rating={vote_average}
                 votes={vote_count}
@@ -62,6 +63,7 @@ export const MoviePage = () => {
                 genres,
               }) => (
                 <BigTile
+                  key={id}
                   id={id}
                   poster_path={poster_path}
                   title={title}

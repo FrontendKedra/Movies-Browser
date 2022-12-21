@@ -14,7 +14,7 @@ import { Error } from "../../../common/states/Error";
 import { BigTile } from "../../../common/tiles/BigTile";
 import { MovieTile } from "../../../common/tiles/MovieTile";
 import { fetchGenres } from "../../../common/tiles/MovieTile/Genre/genreSlice";
-import useQueryParameter from "../../useQueryParameter";
+import useQueryParameter from "../../../useQueryParameter";
 import { PeoplePage } from "../PeoplePage";
 
 export const PersonPage = () => {
@@ -54,6 +54,7 @@ export const PersonPage = () => {
                 article={biography}
                 place_of_birth={place_of_birth}
                 birthday={birthday}
+                key={id}
               />
             )
           )}
