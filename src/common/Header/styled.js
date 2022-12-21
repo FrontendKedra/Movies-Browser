@@ -5,6 +5,7 @@ export const HeaderArea = styled.div`
   background-color: ${({ theme }) => theme.colors.darkBlack};
   color: ${({ theme }) => theme.colors.white};
   padding: 23px 0;
+
   @media (max-width: ${({ theme }) => theme.breakpoints.small}) {
     padding: 32px 0 16px;
   }
@@ -16,6 +17,7 @@ export const HeaderContainer = styled.div`
   margin: 0 auto;
   display: flex;
   align-items: center;
+
   @media (max-width: ${({ theme }) => theme.breakpoints.large}) {
     flex-wrap: wrap;
     padding: 0 16px;
@@ -27,6 +29,7 @@ export const TextSide = styled.div`
   flex: 1 1 auto;
   align-items: center;
   flex-shrink: 0;
+
   @media (max-width: ${({ theme }) => theme.breakpoints.large}) {
     justify-content: flex-end;
   }
@@ -41,6 +44,7 @@ export const Title = styled(NavLink)`
   letter-spacing: -1.5px;
   display: flex;
   align-items: center;
+
   @media (max-width: ${({ theme }) => theme.breakpoints.large}) {
     flex: 1 1 auto;
   }
@@ -52,6 +56,7 @@ export const Title = styled(NavLink)`
 
 export const Icon = styled.img`
   margin-right: 12px;
+
   @media (max-width: ${({ theme }) => theme.breakpoints.small}) {
     width: 16px;
     margin-right: 8px;
@@ -63,6 +68,7 @@ export const NavList = styled.ul`
   padding: 0;
   list-style: none;
   display: flex;
+
   @media (max-width: ${({ theme }) => theme.breakpoints.large}) {
     margin: 0 0 0 7px;
   }
@@ -70,6 +76,7 @@ export const NavList = styled.ul`
 
 export const ListItem = styled.li`
   margin: 0 8px;
+
   @media (max-width: ${({ theme }) => theme.breakpoints.large}) {
     &:last-child {
       margin-right: 0px;
@@ -87,14 +94,25 @@ export const ListLink = styled(NavLink)`
   color: ${({ theme }) => theme.colors.white};
   text-transform: uppercase;
   text-decoration: none;
+
   &.active {
     border: 1px solid ${({ theme }) => theme.colors.white};
     border-radius: ${({ theme }) => theme.radius.navigationLinks};
+      &:hover {
+        border: 1px solid ${({ theme }) => theme.colors.stormGray};
+        transition: 0.3s;
+      }
+      &:active {
+        border: 1px solid ${({ theme }) => theme.colors.darkGray};
+        transition: 0.3s;
+      }
   }
+
   @media (max-width: ${({ theme }) => theme.breakpoints.large}) {
     padding: 8px 12px;
     margin: 0 2px;
   }
+
   @media (max-width: ${({ theme }) => theme.breakpoints.small}) {
     font-size: 12px;
   }
@@ -104,10 +122,23 @@ export const ListLink = styled(NavLink)`
       border: 1px solid ${({ theme }) => theme.radius.navigationLinks};
     }
   }
+
+  &:hover {
+    color: ${({ theme }) => theme.colors.stormGray};
+    border-radius: ${({ theme }) => theme.radius.navigationLinks};
+    transition: 0.3s;
+  }
+
+  &:active {
+    border: 1px solid ${({ theme }) => theme.colors.darkGray};
+    border-radius: ${({ theme }) => theme.radius.navigationLinks};
+    transition: 0.3s;
+  }
 `;
 
 export const SearchBar = styled.div`
   position: relative;
+
   @media (max-width: ${({ theme }) => theme.breakpoints.large}) {
     flex-basis: 100%;
     margin-top: 20px;
@@ -121,6 +152,7 @@ export const SearchIcon = styled.img`
   position: absolute;
   top: 11px;
   left: 14px;
+
   @media (max-width: ${({ theme }) => theme.breakpoints.small}) {
     top: 30%;
     left: 16px;
@@ -139,11 +171,22 @@ export const SearchInput = styled.input`
     font-size: 13px;
     color: ${({ theme }) => theme.colors.darkGrey};
   }
+
   @media (max-width: ${({ theme }) => theme.breakpoints.large}) {
     width: 100%;
   }
+
   @media (max-width: ${({ theme }) => theme.breakpoints.small}) {
     font-size: 13px;
     padding: 12px 12px 12px 38px;
+  }
+
+  &:focus {
+    background-color: ${({ theme }) => theme.colors.lightGrey};
+    transition: 0.3s;
+
+      ::placeholder {
+        color: ${({ theme }) => theme.colors.darkBlack};
+      }
   }
 `;

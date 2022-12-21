@@ -10,9 +10,10 @@ import {
   selectPopularPeopleToatalResults,
   selectPopularPeopleTotalPages,
 } from "../popularPeopleSlice";
-import { Wrapper, PersonContainer, ListTitle } from "./styled";
+import { PersonContainer, ListTitle } from "./styled";
 import { Pagination } from "../../../common/Pagination";
 import { NoResult } from "../../../common/states/NoResult";
+import { Wrapper } from "../../../common/tiles/generisStyles/styled";
 import useQueryParameter from "../../../useQueryParameter";
 
 export const PeoplePage = () => {

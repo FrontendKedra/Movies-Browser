@@ -10,10 +10,10 @@ function App() {
     <HashRouter>
       <Header />
       <Switch>
-      <Route path="/movie-page/:id">
+      <Route path="/movie-list/movie-page/:id">
           <MoviePage />
         </Route>
-        <Route path="/profile/:id">
+        <Route path="/people/profile/:id">
           <PersonPage />
         </Route>
         <Route path="/movie-list">

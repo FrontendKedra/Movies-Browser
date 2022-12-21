@@ -25,7 +25,7 @@ export const MovieTile = ({
   year,
 }) => {
   return (
-    <MovieStyledLink to={`/movie-page/${id}`} key={id}>
+    <MovieStyledLink to={`/movie-list/movie-page/${id}`} key={id}>
       <Container>
         <Poster
           src={poster_path ? `${imageBaseUrl}/w342${poster_path}` : noPoster}

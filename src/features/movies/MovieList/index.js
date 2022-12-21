@@ -1,4 +1,4 @@
-import { ContentContainer, ListTitle, Wrapper } from "./styled";
+import { ContentContainer, ListTitle } from "./styled";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import {
@@ -15,6 +15,7 @@ import useQueryParameter from "../../../useQueryParameter";
 import { NoResult } from "../../../common/states/NoResult";
 import { fetchGenres } from "../../../common/tiles/MovieTile/Genre/genreSlice";
 import { Pagination } from "../../../common/Pagination";
+import { Wrapper } from "../../../common/tiles/generisStyles/styled";
 
 export const MovieList = () => {
   const dispatch = useDispatch();
