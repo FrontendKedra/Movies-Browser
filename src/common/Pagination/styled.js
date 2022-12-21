@@ -2,20 +2,6 @@ import styled, { css, keyframes } from "styled-components";
 import { ReactComponent as arrow } from "./images/previousArrow.svg";
 import { ReactComponent as arrowNext } from "./images/nextArrow.svg";
 
-export const PageChanger = styled.div`
-  margin: 40px 0px 87px 0px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  @media (max-width: ${({ theme }) => theme.breakpoints.large}) {
-    margin: 32px 0px 87px 0px;
-  } 
-  @media (max-width: ${({ theme }) => theme.breakpoints.small}) {
-    margin: 32px 0px 15px 0px;
-  } 
-`;
-
 const move = keyframes`
   0% {
     transform: translateX(0px);
@@ -32,6 +18,20 @@ const move = keyframes`
   100% {
     transform: translateX(0px);
   }
+`;
+
+export const PageChanger = styled.div`
+  margin: 40px 0px 87px 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.large}) {
+    margin: 32px 0px 87px 0px;
+  } 
+  @media (max-width: ${({ theme }) => theme.breakpoints.small}) {
+    margin: 32px 0px 15px 0px;
+  } 
 `;
 
 export const Button = styled.button`
@@ -79,7 +79,7 @@ export const ButtonText = styled.span`
   }
 `;
 
-export const ArrowIcon = styled(arrow)`
+export const ArrowIconPrevious = styled(arrow)`
   color: ${({ theme }) => theme.colors.blue};
   ${Button}:disabled & {
     color: ${({ theme }) => theme.colors.darkGrey};
@@ -133,6 +133,7 @@ export const ArrowIconNext = styled(arrowNext)`
 `;
 
 export const PageCounter = styled.div`
+  font-size: 16px;
   padding: 8px 12px;
   font-weight: 400;
   color: ${({ theme }) => theme.colors.darkGrey};
@@ -140,6 +141,9 @@ export const PageCounter = styled.div`
   @media (max-width: ${({ theme }) => theme.breakpoints.large}) {
     font-size: 12px;
     padding: 8px 0px;
+  }
+  @media (max-width: ${({ theme }) => theme.breakpoints.small}) {
+    font-size: 10px;
   }
 `;
 
@@ -149,6 +153,6 @@ export const Span = styled.span`
   color: ${({ theme }) => theme.colors.black};
 
   @media (max-width: ${({ theme }) => theme.breakpoints.large}) {
-    margin: 0px 3px;
+    margin: 0px 2px;
   }
 `;

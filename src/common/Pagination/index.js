@@ -1,5 +1,5 @@
 import {
-  ArrowIcon,
+  ArrowIconPrevious,
   ArrowIconNext,
   Button,
   ButtonText,
@@ -14,15 +14,15 @@ export const Pagination = ({ page, setPage, totalPages }) => (
       disabled={page === 1}
       onClick={() => setPage(1)}
     >
-      <ArrowIcon mobile="true" />
-      <ArrowIcon />
+      <ArrowIconPrevious mobile="true" />
+      <ArrowIconPrevious />
       <ButtonText>First</ButtonText>
     </Button>
     <Button
       disabled={page === 1}
       onClick={() => setPage(page - 1)}
     >
-      <ArrowIcon />
+      <ArrowIconPrevious />
       <ButtonText>Previous</ButtonText>
     </Button>
     <PageCounter>
