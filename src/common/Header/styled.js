@@ -94,17 +94,17 @@ export const ListLink = styled(NavLink)`
   color: ${({ theme }) => theme.colors.white};
   text-transform: uppercase;
   text-decoration: none;
-  
+
   &.active {
     border: 1px solid ${({ theme }) => theme.colors.white};
     border-radius: ${({ theme }) => theme.radius.navigationLinks};
-      &:hover{
-      border: 1px solid ${({ theme }) => theme.colors.stormGray};
-      transition: 0.3s;
+      &:hover {
+        border: 1px solid ${({ theme }) => theme.colors.stormGray};
+        transition: 0.3s;
       }
-      &:active{
-      border: 1px solid ${({ theme }) => theme.colors.darkGray};
-      transition: 0.3s;
+      &:active {
+        border: 1px solid ${({ theme }) => theme.colors.darkGray};
+        transition: 0.3s;
       }
   }
 
@@ -123,17 +123,17 @@ export const ListLink = styled(NavLink)`
     }
   }
 
-    &:hover {
-      color: ${({ theme }) => theme.colors.stormGray};
-      border-radius: ${({ theme }) => theme.radius.navigationLinks};
-      transition: 0.3s;
-    }
+  &:hover {
+    color: ${({ theme }) => theme.colors.stormGray};
+    border-radius: ${({ theme }) => theme.radius.navigationLinks};
+    transition: 0.3s;
+  }
 
-    &:active{
-      border: 1px solid ${({ theme }) => theme.colors.darkGray};
-      border-radius: ${({ theme }) => theme.radius.navigationLinks};
-      transition: 0.3s;
-    }
+  &:active {
+    border: 1px solid ${({ theme }) => theme.colors.darkGray};
+    border-radius: ${({ theme }) => theme.radius.navigationLinks};
+    transition: 0.3s;
+  }
 `;
 
 export const SearchBar = styled.div`
@@ -152,7 +152,7 @@ export const SearchIcon = styled.img`
   position: absolute;
   top: 11px;
   left: 14px;
-  
+
   @media (max-width: ${({ theme }) => theme.breakpoints.small}) {
     top: 30%;
     left: 16px;
@@ -181,8 +181,12 @@ export const SearchInput = styled.input`
     padding: 12px 12px 12px 38px;
   }
 
-  &:focus{
-      background-color: ${({ theme }) => theme.colors.grey};
-      transition: 0.3s;
+  &:focus {
+    background-color: ${({ theme }) => theme.colors.lightGrey};
+    transition: 0.3s;
+
+      ::placeholder {
+        color: ${({ theme }) => theme.colors.darkBlack};
       }
+  }
 `;
