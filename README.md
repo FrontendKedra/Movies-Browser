@@ -1,12 +1,30 @@
 # Movies Browser
 
-## Description: 
+## Description:
 
-Group project.
+This application is a group project for YouCode Course. Movies Browser based on external API from https://api.themoviedb.org/. The site is divided into two subpages : movies and people. Each one includes search engine which allows to searech for movies or people. Whole application is adapted to follow Responsive Web Design Principles.
 
-## Demo: 
+## Demo:
 
 https://s5zee.github.io/Movies-Browser/
+
+## Usage
+
+![movies-browser](http://g.recordit.co/o9UywvysI8.gif)
+
+## Searching
+
+## Used Technologies
+
+- React
+- React Redux
+- React Router
+- Styled Components
+- Redux Saga
+- Redux Toolkit
+- CSS Flexbox/ Grid
+- data imported from API - using Axios
+- ES6+
 
 # Getting Started with Create React App
 
