@@ -9,8 +9,7 @@ This application is a group project for YouCode Course. Movies Browser based on 
 https://s5zee.github.io/Movies-Browser/
 
 ## Usage
-
-![movies-browser](http://g.recordit.co/RBe5omxJwX.gif)
+![image](https://user-images.githubusercontent.com/109352604/209219298-7526078a-de2f-4d64-a6ba-59d20a3f5b43.png)
 
 ## Searching
 
