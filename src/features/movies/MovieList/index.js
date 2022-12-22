@@ -1,6 +1,6 @@
 import { ContentContainer, ListTitle } from "./styled";
 import { useDispatch, useSelector } from "react-redux";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import {
   fetchPopularMovies,
   selectPopularMovies,
@@ -22,7 +22,7 @@ export const MovieList = () => {
   const movies = useSelector(selectPopularMovies);
   const stateOfLoading = useSelector(selectPopularMoviesStatus);
   const query = useQueryParameter("search");
-  const [page, setPage] = useState(1);
+  const page = useQueryParameter("page");
   const totalPages = useSelector(selectPopularMoviesTotalPages);
   const totalResults = useSelector(selectPopularMoviesTotalResults);
 
@@ -72,11 +72,7 @@ export const MovieList = () => {
                   )
                 )}
               </ContentContainer>
-              <Pagination
-                totalPages={totalPages}
-                page={page}
-                setPage={setPage}
-              />
+              <Pagination totalPages={totalPages} page={page} />
             </>
           )}
         </Wrapper>

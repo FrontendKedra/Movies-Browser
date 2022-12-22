@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Loader } from "../../../common/states/Loader";
 import { Error } from "../../../common/states/Error";
@@ -20,7 +20,7 @@ export const PeoplePage = () => {
   const dispatch = useDispatch();
   const people = useSelector(selectPopularPeople);
   const stateOfLoading = useSelector(selectPopularPeopleStatus);
-  const [page, setPage] = useState(1);
+  const page = useQueryParameter("page");
   const totalPages = useSelector(selectPopularPeopleTotalPages);
   const totalResults = useSelector(selectPopularPeopleToatalResults);
   const query = useQueryParameter("search");
@@ -56,11 +56,7 @@ export const PeoplePage = () => {
                   />
                 ))}
               </PersonContainer>
-              <Pagination
-                page={page}
-                setPage={setPage}
-                totalPages={totalPages}
-              />
+              <Pagination page={page} totalPages={totalPages} />
             </>
           )}
         </Wrapper>
