@@ -10,7 +10,7 @@ https://s5zee.github.io/Movies-Browser/
 
 ## Usage
 
-![movies-browser](http://g.recordit.co/o9UywvysI8.gif)
+![movies-browser](http://g.recordit.co/RBe5omxJwX.gif)
 
 ## Searching
 
