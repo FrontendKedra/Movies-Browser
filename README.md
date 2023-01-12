@@ -2,7 +2,7 @@
 
 ## Description:
 
-This application is a group project for YouCode Course. Movies Browser based on external API from https://api.themoviedb.org/. The site is divided into two subpages : movies and people. Each one includes search engine which allows to searech for movies or people. Whole application is adapted to follow Responsive Web Design Principles.
+This application is a group project for YouCode Course. Movies Browser based on external API from https://api.themoviedb.org/. The site is divided into two subpages : movies and people. Each one includes search engine which allows to search for movies or people. Whole application is adapted to follow Responsive Web Design Principles.
 
 ## Demo:
 
