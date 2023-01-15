@@ -94,17 +94,17 @@ export const ListLink = styled(NavLink)`
   color: ${({ theme }) => theme.colors.white};
   text-transform: uppercase;
   text-decoration: none;
+  transition: 0.3s;
 
   &.active {
     border: 1px solid ${({ theme }) => theme.colors.white};
     border-radius: ${({ theme }) => theme.radius.navigationLinks};
+
       &:hover {
         border: 1px solid ${({ theme }) => theme.colors.stormGray};
-        transition: 0.3s;
       }
       &:active {
         border: 1px solid ${({ theme }) => theme.colors.darkGray};
-        transition: 0.3s;
       }
   }
 
@@ -126,13 +126,11 @@ export const ListLink = styled(NavLink)`
   &:hover {
     color: ${({ theme }) => theme.colors.stormGray};
     border-radius: ${({ theme }) => theme.radius.navigationLinks};
-    transition: 0.3s;
   }
 
   &:active {
     border: 1px solid ${({ theme }) => theme.colors.darkGray};
     border-radius: ${({ theme }) => theme.radius.navigationLinks};
-    transition: 0.3s;
   }
 `;
 
@@ -166,6 +164,7 @@ export const SearchInput = styled.input`
   border: none;
   padding: 14px 12px 14px 45px;
   font-weight: 400;
+  transition: 0.3s;
 
   ::placeholder {
     font-size: 13px;
@@ -183,7 +182,6 @@ export const SearchInput = styled.input`
 
   &:focus {
     background-color: ${({ theme }) => theme.colors.lightGrey};
-    transition: 0.3s;
 
       ::placeholder {
         color: ${({ theme }) => theme.colors.darkBlack};
