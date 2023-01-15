@@ -1,4 +1,4 @@
-import { imageBaseUrl } from "../../../../ApiValue"
+import { imageBaseUrl } from "../../../../ApiValue";
 import {
   BackdropImg,
   BlureFrame,
@@ -13,32 +13,27 @@ import {
   Wrapper,
 } from "./styled";
 
-export const Backdrop = ({
-  title,
-  rating,
-  votes,
-  backdrop_path,
-}) => {
-  return (
-    <>
-      {backdrop_path && (
-        <Wrapper>
-          <Container>
-            <BlureFrame />
-            <BackdropImg src={`${imageBaseUrl}/w1280${backdrop_path}`}
-              alt={`poster of ${title}`} />
-            <Content>
-              <Title>{title}</Title>
-              <RatingContainer>
-                <StarIcon />
-                <Vote>{rating.toFixed(1)}</Vote>
-                <Rate>/ 10</Rate>
-                <Votes>{votes} votes</Votes>
-              </RatingContainer>
-            </Content>
-          </Container>
-        </Wrapper>
-      )}
-    </>
-  );
-};
+export const Backdrop = ({ title, rating, votes, backdrop_path }) => (
+  <>
+    {backdrop_path && (
+      <Wrapper>
+        <Container>
+          <BlureFrame />
+          <BackdropImg
+            src={`${imageBaseUrl}/w1280${backdrop_path}`}
+            alt={`poster of ${title}`}
+          />
+          <Content>
+            <Title>{title}</Title>
+            <RatingContainer>
+              <StarIcon />
+              <Vote>{rating.toFixed(1)}</Vote>
+              <Rate>/ 10</Rate>
+              <Votes>{votes} votes</Votes>
+            </RatingContainer>
+          </Content>
+        </Container>
+      </Wrapper>
+    )}
+  </>
+);
