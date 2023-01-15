@@ -3,7 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const personSlice = createSlice({
   name: "person",
   initialState: {
-    status: "loading",
+    status: "initial",
     person: [],
     cast: [],
     crew: [],
@@ -11,9 +11,6 @@ const personSlice = createSlice({
   reducers: {
     fetchPerson: () => ({
       status: "loading",
-      person: [],
-      cast: [],
-      crew: [],
     }),
     fetchPersonSuccess: (state, { payload: { person, details } }) => ({
       status: "success",
@@ -23,9 +20,6 @@ const personSlice = createSlice({
     }),
     fetchPersonError: () => ({
       status: "error",
-      person: [],
-      cast: [],
-      crew: [],
     }),
   },
 });
