@@ -13,9 +13,12 @@ import { Loader } from "../../../common/states/Loader";
 import { Error } from "../../../common/states/Error";
 import { BigTile } from "../../../common/tiles/BigTile";
 import { MovieTile } from "../../../common/tiles/MovieTile";
-import { fetchGenres } from "../../../common/tiles/MovieTile/Genre/genreSlice";
 import useQueryParameter from "../../../useQueryParameter";
 import { PeoplePage } from "../PeoplePage";
+import {
+  fetchGenres,
+  selectGenres,
+} from "../../../common/tiles/MovieTile/Genre/genreSlice";
 
 export const PersonPage = () => {
   const dispatch = useDispatch();
@@ -23,6 +26,7 @@ export const PersonPage = () => {
   const cast = useSelector(selectCast);
   const crew = useSelector(selectCrew);
   const person = useSelector(selectPerson);
+  const genres = useSelector(selectGenres);
   const stateOfLoading = useSelector(selectPersonStatus);
   const query = useQueryParameter("search");
 
@@ -89,6 +93,7 @@ export const PersonPage = () => {
                       genre_ids={genre_ids}
                       character={character}
                       year={release_date}
+                      genres={genres}
                     />
                   )
                 )}
@@ -126,6 +131,7 @@ export const PersonPage = () => {
                       year={release_date}
                       poster_path={poster_path}
                       genre_ids={genre_ids}
+                      genres={genres}
                     />
                   )
                 )}
