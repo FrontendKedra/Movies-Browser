@@ -1,4 +1,4 @@
-import { call, debounce, put } from "redux-saga/effects";
+import { call, debounce, delay, put } from "redux-saga/effects";
 import { apiKey, baseUrl, language } from "../../ApiValue";
 import { getApiDatabase } from "../../getApiDatabase";
 import {
@@ -13,6 +13,8 @@ function* fetchPopularMoviesHandler({ payload: { page, query } }) {
       ? `${baseUrl}/movie/popular${apiKey}${language}&page=${page}`
       : `${baseUrl}/search/movie${apiKey}${language}&query=${query}&page=${page}`;
 
+  yield delay(500);
+
   try {
     const movies = yield call(getApiDatabase, path);
     yield put(fetchPopularMoviesSuccess(movies));
@@ -22,5 +24,5 @@ function* fetchPopularMoviesHandler({ payload: { page, query } }) {
 }
 
 export function* watchFetchPopularMovies() {
-  yield debounce(2000, fetchPopularMovies.type, fetchPopularMoviesHandler);
+  yield debounce(500, fetchPopularMovies.type, fetchPopularMoviesHandler);
 }
