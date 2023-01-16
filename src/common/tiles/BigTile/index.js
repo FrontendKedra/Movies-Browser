@@ -47,12 +47,11 @@ export const BigTile = ({
   };
 
   useEffect(() => {
-    
     window.addEventListener("resize", setMobileState);
 
     return () => {
       window.removeEventListener("resize", setMobileState);
-    }
+    };
   }, []);
 
   return (
@@ -74,7 +73,7 @@ export const BigTile = ({
       <TileContainer>
         {title && <BigTileTitle>{title}</BigTileTitle>}
 
-        {release_date && <Year>{(release_date).slice(0, 4)}</Year>}
+        {release_date && <Year>{release_date.slice(0, 4)}</Year>}
         <SubHeaderContainer>
           {countries && release_date ? (
             <>
@@ -82,21 +81,21 @@ export const BigTile = ({
                 countries.length > 0 ? (
                   <SubHeader>
                     <SubHeaderTitle>Production:</SubHeaderTitle>
-                    <SubHeaderInformation>
-                      {countries.map(country => (
-                        <>
-                          {country.name}
-                          {countries.indexOf(country) !== countries.length - 1 && ", "}
-                        </>
-                      ))}
-                    </SubHeaderInformation>
+                    {countries.map((country) => (
+                      <SubHeaderInformation key={country.name}>
+                        {country.name}
+                        {countries.indexOf(country) !== countries.length - 1 && ", "}
+                      </SubHeaderInformation>
+                    ))}
                   </SubHeader>
                 ) : null
               ) : null}
               {release_date ? (
                 <SubHeader>
                   <SubHeaderTitle>Release date:</SubHeaderTitle>
-                  <SubHeaderInformation>{dateOfRelease.toLocaleDateString('pl-PL')}</SubHeaderInformation>
+                  <SubHeaderInformation>
+                    {dateOfRelease.toLocaleDateString("pl-PL")}
+                  </SubHeaderInformation>
                 </SubHeader>
               ) : null}
             </>
@@ -106,8 +105,12 @@ export const BigTile = ({
             <div>
               {birthday && (
                 <Paragraf>
-                  <SubHeaderDate>{isMobile ? "Birth:" : "Date of birth:"}</SubHeaderDate>
-                  <SubHeaderInformation>{dayOfBirth.toLocaleDateString('pl-PL')}</SubHeaderInformation>
+                  <SubHeaderDate>
+                    {isMobile ? "Birth:" : "Date of birth:"}
+                  </SubHeaderDate>
+                  <SubHeaderInformation>
+                    {dayOfBirth.toLocaleDateString("pl-PL")}
+                  </SubHeaderInformation>
                 </Paragraf>
               )}
               {place_of_birth && (
@@ -123,7 +126,7 @@ export const BigTile = ({
         {genres && (
           <GenreContainer>
             {genres.map(({ name }) => (
-              <Genre>{name}</Genre>
+              <Genre key={name}>{name}</Genre>
             ))}
           </GenreContainer>
         )}

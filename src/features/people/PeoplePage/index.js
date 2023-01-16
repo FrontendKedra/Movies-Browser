@@ -44,7 +44,7 @@ export const PeoplePage = () => {
               <ListTitle>
                 {query
                   ? `Search results for "${query}" (${totalResults})`
-                  : "Popular people"}
+                  : `Popular people`}
               </ListTitle>
               <PersonContainer>
                 {people.map(({ profile_path, id, name }) => (

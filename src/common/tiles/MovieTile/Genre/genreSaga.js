@@ -1,4 +1,4 @@
-import { call, put, takeLatest } from "redux-saga/effects";
+import { call, delay, put, takeLatest } from "redux-saga/effects";
 import { apiKey, baseUrl, language } from "../../../../ApiValue";
 import { getApiDatabase } from "../../../../getApiDatabase";
 import {
@@ -8,6 +8,8 @@ import {
 } from "./genreSlice";
 
 function* fetchGenresHandler() {
+  yield delay(500);
+
   try {
     const genres = yield call(
       getApiDatabase,

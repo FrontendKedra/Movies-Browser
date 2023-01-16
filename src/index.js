@@ -11,12 +11,10 @@ import store from "./store.js";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <Provider store={store}>
-    <React.StrictMode>
       <ThemeProvider theme={theme}>
         <App />
         <GlobalStyle />
       </ThemeProvider>
-    </React.StrictMode>
   </Provider>
 );
 

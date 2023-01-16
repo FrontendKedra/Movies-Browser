@@ -3,17 +3,20 @@ import { createSlice } from "@reduxjs/toolkit";
 const genreSlice = createSlice({
   name: "genres",
   initialState: {
+    state: "initial",
     genre: [],
   },
   reducers: {
     fetchGenres: () => ({
+      state: "loading",
       genre: [],
     }),
     fetchGenresSuccess: (state, { payload: genresApi }) => ({
+      state: "success",
       genre: genresApi.genres,
     }),
     fetchGenresError: () => ({
-      genre: [],
+      state: "error"
     }),
   },
 });

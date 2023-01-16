@@ -51,6 +51,7 @@ export const Button = styled.button`
   @media (max-width: ${({ theme }) => theme.breakpoints.small}) {
     padding: 8px 12px;
     margin: 0px 8px 0px 0px;
+    gap: 0;
   }
 
   ${({ next }) => next && css`

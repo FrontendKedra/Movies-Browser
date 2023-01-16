@@ -70,7 +70,7 @@ export const Title = styled.h2`
   font-size: 22px;
   line-height: 1.3;
   color: ${({ theme }) => theme.colors.black};
-  margin: 0 0 0 16px;
+  margin: 0 16px;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.mobileMax}) {
     font-size: 22px;
@@ -87,7 +87,7 @@ export const Year = styled.p`
   font-size: 16px;
   line-height: 1.5;
   color: ${({ theme }) => theme.colors.darkGrey};
-  margin: 0 0 0 16px;
+  margin: 0 16px;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.small}) {
     font-size: 13px;

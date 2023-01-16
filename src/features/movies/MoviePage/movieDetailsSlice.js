@@ -3,7 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const movieDetailsSlice = createSlice({
   name: "movieDetails",
   initialState: {
-    status: "loading",
+    status: "initial",
     movie: [],
     cast: [],
     crew: [],
@@ -11,13 +11,8 @@ const movieDetailsSlice = createSlice({
   reducers: {
     fetchMovieDetails: () => ({
       status: "loading",
-      movie: [],
-      cast: [],
-      crew: [],
     }),
-    fetchMovieDetailsSuccess: (
-      state,
-      { payload: { movieDetails, movie } }
+    fetchMovieDetailsSuccess: (state, { payload: { movieDetails, movie } }
     ) => ({
       status: "success",
       movie: [movieDetails],
@@ -26,9 +21,6 @@ const movieDetailsSlice = createSlice({
     }),
     fetchMovieDetailsError: () => ({
       status: "error",
-      movie: [],
-      cast: [],
-      crew: [],
     }),
   },
 });

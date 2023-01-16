@@ -3,7 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const popularMoviesSlice = createSlice({
   name: "popularMovies",
   initialState: {
-    status: "loading",
+    status: "initial",
     movies: [],
     totalPages: 0,
     query: "",
@@ -12,9 +12,6 @@ const popularMoviesSlice = createSlice({
   reducers: {
     fetchPopularMovies: () => ({
       status: "loading",
-      movies: [],
-      totalPages: 0,
-      totalResults: 0,
     }),
     fetchPopularMoviesSuccess: (state, { payload: movies }) => ({
       status: "success",
@@ -24,9 +21,6 @@ const popularMoviesSlice = createSlice({
     }),
     fetchPopularMoviesError: () => ({
       status: "error",
-      movies: [],
-      totalPages: 0,
-      totalResults: 0,
     }),
   },
 });

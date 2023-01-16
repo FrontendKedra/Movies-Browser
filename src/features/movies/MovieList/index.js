@@ -13,13 +13,14 @@ import { Loader } from "../../../common/states/Loader";
 import { Error } from "../../../common/states/Error";
 import useQueryParameter from "../../../useQueryParameter";
 import { NoResult } from "../../../common/states/NoResult";
-import { fetchGenres } from "../../../common/tiles/MovieTile/Genre/genreSlice";
 import { Pagination } from "../../../common/Pagination";
 import { Wrapper } from "../../../common/tiles/generisStyles/styled";
+import { fetchGenres, selectGenres } from "../../../common/tiles/MovieTile/Genre/genreSlice";
 
 export const MovieList = () => {
   const dispatch = useDispatch();
   const movies = useSelector(selectPopularMovies);
+  const genres = useSelector(selectGenres);
   const stateOfLoading = useSelector(selectPopularMoviesStatus);
   const query = useQueryParameter("search");
   const page = useQueryParameter("page");
@@ -46,7 +47,7 @@ export const MovieList = () => {
               <ListTitle>
                 {query
                   ? `Search results for "${query}" (${totalResults})`
-                  : "Popular movies"}
+                  : `Popular movies`}
               </ListTitle>
               <ContentContainer>
                 {movies.map(
@@ -68,6 +69,7 @@ export const MovieList = () => {
                       release_date={release_date}
                       rating={vote_average}
                       votes={vote_count}
+                      genres={genres}
                     />
                   )
                 )}

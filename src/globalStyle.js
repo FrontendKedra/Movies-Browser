@@ -11,6 +11,6 @@ export const GlobalStyle = createGlobalStyle`
     
     body {
         background: #F5F5FA;
-        font-family: 'Poppins';
+        font-family: 'Poppins';  
     }
 `;
