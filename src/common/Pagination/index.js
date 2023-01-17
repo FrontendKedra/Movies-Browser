@@ -7,53 +7,40 @@ import {
   PageCounter,
   Span,
 } from "./styled";
-import useQueryParameter from "../../useQueryParameter";
-import { useReplaceQueryParameter } from "../../useReplaceQueryParameter";
+import { usePageNumber } from "../../usePageNumber";
 
 export const Pagination = ({ totalPages }) => {
-  const urlPage = +useQueryParameter("page");
-  const pageChecker = (urlPage) => {
-    return urlPage < 1 ? 1 : urlPage;
-  };
-  const page = pageChecker(urlPage);
-
-  const replaceQueryParameter = useReplaceQueryParameter();
-  const setPage = (page) => {
-    replaceQueryParameter({
-      key: "page",
-      value: page,
-    });
-  };
+  const [pageNumber, changePage] = usePageNumber();
 
   return (
     <PageChanger>
-      <Button disabled={page === 1} onClick={() => setPage(1)}>
+      <Button disabled={pageNumber === 1} onClick={() => changePage(1)}>
         <ArrowIconPrevious mobile="true" />
         <ArrowIconPrevious />
         <ButtonText>First</ButtonText>
       </Button>
-      <Button disabled={page === 1} onClick={() => setPage(page - 1)}>
+      <Button disabled={pageNumber === 1} onClick={() => changePage(pageNumber - 1)}>
         <ArrowIconPrevious />
         <ButtonText>Previous</ButtonText>
       </Button>
       <PageCounter>
         Page
-        <Span>{page}</Span>
+        <Span>{pageNumber}</Span>
         of
         <Span>{totalPages > 500 ? 500 : totalPages}</Span>
       </PageCounter>
       <Button
         next
-        disabled={page === (totalPages > 500 ? 500 : totalPages)}
-        onClick={() => setPage(page + 1)}
+        disabled={pageNumber === (totalPages > 500 ? 500 : totalPages)}
+        onClick={() => changePage(pageNumber + 1)}
       >
         <ButtonText>Next</ButtonText>
         <ArrowIconNext />
       </Button>
       <Button
         next
-        disabled={page === (totalPages > 500 ? 500 : totalPages)}
-        onClick={() => setPage(totalPages > 500 ? 500 : totalPages)}
+        disabled={pageNumber === (totalPages > 500 ? 500 : totalPages)}
+        onClick={() => changePage(totalPages > 500 ? 500 : totalPages)}
       >
         <ButtonText>Last</ButtonText>
         <ArrowIconNext mobile="true" />
