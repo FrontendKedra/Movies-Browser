@@ -18,7 +18,6 @@ import camera from "./icons/camera.svg";
 import search from "./icons/search.svg";
 
 export const Header = () => {
-
   const location = useLocation();
 
   const query = useQueryParameter("search");
@@ -53,13 +52,9 @@ export const Header = () => {
         <SearchBar>
           <SearchIcon src={search} alt="" />
           <SearchInput
-            placeholder={
-              `Search for ${location.pathname === "/people" ||
-                location.pathname.indexOf("/profile") === 0
-                ? "people..."
-                : "movies..."
-              }`
-            }
+            placeholder={`Search for ${
+              location.pathname.includes("/people") ? "people..." : "movies..."
+            }`}
             value={query || ""}
             onChange={onInputChange}
           />
