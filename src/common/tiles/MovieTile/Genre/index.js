@@ -1,9 +1,7 @@
 import { GenreContainer, GenreItem } from "./styled";
 
 export const Genre = ({ genre_ids, genres }) => {
-  const filteredGenres = (genre_ids
-    .map((genre) => genres.filter(({ id }) => genre === id))
-  ).flat();
+  const filteredGenres = genres.filter(({ id }) => genre_ids.includes(id));
 
   return (
     <GenreContainer>
