@@ -21,7 +21,10 @@ https://frontendkedra.github.io/Movies-Browser/
 - Redux Toolkit
 - CSS Flexbox/ Grid
 - data imported from API - using Axios
-- ES6+
+- Javascript ES6+
+- Github(pull requests & review)
+- Error handling
+- Trello
 
 # Getting Started with Create React App
 
