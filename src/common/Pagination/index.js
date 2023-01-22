@@ -12,14 +12,17 @@ import { usePageNumber } from "../../usePageNumber";
 export const Pagination = ({ totalPages }) => {
   const [pageNumber, changePage] = usePageNumber();
 
+  const isLastPage = totalPages > 500 ? 500 : totalPages;
+  const isFirstPage = pageNumber === 1;
+
   return (
     <PageChanger>
-      <Button disabled={pageNumber === 1} onClick={() => changePage(1)}>
+      <Button disabled={isFirstPage} onClick={() => changePage(1)}>
         <ArrowIconPrevious mobile="true" />
         <ArrowIconPrevious />
         <ButtonText>First</ButtonText>
       </Button>
-      <Button disabled={pageNumber === 1} onClick={() => changePage(pageNumber - 1)}>
+      <Button disabled={isFirstPage} onClick={() => changePage(pageNumber - 1)}>
         <ArrowIconPrevious />
         <ButtonText>Previous</ButtonText>
       </Button>
@@ -27,11 +30,11 @@ export const Pagination = ({ totalPages }) => {
         Page
         <Span>{pageNumber}</Span>
         of
-        <Span>{totalPages > 500 ? 500 : totalPages}</Span>
+        <Span>{isLastPage}</Span>
       </PageCounter>
       <Button
         next
-        disabled={pageNumber === (totalPages > 500 ? 500 : totalPages)}
+        disabled={pageNumber === isLastPage}
         onClick={() => changePage(pageNumber + 1)}
       >
         <ButtonText>Next</ButtonText>
@@ -39,8 +42,8 @@ export const Pagination = ({ totalPages }) => {
       </Button>
       <Button
         next
-        disabled={pageNumber === (totalPages > 500 ? 500 : totalPages)}
-        onClick={() => changePage(totalPages > 500 ? 500 : totalPages)}
+        disabled={pageNumber === isLastPage}
+        onClick={() => changePage(isLastPage)}
       >
         <ButtonText>Last</ButtonText>
         <ArrowIconNext mobile="true" />
