@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Loader } from "../../../common/states/Loader";
-import { Error } from "../../../common/states/Error";
+import { Loader } from "../../../common/fetchStates/Loader";
+import { Error } from "../../../common/fetchStates/Error";
 import { PersonTile } from "../../../common/tiles/PersonTile";
 import {
   fetchPopularPeople,
@@ -12,7 +12,7 @@ import {
 } from "../popularPeopleSlice";
 import { PersonContainer, ListTitle } from "./styled";
 import { Pagination } from "../../../common/Pagination";
-import { NoResult } from "../../../common/states/NoResult";
+import { NoResult } from "../../../common/fetchStates/NoResult";
 import { Wrapper } from "../../../common/tiles/generisStyles/styled";
 import useQueryParameter from "../../../useQueryParameter";
 

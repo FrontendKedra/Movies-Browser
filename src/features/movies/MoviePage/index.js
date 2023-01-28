@@ -11,8 +11,8 @@ import {
   selectMovieCrew,
 } from "./movieDetailsSlice";
 import { ContentContainer, Header, Wrapper } from "./styled";
-import { Loader } from "../../../common/states/Loader";
-import { Error } from "../../../common/states/Error";
+import { Loader } from "../../../common/fetchStates/Loader";
+import { Error } from "../../../common/fetchStates/Error";
 import { PersonTile } from "../../../common/tiles/PersonTile";
 import useQueryParameter from "../../../useQueryParameter";
 import { MovieList } from "../MovieList";

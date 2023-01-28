@@ -9,8 +9,8 @@ import {
   selectPersonStatus,
 } from "./personSlice";
 import { ContentContainer, Header, Wrapper } from "./styled";
-import { Loader } from "../../../common/states/Loader";
-import { Error } from "../../../common/states/Error";
+import { Loader } from "../../../common/fetchStates/Loader";
+import { Error } from "../../../common/fetchStates/Error";
 import { BigTile } from "../../../common/tiles/BigTile";
 import { MovieTile } from "../../../common/tiles/MovieTile";
 import useQueryParameter from "../../../useQueryParameter";

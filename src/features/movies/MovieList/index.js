@@ -9,10 +9,10 @@ import {
   selectPopularMoviesTotalResults,
 } from "../popularMoviesSlice";
 import { MovieTile } from "../../../common/tiles/MovieTile";
-import { Loader } from "../../../common/states/Loader";
-import { Error } from "../../../common/states/Error";
+import { Loader } from "../../../common/fetchStates/Loader";
+import { Error } from "../../../common/fetchStates/Error";
 import useQueryParameter from "../../../useQueryParameter";
-import { NoResult } from "../../../common/states/NoResult";
+import { NoResult } from "../../../common/fetchStates/NoResult";
 import { Pagination } from "../../../common/Pagination";
 import { Wrapper } from "../../../common/tiles/generisStyles/styled";
 import { fetchGenres, selectGenres } from "../../../common/tiles/MovieTile/Genre/genreSlice";
