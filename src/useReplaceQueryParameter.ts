@@ -4,14 +4,19 @@ export const useReplaceQueryParameter = () => {
   const location = useLocation();
   const history = useHistory();
 
-  return ({ key, value }) => {
+  interface HookProps<ItemType> {
+    key: string;
+    value: ItemType;
+  }
+
+  return <ItemType>({ key, value }: HookProps<ItemType>) => {
     const searchParams = new URLSearchParams(location.search);
     searchParams.delete("page");
 
-    if (value === "") {
+    if (!value) {
       searchParams.delete(key);
     } else {
-      searchParams.set(key, value);
+      searchParams.set(key, value.toString());
     }
 
     history.push(`${location.pathname}?${searchParams.toString()}`);
