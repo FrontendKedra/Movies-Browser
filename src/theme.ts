@@ -1,4 +1,15 @@
-export const theme = {
+interface Theme {
+  [index: string]: string;
+}
+
+interface ThemeFields {
+  colors: Theme;
+  breakpoints: Theme;
+  radius: Theme;
+  shadow: Theme;
+}
+
+export const theme: ThemeFields = {
   colors: {
     darkBlack: "#000000",
     black: "#18181B",

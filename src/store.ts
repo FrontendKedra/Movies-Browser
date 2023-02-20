@@ -9,7 +9,7 @@ import rootSaga from "./rootSaga";
 
 const sagaMiddleware = createSagaMiddleware();
 
-const store = configureStore({
+export const store = configureStore({
   reducer: {
     popularMovies: popularMoviesReducer,
     popularPeople: popularPeopleReducer,
@@ -22,4 +22,4 @@ const store = configureStore({
 
 sagaMiddleware.run(rootSaga);
 
-export default store;
+export type RootState = ReturnType<typeof store.getState>;
