@@ -23,10 +23,10 @@ export const Header = () => {
   const query = useQueryParameter("search");
   const replaceQueryParam = useReplaceQueryParameter();
 
-  const onInputChange = ({ target }) => {
+  const onInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     replaceQueryParam({
       key: "search",
-      value: target.value.trim() !== "" ? target.value : "",
+      value: event.target.value.trim() !== "" ? event.target.value : undefined,
     });
   };
 
