@@ -1,6 +1,10 @@
 import { Image, Header, Container, Wrapper } from "./styled";
 
-export const NoResult = ({ query }) => (
+interface NoResult {
+  query: string | null;
+}
+
+export const NoResult = ({ query }: NoResult) => (
   <Wrapper>
     <Header>Sorry, there are no results for “{query}”</Header>
     <Container>
