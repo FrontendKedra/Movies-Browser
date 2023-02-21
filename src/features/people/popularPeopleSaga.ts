@@ -1,4 +1,5 @@
 import { call, debounce, delay, put } from "redux-saga/effects";
+import { PersonPopularAndSearch } from "../../apiInterfaces/peopleInterfaces/personPopularAndSearch";
 import { apiKey, baseUrl, language } from "../../ApiValue";
 import { getApiDatabase } from "../../getApiDatabase";
 import {
@@ -7,7 +8,16 @@ import {
   fetchPopularPeopleSuccess,
 } from "./popularPeopleSlice";
 
-function* fetchPopularPeopleHandler({ payload: { page, query } }) {
+interface PopularPeoplePayload {
+  payload: {
+    page: string | null;
+    query: string | null;
+  };
+}
+
+function* fetchPopularPeopleHandler({
+  payload: { page, query },
+}: PopularPeoplePayload) {
   const path =
     query === null
       ? `${baseUrl}/person/popular${apiKey}${language}&page=${page}`
@@ -16,7 +26,10 @@ function* fetchPopularPeopleHandler({ payload: { page, query } }) {
   yield delay(500);
 
   try {
-    const people = yield call(getApiDatabase, path);
+    const people: PersonPopularAndSearch = yield call(
+      getApiDatabase<PersonPopularAndSearch>,
+      path
+    );
     yield put(fetchPopularPeopleSuccess(people));
   } catch (error) {
     yield put(fetchPopularPeopleError());
@@ -24,5 +37,5 @@ function* fetchPopularPeopleHandler({ payload: { page, query } }) {
 }
 
 export function* watchFetchPopularPeople() {
-  yield debounce(500, fetchPopularPeople.type, fetchPopularPeopleHandler);
+  yield debounce(500, fetchPopularPeople, fetchPopularPeopleHandler);
 }
