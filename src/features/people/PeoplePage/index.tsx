@@ -56,7 +56,7 @@ export const PeoplePage = () => {
                   />
                 ))}
               </PersonContainer>
-              <Pagination page={page} totalPages={totalPages} />
+              <Pagination totalPages={totalPages} />
             </>
           )}
         </Wrapper>
