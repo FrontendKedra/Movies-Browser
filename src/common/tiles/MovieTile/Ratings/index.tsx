@@ -1,6 +1,11 @@
 import { Rate, RatingsContainer, StyledStar, Votes } from "./styled";
 
-export const Ratings = ({ rating, votes }) => {
+interface RatingsProps {
+  rating: number;
+  votes: number;
+}
+
+export const Ratings = ({ rating, votes }: RatingsProps) => {
   return (
     <RatingsContainer>
       <StyledStar />
