@@ -11,6 +11,21 @@ import { Genre } from "./Genre";
 import { imageBaseUrl } from "../../../ApiValue";
 import noPoster from "./noPoster.png";
 import { MovieStyledLink } from "../generisStyles/styled";
+import { Genres } from "../../../apiInterfaces/genres";
+
+interface MovieTileProps {
+  id: number;
+  poster_path: string;
+  title: string;
+  release_date?: string;
+  rating: number;
+  votes: number;
+  genre_ids: number[];
+  character?: string;
+  job?: string;
+  year?: string;
+  genres: Genres[];
+}
 
 export const MovieTile = ({
   id,
@@ -23,8 +38,8 @@ export const MovieTile = ({
   character,
   job,
   year,
-  genres
-}) => (
+  genres,
+}: MovieTileProps) => (
   <MovieStyledLink to={`/movie-list/movie-page/${id}`} key={id}>
     <Container>
       <Poster
@@ -37,20 +52,19 @@ export const MovieTile = ({
 
           {release_date && <Year>{release_date.slice(0, 4)}</Year>}
 
-          {character && (
+          {(character && year) && (
             <Year>
               {character} {`(${year.slice(0, 4)})`}
             </Year>
           )}
 
-          {job && (
+          {(job && year) && (
             <Year>
               {job} {`(${year.slice(0, 4)})`}
             </Year>
           )}
 
-          {genre_ids &&
-            <Genre genre_ids={genre_ids} genres={genres} />}
+          {genre_ids && <Genre genre_ids={genre_ids} genres={genres} />}
         </Details>
         {rating && votes ? (
           <StyledRatings rating={rating} votes={votes} />
