@@ -16,10 +16,11 @@ import { Error } from "../../../common/fetchStates/Error";
 import { PersonTile } from "../../../common/tiles/PersonTile";
 import useQueryParameter from "../../../useQueryParameter";
 import { MovieList } from "../MovieList";
+import { Id } from "../../../apiInterfaces/generalTypesInterfaces/interface";
 
 export const MoviePage = () => {
   const dispatch = useDispatch();
-  const { id } = useParams();
+  const { id } = useParams<Id>();
   const movie = useSelector(selectMovie);
   const cast = useSelector(selectMovieCast);
   const crew = useSelector(selectMovieCrew);
@@ -39,7 +40,13 @@ export const MoviePage = () => {
       ) : query === null ? (
         <>
           {movie.map(
-            ({ original_title, vote_average, vote_count, backdrop_path, id}) => (
+            ({
+              original_title,
+              vote_average,
+              vote_count,
+              backdrop_path,
+              id,
+            }) => (
               <Backdrop
                 key={id}
                 title={original_title}
@@ -64,7 +71,6 @@ export const MoviePage = () => {
               }) => (
                 <BigTile
                   key={id}
-                  id={id}
                   poster_path={poster_path}
                   title={title}
                   release_date={release_date}
