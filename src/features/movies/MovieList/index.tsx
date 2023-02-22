@@ -74,7 +74,7 @@ export const MovieList = () => {
                   )
                 )}
               </ContentContainer>
-              <Pagination totalPages={totalPages} page={page} />
+              <Pagination totalPages={totalPages} />
             </>
           )}
         </Wrapper>
