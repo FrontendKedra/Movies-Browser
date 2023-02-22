@@ -19,10 +19,11 @@ import {
   fetchGenres,
   selectGenres,
 } from "../../../common/tiles/MovieTile/Genre/genreSlice";
+import { Id } from "../../../apiInterfaces/generalTypesInterfaces/interface";
 
 export const PersonPage = () => {
   const dispatch = useDispatch();
-  const { id } = useParams();
+  const { id } = useParams<Id>();
   const cast = useSelector(selectCast);
   const crew = useSelector(selectCrew);
   const person = useSelector(selectPerson);
