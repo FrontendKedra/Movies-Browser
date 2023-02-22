@@ -9,8 +9,14 @@ import {
 } from "./styled";
 import { usePageNumber } from "../../usePageNumber";
 
-export const Pagination = ({ totalPages }) => {
-  const [pageNumber, changePage] = usePageNumber();
+interface PaginationProps {
+  totalPages: number;
+}
+
+export type UsePageNumber = [number, (pageNumber: number) => void];
+
+export const Pagination = ({ totalPages }: PaginationProps) => {
+  const [pageNumber, changePage]: UsePageNumber = usePageNumber();
 
   const isLastPage = totalPages > 500 ? 500 : totalPages;
   const isFirstPage = pageNumber === 1;
