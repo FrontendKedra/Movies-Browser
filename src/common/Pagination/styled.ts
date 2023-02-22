@@ -2,6 +2,10 @@ import styled, { css, keyframes } from "styled-components";
 import { ReactComponent as arrow } from "./images/previousArrow.svg";
 import { ReactComponent as arrowNext } from "./images/nextArrow.svg";
 
+interface Next {
+  next?: boolean;
+}
+
 const move = keyframes`
   0% {
     transform: translateX(0px);
@@ -28,10 +32,10 @@ export const PageChanger = styled.div`
 
   @media (max-width: ${({ theme }) => theme.breakpoints.large}) {
     margin: 32px 0px 87px 0px;
-  } 
+  }
   @media (max-width: ${({ theme }) => theme.breakpoints.small}) {
     margin: 32px 0px 15px 0px;
-  } 
+  }
 `;
 
 export const Button = styled.button`
@@ -46,7 +50,7 @@ export const Button = styled.button`
   gap: 8px;
   border: none;
   cursor: pointer;
-  transition: background .3s;
+  transition: background 0.3s;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.small}) {
     padding: 8px 12px;
@@ -54,18 +58,20 @@ export const Button = styled.button`
     gap: 0;
   }
 
-  ${({ next }) => next && css`
-    margin: 0px 0px 0px 12px;
+  ${({ next }: Next) =>
+    next &&
+    css`
+      margin: 0px 0px 0px 12px;
 
-    @media (max-width: ${({ theme }) => theme.breakpoints.small}) {
-      margin: 0px 0px 0px 8px;
-    }
-  `}
+      @media (max-width: ${({ theme }) => theme.breakpoints.small}) {
+        margin: 0px 0px 0px 8px;
+      }
+    `}
 
-  &:active{
+  &:active {
     background: #ccdbf7;
   }
-  &:disabled{
+  &:disabled {
     background: ${({ theme }) => theme.colors.grey};
     color: ${({ theme }) => theme.colors.black};
     pointer-events: none;
@@ -97,14 +103,16 @@ export const ArrowIconPrevious = styled(arrow)`
     height: 8px;
   }
 
-  ${({ mobile }) => mobile && css`
-    display: none;
-      
-    @media (max-width: ${({ theme }) => theme.breakpoints.small}) {
-      display: block;
-      margin-right: 4px;
-    }
-  `}
+  ${({ mobile }) =>
+    mobile &&
+    css`
+      display: none;
+
+      @media (max-width: ${({ theme }) => theme.breakpoints.small}) {
+        display: block;
+        margin-right: 4px;
+      }
+    `}
 `;
 
 export const ArrowIconNext = styled(arrowNext)`
@@ -123,14 +131,16 @@ export const ArrowIconNext = styled(arrowNext)`
     width: 5px;
     height: 8px;
   }
-  ${({ mobile }) => mobile && css`
-    display: none;
-    
-    @media (max-width: ${({ theme }) => theme.breakpoints.small}) {
-      display: block;
-      margin-right: 4px;
-    }
-  `}
+  ${({ mobile }) =>
+    mobile &&
+    css`
+      display: none;
+
+      @media (max-width: ${({ theme }) => theme.breakpoints.small}) {
+        display: block;
+        margin-right: 4px;
+      }
+    `}
 `;
 
 export const PageCounter = styled.div`
