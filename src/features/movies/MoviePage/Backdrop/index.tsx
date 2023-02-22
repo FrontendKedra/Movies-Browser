@@ -13,7 +13,19 @@ import {
   Wrapper,
 } from "./styled";
 
-export const Backdrop = ({ title, rating, votes, backdrop_path }) => (
+interface BackdropProps {
+  title: string;
+  rating: number;
+  votes: number;
+  backdrop_path: string;
+}
+
+export const Backdrop = ({
+  title,
+  rating,
+  votes,
+  backdrop_path,
+}: BackdropProps) => (
   <>
     {backdrop_path && (
       <Wrapper>
