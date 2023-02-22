@@ -1,22 +1,24 @@
 import { useEffect } from "react";
 import { useState } from "react";
 import { useHistory, useLocation } from "react-router-dom";
+import { UsePageNumber } from "./common/Pagination/index";
 
-export const usePageNumber = () => {
+export const usePageNumber = (): UsePageNumber => {
   const history = useHistory();
   const location = useLocation();
   const [pageNumber, setPageNumber] = useState(1);
 
   useEffect(() => {
-    const currentPage = +new URLSearchParams(location.search).get("page");
+    const currentPage = new URLSearchParams(location.search).get("page");
+
     if (currentPage) {
-      setPageNumber(currentPage);
+      setPageNumber(parseInt(currentPage));
     }
   }, [location]);
 
-  const changePage = (newPage) => {
+  const changePage = (newPage: number) => {
     const queryParams = new URLSearchParams(location.search);
-    queryParams.set("page", newPage);
+    queryParams.set("page", newPage.toString());
 
     history.push(`${location.pathname}?${queryParams.toString()}`);
 
