@@ -24,6 +24,24 @@ import {
 import noPicture from "../PersonTile/noPicture.png";
 import noPoster from "../MovieTile/noPoster.png";
 import { useState, useEffect } from "react";
+import {
+  MovieGenre,
+  ProductionCountry,
+} from "../../../apiInterfaces/movieInterfaces/movieDetails";
+
+interface BigTileProps {
+  poster_path?: string;
+  title: string;
+  release_date?: string;
+  place_of_birth?: string;
+  birthday?: string;
+  rating?: number;
+  votes?: number;
+  countries?: ProductionCountry[];
+  article: string;
+  genres?: MovieGenre[];
+  profile_path?: string;
+}
 
 export const BigTile = ({
   poster_path,
@@ -37,9 +55,9 @@ export const BigTile = ({
   article,
   genres,
   profile_path,
-}) => {
-  const dateOfRelease = new Date(release_date);
-  const dayOfBirth = new Date(birthday);
+}: BigTileProps) => {
+  const dateOfRelease = release_date ? new Date(release_date) : undefined;
+  const dayOfBirth = birthday ? new Date(birthday) : undefined;
   const [isMobile, setIsMobile] = useState(false);
 
   const setMobileState = () => {
@@ -84,7 +102,8 @@ export const BigTile = ({
                     {countries.map((country) => (
                       <SubHeaderInformation key={country.name}>
                         {country.name}
-                        {countries.indexOf(country) !== countries.length - 1 && ", "}
+                        {countries.indexOf(country) !== countries.length - 1 &&
+                          ", "}
                       </SubHeaderInformation>
                     ))}
                   </SubHeader>
@@ -94,7 +113,7 @@ export const BigTile = ({
                 <SubHeader>
                   <SubHeaderTitle>Release date:</SubHeaderTitle>
                   <SubHeaderInformation>
-                    {dateOfRelease.toLocaleDateString("pl-PL")}
+                    {dateOfRelease?.toLocaleDateString("pl-PL")}
                   </SubHeaderInformation>
                 </SubHeader>
               ) : null}
@@ -109,7 +128,7 @@ export const BigTile = ({
                     {isMobile ? "Birth:" : "Date of birth:"}
                   </SubHeaderDate>
                   <SubHeaderInformation>
-                    {dayOfBirth.toLocaleDateString("pl-PL")}
+                    {dayOfBirth?.toLocaleDateString("pl-PL")}
                   </SubHeaderInformation>
                 </Paragraf>
               )}
