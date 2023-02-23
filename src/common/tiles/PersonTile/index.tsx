@@ -18,7 +18,7 @@ export const PersonTile = ({
   big,
   character,
 }: PersonTileProps) => (
-  <PeopleStyledLink to={`/people/profile/${id}`} key={id}>
+  <PeopleStyledLink to={`/people/profile/${id}`}>
     <Container>
       <ProfileImage
         src={profile_path ? `${imageBaseUrl}/w342${profile_path}` : noPicture}
