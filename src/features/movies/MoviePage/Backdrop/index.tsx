@@ -1,3 +1,4 @@
+import { BackdropProps } from "../../../../apiInterfaces/generalTypesInterfaces/typesAndInterfaces";
 import { imageBaseUrl } from "../../../../ApiValue";
 import {
   BackdropImg,
@@ -12,13 +13,6 @@ import {
   Votes,
   Wrapper,
 } from "./styled";
-
-interface BackdropProps {
-  title: string;
-  rating: number;
-  votes: number;
-  backdrop_path: string;
-}
 
 export const Backdrop = ({
   title,

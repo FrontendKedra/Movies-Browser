@@ -1,10 +1,5 @@
-import { Genres } from "../../../../apiInterfaces/genres";
+import { GenreProps } from "../../../../apiInterfaces/generalTypesInterfaces/typesAndInterfaces";
 import { GenreContainer, GenreItem } from "./styled";
-
-interface GenreProps {
-  genre_ids: number[];
-  genres: Genres[];
-}
 
 export const Genre = ({ genre_ids, genres }: GenreProps) => {
   const filteredGenres = genres.filter(({ id }) => genre_ids.includes(id));

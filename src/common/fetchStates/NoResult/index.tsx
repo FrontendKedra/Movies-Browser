@@ -1,10 +1,7 @@
+import { NoResultProps } from "../../../apiInterfaces/generalTypesInterfaces/typesAndInterfaces";
 import { Image, Header, Container, Wrapper } from "./styled";
 
-interface NoResult {
-  query: string | null;
-}
-
-export const NoResult = ({ query }: NoResult) => (
+export const NoResult = ({ query }: NoResultProps) => (
   <Wrapper>
     <Header>Sorry, there are no results for “{query}”</Header>
     <Container>

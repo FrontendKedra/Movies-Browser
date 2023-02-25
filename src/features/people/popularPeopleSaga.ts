@@ -1,4 +1,5 @@
 import { call, debounce, delay, put } from "redux-saga/effects";
+import { PopularPeoplePayload } from "../../apiInterfaces/generalTypesInterfaces/typesAndInterfaces";
 import { PersonPopularAndSearch } from "../../apiInterfaces/peopleInterfaces/personPopularAndSearch";
 import { apiKey, baseUrl, language } from "../../ApiValue";
 import { getApiDatabase } from "../../getApiDatabase";
@@ -7,13 +8,6 @@ import {
   fetchPopularPeopleError,
   fetchPopularPeopleSuccess,
 } from "./popularPeopleSlice";
-
-interface PopularPeoplePayload {
-  payload: {
-    page: string | null;
-    query: string | null;
-  };
-}
 
 function* fetchPopularPeopleHandler({
   payload: { page, query },

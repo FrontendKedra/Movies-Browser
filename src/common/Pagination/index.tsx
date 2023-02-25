@@ -8,12 +8,7 @@ import {
   Span,
 } from "./styled";
 import { usePageNumber } from "../../usePageNumber";
-
-interface PaginationProps {
-  totalPages: number;
-}
-
-export type UsePageNumber = [number, (pageNumber: number) => void];
+import { PaginationProps, UsePageNumber } from "../../apiInterfaces/generalTypesInterfaces/typesAndInterfaces";
 
 export const Pagination = ({ totalPages }: PaginationProps) => {
   const [pageNumber, changePage]: UsePageNumber = usePageNumber();

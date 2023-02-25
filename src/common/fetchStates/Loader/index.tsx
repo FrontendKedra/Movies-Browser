@@ -1,10 +1,7 @@
+import { LoaderProps } from "../../../apiInterfaces/generalTypesInterfaces/typesAndInterfaces";
 import { IconSpinner, Header, Container, Wrapper } from "./styled";
 
-interface Loader {
-  title: string;
-}
-
-export const Loader = ({ title }: Loader) => (
+export const Loader = ({ title }: LoaderProps) => (
   <Wrapper>
     <Header>{title}</Header>
     <Container>

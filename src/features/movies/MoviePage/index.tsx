@@ -16,7 +16,7 @@ import { Error } from "../../../common/fetchStates/Error";
 import { PersonTile } from "../../../common/tiles/PersonTile";
 import useQueryParameter from "../../../useQueryParameter";
 import { MovieList } from "../MovieList";
-import { Id } from "../../../apiInterfaces/generalTypesInterfaces/interface";
+import { Id } from "../../../apiInterfaces/generalTypesInterfaces/typesAndInterfaces";
 
 export const MoviePage = () => {
   const dispatch = useDispatch();

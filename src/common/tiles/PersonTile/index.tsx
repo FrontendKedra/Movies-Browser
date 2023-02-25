@@ -2,14 +2,7 @@ import { imageBaseUrl } from "../../../ApiValue";
 import { Container, ProfileImage, Name, Info } from "./styled";
 import noPicture from "./noPicture.png";
 import { PeopleStyledLink } from "../generisStyles/styled";
-
-interface PersonTileProps {
-  id: number;
-  profile_path: string;
-  name: string;
-  big?: boolean;
-  character?: string;
-}
+import { PersonTileProps } from "../../../apiInterfaces/generalTypesInterfaces/typesAndInterfaces";
 
 export const PersonTile = ({
   id,

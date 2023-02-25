@@ -24,24 +24,8 @@ import {
 import noPicture from "../PersonTile/noPicture.png";
 import noPoster from "../MovieTile/noPoster.png";
 import { useState, useEffect } from "react";
-import {
-  MovieGenre,
-  ProductionCountry,
-} from "../../../apiInterfaces/movieInterfaces/movieDetails";
+import { BigTileProps } from "../../../apiInterfaces/generalTypesInterfaces/typesAndInterfaces";
 
-interface BigTileProps {
-  poster_path?: string;
-  title: string;
-  release_date?: string;
-  place_of_birth?: string;
-  birthday?: string;
-  rating?: number;
-  votes?: number;
-  countries?: ProductionCountry[];
-  article: string;
-  genres?: MovieGenre[];
-  profile_path?: string;
-}
 
 export const BigTile = ({
   poster_path,

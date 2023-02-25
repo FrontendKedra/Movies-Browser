@@ -11,21 +11,7 @@ import { Genre } from "./Genre";
 import { imageBaseUrl } from "../../../ApiValue";
 import noPoster from "./noPoster.png";
 import { MovieStyledLink } from "../generisStyles/styled";
-import { Genres } from "../../../apiInterfaces/genres";
-
-interface MovieTileProps {
-  id: number;
-  poster_path: string;
-  title: string;
-  release_date?: string;
-  rating: number;
-  votes: number;
-  genre_ids: number[];
-  character?: string;
-  job?: string;
-  year?: string;
-  genres: Genres[];
-}
+import { MovieTileProps } from "../../../apiInterfaces/generalTypesInterfaces/typesAndInterfaces";
 
 export const MovieTile = ({
   id,

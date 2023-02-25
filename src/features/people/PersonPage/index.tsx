@@ -19,7 +19,7 @@ import {
   fetchGenres,
   selectGenres,
 } from "../../../common/tiles/MovieTile/Genre/genreSlice";
-import { Id } from "../../../apiInterfaces/generalTypesInterfaces/interface";
+import { Id } from "../../../apiInterfaces/generalTypesInterfaces/typesAndInterfaces";
 
 export const PersonPage = () => {
   const dispatch = useDispatch();

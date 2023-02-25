@@ -1,10 +1,7 @@
 import styled, { css, keyframes } from "styled-components";
 import { ReactComponent as arrow } from "./images/previousArrow.svg";
 import { ReactComponent as arrowNext } from "./images/nextArrow.svg";
-
-interface Next {
-  next?: boolean;
-}
+import { Next } from "../../apiInterfaces/generalTypesInterfaces/typesAndInterfaces";
 
 const move = keyframes`
   0% {
