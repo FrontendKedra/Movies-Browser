@@ -15,7 +15,9 @@ function* fetchPopularMoviesHandler({
   const path =
     query === null
       ? `${baseUrl}/movie/popular${apiKey}${language}&page=${page}`
-      : `${baseUrl}/search/movie${apiKey}${language}&query=${query}&page=${page}`;
+      : (page !== null
+      ? `${baseUrl}/search/movie${apiKey}${language}&query=${query}&page=${page}`
+      : `${baseUrl}/search/movie${apiKey}${language}&query=${query}&page=${"1"}`);
 
   yield delay(500);
 

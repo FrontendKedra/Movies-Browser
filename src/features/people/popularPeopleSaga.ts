@@ -15,7 +15,9 @@ function* fetchPopularPeopleHandler({
   const path =
     query === null
       ? `${baseUrl}/person/popular${apiKey}${language}&page=${page}`
-      : `${baseUrl}/search/person${apiKey}${language}&query=${query}&page=${page}`;
+      : (page !== null
+      ? `${baseUrl}/search/person${apiKey}${language}&query=${query}&page=${page}`
+      : `${baseUrl}/search/person${apiKey}${language}&query=${query}&page=${"1"}`);
 
   yield delay(500);
 
