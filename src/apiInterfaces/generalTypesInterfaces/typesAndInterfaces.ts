@@ -64,17 +64,6 @@ export interface MovieTileProps {
   genres: Genres[];
 }
 
-export interface PopularMoviesPayload {
-  payload: {
-    page: string | null;
-    query: string | null;
-  };
-}
-
-export interface MoviesPayload {
-  payload: string;
-}
-
 export interface BackdropProps {
   title: string;
   rating: number;
@@ -82,13 +71,13 @@ export interface BackdropProps {
   backdrop_path: string;
 }
 
-export interface PopularPeoplePayload {
+export interface PopularPayload {
   payload: {
     page: string | null;
     query: string | null;
   };
 }
 
-export interface PersonPayload {
+export interface PagePayload {
   payload: string;
 }

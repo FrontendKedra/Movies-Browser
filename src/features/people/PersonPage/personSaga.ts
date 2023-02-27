@@ -1,5 +1,5 @@
 import { call, put, takeLatest, all, delay } from "redux-saga/effects";
-import { PersonPayload } from "../../../apiInterfaces/generalTypesInterfaces/typesAndInterfaces";
+import { PagePayload } from "../../../apiInterfaces/generalTypesInterfaces/typesAndInterfaces";
 import { PersonDetails } from "../../../apiInterfaces/peopleInterfaces/personDetails";
 import { PersonMovieCredits } from "../../../apiInterfaces/peopleInterfaces/personMovieCredits";
 import { PersonDetailsCreditsTupple } from "../../../apiInterfaces/peopleInterfaces/personTupple";
@@ -11,7 +11,7 @@ import {
   fetchPersonSuccess,
 } from "./personSlice";
 
-function* fetchPersonHandler({ payload: id }: PersonPayload) {
+function* fetchPersonHandler({ payload: id }: PagePayload) {
   const personPath = `${baseUrl}/person/${id}/movie_credits${apiKey}${language}`;
   const detailsPath = `${baseUrl}/person/${id}${apiKey}${language}`;
 

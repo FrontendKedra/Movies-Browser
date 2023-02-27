@@ -1,5 +1,5 @@
 import { call, put, takeEvery, all, delay } from "redux-saga/effects";
-import { MoviesPayload } from "../../../apiInterfaces/generalTypesInterfaces/typesAndInterfaces";
+import { PagePayload } from "../../../apiInterfaces/generalTypesInterfaces/typesAndInterfaces";
 import { MovieCredits } from "../../../apiInterfaces/movieInterfaces/movieCredits";
 import { MovieDetails } from "../../../apiInterfaces/movieInterfaces/movieDetails";
 import { MovieDetailsCreditsTupple } from "../../../apiInterfaces/movieInterfaces/movieTupple";
@@ -11,7 +11,7 @@ import {
   fetchMovieDetailsSuccess,
 } from "./movieDetailsSlice";
 
-function* fetchMovieDetailsHandler({ payload: id }: MoviesPayload) {
+function* fetchMovieDetailsHandler({ payload: id }: PagePayload) {
   const movieDetailsPath = `${baseUrl}/movie/${id}${apiKey}${language}`;
   const moviePath = `${baseUrl}/movie/${id}/credits${apiKey}${language}`;
 
