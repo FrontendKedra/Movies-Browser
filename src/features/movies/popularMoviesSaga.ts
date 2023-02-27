@@ -1,5 +1,5 @@
 import { call, debounce, delay, put } from "redux-saga/effects";
-import { PopularMoviesPayload } from "../../apiInterfaces/generalTypesInterfaces/typesAndInterfaces";
+import { PopularPayload } from "../../apiInterfaces/generalTypesInterfaces/typesAndInterfaces";
 import { MoviePopularAndSearch } from "../../apiInterfaces/movieInterfaces/moviePopularAndSearch";
 import { apiKey, baseUrl, language } from "../../ApiValue";
 import { getApiDatabase } from "../../getApiDatabase";
@@ -11,7 +11,7 @@ import {
 
 function* fetchPopularMoviesHandler({
   payload: { page, query },
-}: PopularMoviesPayload) {
+}: PopularPayload) {
   const path =
     query === null
       ? `${baseUrl}/movie/popular${apiKey}${language}&page=${page}`

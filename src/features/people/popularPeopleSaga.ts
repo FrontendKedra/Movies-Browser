@@ -1,5 +1,5 @@
 import { call, debounce, delay, put } from "redux-saga/effects";
-import { PopularPeoplePayload } from "../../apiInterfaces/generalTypesInterfaces/typesAndInterfaces";
+import { PopularPayload } from "../../apiInterfaces/generalTypesInterfaces/typesAndInterfaces";
 import { PersonPopularAndSearch } from "../../apiInterfaces/peopleInterfaces/personPopularAndSearch";
 import { apiKey, baseUrl, language } from "../../ApiValue";
 import { getApiDatabase } from "../../getApiDatabase";
@@ -11,7 +11,7 @@ import {
 
 function* fetchPopularPeopleHandler({
   payload: { page, query },
-}: PopularPeoplePayload) {
+}: PopularPayload) {
   const path =
     query === null
       ? `${baseUrl}/person/popular${apiKey}${language}&page=${page}`
