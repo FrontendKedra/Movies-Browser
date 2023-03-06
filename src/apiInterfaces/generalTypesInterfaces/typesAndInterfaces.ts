@@ -1,4 +1,4 @@
-import { Genres } from "../genres";
+import { Genres } from "../genresInterfaces/genres";
 import { MovieGenre, ProductionCountry } from "../movieInterfaces/movieDetails";
 
 export interface Id {

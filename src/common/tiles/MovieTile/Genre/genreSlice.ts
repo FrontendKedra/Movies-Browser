@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { RootState } from "../../../../store";
-import { Genres } from "../../../../apiInterfaces/genres";
+import { Genres } from "../../../../apiInterfaces/genresInterfaces/genres";
 
 interface GenreState {
   status: string;

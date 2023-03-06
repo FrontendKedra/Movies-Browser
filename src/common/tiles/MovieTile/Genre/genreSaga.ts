@@ -1,5 +1,5 @@
 import { call, delay, put, takeLatest } from "redux-saga/effects";
-import { Genres } from "../../../../apiInterfaces/genres";
+import { Genres } from "../../../../apiInterfaces/genresInterfaces/genres";
 import { apiKey, baseUrl, language } from "../../../../ApiValue";
 import { getApiDatabase } from "../../../../getApiDatabase";
 import {
