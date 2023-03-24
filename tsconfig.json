@@ -102,6 +102,3 @@
       "jsx": "react-jsx"
     }
   }
-  // q: Cannot use JSX unless the '--jsx' flag is provided
-  // a: https://stackoverflow.com/questions/54001731/cannot-use-jsx-unless-the-jsx-flag-is-provided
-  
