@@ -45,7 +45,7 @@ export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   background-color: ${({ theme }) => theme.colors.lightGrey};
-  
+
   @media (max-width: ${({ theme }) => theme.breakpoints.largest}) {
     padding: 16px;
   }
