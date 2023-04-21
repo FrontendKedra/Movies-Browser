@@ -1,4 +1,4 @@
-import { call, debounce, delay, put } from "redux-saga/effects";
+import { call, delay, put, takeLatest } from "redux-saga/effects";
 import { PopularPayload } from "../../apiInterfaces/generalTypesInterfaces/typesAndInterfaces";
 import { PersonPopularAndSearch } from "../../apiInterfaces/peopleInterfaces/personPopularAndSearch";
 import { apiKey, baseUrl, language } from "../../ApiValue";
@@ -33,5 +33,5 @@ function* fetchPopularPeopleHandler({
 }
 
 export function* watchFetchPopularPeople() {
-  yield debounce(500, fetchPopularPeople, fetchPopularPeopleHandler);
+  yield takeLatest(fetchPopularPeople, fetchPopularPeopleHandler);
 }
