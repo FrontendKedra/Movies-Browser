@@ -16,17 +16,25 @@ import {
 } from "./styled";
 import camera from "./icons/camera.svg";
 import search from "./icons/search.svg";
+import { useEffect, useState } from "react";
 
 export const Header = () => {
   const location = useLocation();
 
-  const query = useQueryParameter("search");
-  const replaceQueryParam = useReplaceQueryParameter();
+  const queryInUrl = useQueryParameter("search");
+
+  const [inputValue, setInputValue] = useState(queryInUrl);
+
+  useEffect(() => {
+    setInputValue(queryInUrl);
+  }, [queryInUrl]);
+
+  const replaceQueryParam = useReplaceQueryParameter(setInputValue);
 
   const onInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     replaceQueryParam({
       key: "search",
-      value: event.target.value.trim() !== "" ? event.target.value : undefined,
+      value: event.target.value.trim() !== "" ? event.target.value : "",
     });
   };
 
@@ -55,7 +63,7 @@ export const Header = () => {
             placeholder={`Search for ${
               location.pathname.includes("/people") ? "people..." : "movies..."
             }`}
-            value={query || ""}
+            value={inputValue || ""}
             onChange={onInputChange}
           />
         </SearchBar>

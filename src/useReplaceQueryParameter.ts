@@ -1,24 +1,33 @@
 import { useHistory, useLocation } from "react-router-dom";
+import { useRef } from "react";
 
-export const useReplaceQueryParameter = () => {
+interface SetInputValue {
+  (value: string | null): void;
+}
+
+interface HookProps {
+  key: string;
+  value: string | null;
+}
+
+export const useReplaceQueryParameter = (setInputValue: SetInputValue) => {
   const location = useLocation();
   const history = useHistory();
+  const timeoutRef = useRef<number | undefined>(undefined);
 
-  interface HookProps<ItemType> {
-    key: string;
-    value: ItemType;
-  }
-
-  return <ItemType>({ key, value }: HookProps<ItemType>) => {
+  return ({ key, value }: HookProps) => {
     const searchParams = new URLSearchParams(location.search);
     searchParams.delete("page");
+    clearTimeout(timeoutRef.current);
+    setInputValue(value);
 
-    if (!value) {
-      searchParams.delete(key);
-    } else {
-      searchParams.set(key, value.toString());
-    }
-
-    history.push(`${location.pathname}?${searchParams.toString()}`);
+    timeoutRef.current = window.setTimeout(() => {
+      if (!value) {
+        searchParams.delete(key);
+      } else {
+        searchParams.set(key, value.toString());
+      }
+      history.push(`${location.pathname}?${searchParams.toString()}`);
+    }, 500);
   };
 };
