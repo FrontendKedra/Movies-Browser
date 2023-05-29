@@ -81,3 +81,7 @@ export interface PopularPayload {
 export interface PagePayload {
   payload: string;
 }
+
+export interface Big {
+  big?: boolean;
+}

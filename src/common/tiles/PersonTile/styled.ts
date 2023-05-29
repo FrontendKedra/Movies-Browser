@@ -1,8 +1,5 @@
 import styled, { css } from "styled-components";
-
-interface Big {
-  big?: boolean;
-}
+import { Big } from "../../../apiInterfaces/generalTypesInterfaces/typesAndInterfaces";
 
 export const Container = styled.div`
   padding: 16px;
