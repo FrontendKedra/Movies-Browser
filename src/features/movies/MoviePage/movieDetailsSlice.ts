@@ -8,7 +8,7 @@ import {
 
 interface MovieDetailsState {
   status: string;
-  movie: MovieDetails[];
+  movie: MovieDetails[];  
   cast: Cast[];
   crew: Crew[];
 }
