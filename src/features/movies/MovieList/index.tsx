@@ -15,7 +15,10 @@ import useQueryParameter from "../../../useQueryParameter";
 import { NoResult } from "../../../common/fetchStates/NoResult";
 import { Pagination } from "../../../common/Pagination";
 import { Wrapper } from "../../../common/tiles/generisStyles/styled";
-import { fetchGenres, selectGenres } from "../../../common/tiles/MovieTile/Genre/genreSlice";
+import {
+  fetchGenres,
+  selectGenres,
+} from "../../../common/tiles/MovieTile/Genre/genreSlice";
 
 export const MovieList = () => {
   const dispatch = useDispatch();
