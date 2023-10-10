@@ -3,18 +3,29 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { GlobalStyle } from "./globalStyle";
 import { ThemeProvider } from "styled-components";
-import { Provider } from "react-redux";
-import { store } from "./store";
+import { QueryClient, QueryClientProvider } from "react-query";
+import { ReactQueryDevtools } from "react-query/devtools";
 import { theme } from "./theme";
+
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      staleTime: 1000 * 10,
+      cacheTime: 1000 * 60 * 5,
+    },
+  },
+});
 
 const root = ReactDOM.createRoot(document.getElementById("root") as Element);
 root.render(
-  <Provider store={store}>
+
+  <QueryClientProvider client={queryClient}>
     <ThemeProvider theme={theme}>
+      <ReactQueryDevtools />
       <App />
       <GlobalStyle />
     </ThemeProvider>
-  </Provider>
+  </QueryClientProvider>
 );
 
 reportWebVitals();
