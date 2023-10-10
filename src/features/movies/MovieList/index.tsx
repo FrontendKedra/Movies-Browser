@@ -1,13 +1,5 @@
 import { ContentContainer, ListTitle } from "./styled";
-import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
-import {
-  fetchPopularMovies,
-  selectPopularMovies,
-  selectPopularMoviesStatus,
-  selectPopularMoviesTotalPages,
-  selectPopularMoviesTotalResults,
-} from "../popularMoviesSlice";
 import { MovieTile } from "../../../common/tiles/MovieTile";
 import { Loader } from "../../../common/fetchStates/Loader";
 import { Error } from "../../../common/fetchStates/Error";
@@ -15,31 +7,43 @@ import useQueryParameter from "../../../useQueryParameter";
 import { NoResult } from "../../../common/fetchStates/NoResult";
 import { Pagination } from "../../../common/Pagination";
 import { Wrapper } from "../../../common/tiles/generisStyles/styled";
-import {
-  fetchGenres,
-  selectGenres,
-} from "../../../common/tiles/MovieTile/Genre/genreSlice";
+import { useQuery, useQueryClient } from "react-query";
+import { usePageNumber } from "../../../usePageNumber";
+import { getMovies } from "../../../api/movies/getMovies";
+import { getGenres } from "../../../api/getGenres";
 
 export const MovieList = () => {
-  const dispatch = useDispatch();
-  const movies = useSelector(selectPopularMovies);
-  const genres = useSelector(selectGenres);
-  const stateOfLoading = useSelector(selectPopularMoviesStatus);
+  const [page] = usePageNumber();
   const query = useQueryParameter("search");
-  const page = useQueryParameter("page");
-  const totalPages = useSelector(selectPopularMoviesTotalPages);
-  const totalResults = useSelector(selectPopularMoviesTotalResults);
+  const queryClient = useQueryClient();
+
+  const { isLoading, data, isError } = useQuery(
+    ["popularMovies", { page, query }],
+    getMovies
+  );
+
+  const movies = data?.results || [];
+  const totalPages = data?.total_pages || 0;
+  const totalResults = data?.total_results || 0;
+  const limitedTotalPages = totalPages > 500 ? 500 : totalPages;
 
   useEffect(() => {
-    dispatch(fetchPopularMovies({ page, query }));
-    dispatch(fetchGenres());
-  }, [dispatch, page, query]);
+    if (page + 1 < limitedTotalPages)
+      queryClient.prefetchQuery(
+        ["popularMovies", { page: page + 1, query }],
+        getMovies
+      );
+  }, [page, queryClient, query, limitedTotalPages]);
+
+  const genresResponse = useQuery("genres", getGenres);
+
+  const genres = genresResponse.data?.genres || [];
 
   return (
     <>
-      {stateOfLoading === "loading" ? (
+      {isLoading ? (
         <Loader title="Loading..." />
-      ) : stateOfLoading === "error" ? (
+      ) : isError ? (
         <Error />
       ) : (
         <Wrapper>
@@ -77,7 +81,7 @@ export const MovieList = () => {
                   )
                 )}
               </ContentContainer>
-              <Pagination totalPages={totalPages} />
+              <Pagination totalPages={limitedTotalPages} />
             </>
           )}
         </Wrapper>

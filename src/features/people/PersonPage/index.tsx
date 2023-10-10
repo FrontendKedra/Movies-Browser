@@ -1,13 +1,4 @@
-import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import {
-  fetchPerson,
-  selectCast,
-  selectCrew,
-  selectPerson,
-  selectPersonStatus,
-} from "./personSlice";
 import { ContentContainer, Header, Wrapper } from "./styled";
 import { Loader } from "../../../common/fetchStates/Loader";
 import { Error } from "../../../common/fetchStates/Error";
@@ -15,32 +6,36 @@ import { BigTile } from "../../../common/tiles/BigTile";
 import { MovieTile } from "../../../common/tiles/MovieTile";
 import useQueryParameter from "../../../useQueryParameter";
 import { PeoplePage } from "../PeoplePage";
-import {
-  fetchGenres,
-  selectGenres,
-} from "../../../common/tiles/MovieTile/Genre/genreSlice";
 import { Id } from "../../../apiInterfaces/generalTypesInterfaces/typesAndInterfaces";
+import { useQuery } from "react-query";
+import { getPersonDetails } from "../../../api/people/getPersonDetails";
+import { getGenres } from "../../../api/getGenres";
 
 export const PersonPage = () => {
-  const dispatch = useDispatch();
   const { id } = useParams<Id>();
-  const cast = useSelector(selectCast);
-  const crew = useSelector(selectCrew);
-  const person = useSelector(selectPerson);
-  const genres = useSelector(selectGenres);
-  const stateOfLoading = useSelector(selectPersonStatus);
   const query = useQueryParameter("search");
 
-  useEffect(() => {
-    query === null && dispatch(fetchPerson(id));
-    dispatch(fetchGenres());
-  }, [dispatch, id, query]);
+  const { isLoading, data, isError } = useQuery(
+    ["personDetails", { id }],
+    getPersonDetails,
+    {
+      enabled: query === null,
+    }
+  );
+
+  const person = data?.details || [];
+  const cast = data?.credits.cast || [];
+  const crew = data?.credits.crew || [];
+
+  const genresResponse = useQuery("genres", getGenres);
+
+  const genres = genresResponse.data?.genres || [];
 
   return (
     <>
-      {stateOfLoading === "loading" ? (
+      {isLoading ? (
         <Loader title="Loading..." />
-      ) : stateOfLoading === "error" ? (
+      ) : isError ? (
         <Error />
       ) : query === null ? (
         <Wrapper>

@@ -1,15 +1,6 @@
-import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { BigTile } from "../../../common/tiles/BigTile";
 import { Backdrop } from "./Backdrop";
-import {
-  fetchMovieDetails,
-  selectMovie,
-  selectMovieStatus,
-  selectMovieCast,
-  selectMovieCrew,
-} from "./movieDetailsSlice";
 import { ContentContainer, Header, Wrapper } from "./styled";
 import { Loader } from "../../../common/fetchStates/Loader";
 import { Error } from "../../../common/fetchStates/Error";
@@ -17,25 +8,30 @@ import { PersonTile } from "../../../common/tiles/PersonTile";
 import useQueryParameter from "../../../useQueryParameter";
 import { MovieList } from "../MovieList";
 import { Id } from "../../../apiInterfaces/generalTypesInterfaces/typesAndInterfaces";
+import { useQuery } from "react-query";
+import { getMovieDetails } from "../../../api/movies/getMovieDetails";
 
 export const MoviePage = () => {
-  const dispatch = useDispatch();
   const { id } = useParams<Id>();
-  const movie = useSelector(selectMovie);
-  const cast = useSelector(selectMovieCast);
-  const crew = useSelector(selectMovieCrew);
-  const stateOfLoading = useSelector(selectMovieStatus);
   const query = useQueryParameter("search");
 
-  useEffect(() => {
-    query === null && dispatch(fetchMovieDetails(id));
-  }, [dispatch, id, query]);
+  const { isLoading, data, isError } = useQuery(
+    ["movieDetails", { id }],
+    getMovieDetails,
+    {
+      enabled: query === null,
+    }
+  );
+
+  const movie = data?.details || [];
+  const cast = data?.credits.cast || [];
+  const crew = data?.credits.crew || [];
 
   return (
     <>
-      {stateOfLoading === "loading" ? (
+      {isLoading ? (
         <Loader title="Loading..." />
-      ) : stateOfLoading === "error" ? (
+      ) : isError ? (
         <Error />
       ) : query === null ? (
         <>

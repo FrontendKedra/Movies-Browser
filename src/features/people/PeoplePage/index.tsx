@@ -1,39 +1,44 @@
 import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
 import { Loader } from "../../../common/fetchStates/Loader";
 import { Error } from "../../../common/fetchStates/Error";
 import { PersonTile } from "../../../common/tiles/PersonTile";
-import {
-  fetchPopularPeople,
-  selectPopularPeople,
-  selectPopularPeopleStatus,
-  selectPopularPeopleToatalResults,
-  selectPopularPeopleTotalPages,
-} from "../popularPeopleSlice";
 import { PersonContainer, ListTitle } from "./styled";
 import { Pagination } from "../../../common/Pagination";
 import { NoResult } from "../../../common/fetchStates/NoResult";
 import { Wrapper } from "../../../common/tiles/generisStyles/styled";
 import useQueryParameter from "../../../useQueryParameter";
+import { useQuery, useQueryClient } from "react-query";
+import { usePageNumber } from "../../../usePageNumber";
+import { getPeople } from "../../../api/people/getPeople";
 
 export const PeoplePage = () => {
-  const dispatch = useDispatch();
-  const people = useSelector(selectPopularPeople);
-  const stateOfLoading = useSelector(selectPopularPeopleStatus);
-  const page = useQueryParameter("page");
-  const totalPages = useSelector(selectPopularPeopleTotalPages);
-  const totalResults = useSelector(selectPopularPeopleToatalResults);
+  const [page] = usePageNumber();
   const query = useQueryParameter("search");
+  const queryClient = useQueryClient();
+
+  const { isLoading, data, isError } = useQuery(
+    ["popularPeople", { page, query }],
+    getPeople
+  );
+
+  const people = data?.results || [];
+  const totalPages = data?.total_pages || 0;
+  const totalResults = data?.total_results || 0;
+  const limitedTotalPages = totalPages > 500 ? 500 : totalPages;
 
   useEffect(() => {
-    dispatch(fetchPopularPeople({ page, query }));
-  }, [dispatch, page, query]);
+    if (page + 1 < limitedTotalPages)
+      queryClient.prefetchQuery(
+        ["popularPeople", { page: page + 1, query }],
+        getPeople
+      );
+  }, [page, queryClient, query, limitedTotalPages]);
 
   return (
     <>
-      {stateOfLoading === "loading" ? (
+      {isLoading ? (
         <Loader title="Loading..." />
-      ) : stateOfLoading === "error" ? (
+      ) : isError ? (
         <Error />
       ) : (
         <Wrapper>
@@ -56,7 +61,7 @@ export const PeoplePage = () => {
                   />
                 ))}
               </PersonContainer>
-              <Pagination totalPages={totalPages} />
+              <Pagination totalPages={limitedTotalPages} />
             </>
           )}
         </Wrapper>
