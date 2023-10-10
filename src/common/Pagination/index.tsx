@@ -8,12 +8,13 @@ import {
   Span,
 } from "./styled";
 import { usePageNumber } from "../../usePageNumber";
-import { PaginationProps, UsePageNumber } from "../../apiInterfaces/generalTypesInterfaces/typesAndInterfaces";
+import {
+  PaginationProps,
+  UsePageNumber,
+} from "../../apiInterfaces/generalTypesInterfaces/typesAndInterfaces";
 
 export const Pagination = ({ totalPages }: PaginationProps) => {
   const [pageNumber, changePage]: UsePageNumber = usePageNumber();
-
-  const isLastPage = totalPages > 500 ? 500 : totalPages;
   const isFirstPage = pageNumber === 1;
 
   return (
@@ -31,11 +32,11 @@ export const Pagination = ({ totalPages }: PaginationProps) => {
         Page
         <Span>{pageNumber}</Span>
         of
-        <Span>{isLastPage}</Span>
+        <Span>{totalPages}</Span>
       </PageCounter>
       <Button
         next
-        disabled={pageNumber === isLastPage}
+        disabled={pageNumber === totalPages}
         onClick={() => changePage(pageNumber + 1)}
       >
         <ButtonText>Next</ButtonText>
@@ -43,8 +44,8 @@ export const Pagination = ({ totalPages }: PaginationProps) => {
       </Button>
       <Button
         next
-        disabled={pageNumber === isLastPage}
-        onClick={() => changePage(isLastPage)}
+        disabled={pageNumber === totalPages}
+        onClick={() => changePage(totalPages)}
       >
         <ButtonText>Last</ButtonText>
         <ArrowIconNext mobile="true" />
