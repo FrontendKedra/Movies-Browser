@@ -1,4 +1,4 @@
-import { Genres } from "../genresInterfaces/genres";
+import { Genre } from "../genresInterfaces/genres";
 import { MovieGenre, ProductionCountry } from "../movieInterfaces/movieDetails";
 
 export interface Id {
@@ -21,7 +21,7 @@ export type UsePageNumber = [number, (pageNumber: number) => void];
 
 export interface GenreProps {
   genre_ids: number[];
-  genres: Genres[];
+  genres: Genre[];
 }
 
 export interface BigTileProps {
@@ -61,7 +61,7 @@ export interface MovieTileProps {
   character?: string;
   job?: string;
   year?: string;
-  genres: Genres[];
+  genres: Genre[];
 }
 
 export interface BackdropProps {
