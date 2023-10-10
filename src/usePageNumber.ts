@@ -13,6 +13,8 @@ export const usePageNumber = (): UsePageNumber => {
 
     if (currentPage) {
       setPageNumber(parseInt(currentPage));
+    } else {
+      setPageNumber(1);
     }
   }, [location]);
 
