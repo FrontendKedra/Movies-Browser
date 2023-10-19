@@ -10,18 +10,10 @@ function App() {
     <HashRouter>
       <Header />
       <Switch>
-        <Route path="/movie-list/movie-page/:id">
-          <MoviePage />
-        </Route>
-        <Route path="/people/profile/:id">
-          <PersonPage />
-        </Route>
-        <Route path="/movie-list">
-          <MovieList />
-        </Route>
-        <Route path="/people">
-          <PeoplePage />
-        </Route>
+        <Route path="/movie-list/movie-page/:id" component={MoviePage} />
+        <Route path="/people/profile/:id" component={PersonPage} />
+        <Route path="/movie-list" component={MovieList} />
+        <Route path="/people" component={PeoplePage} />
         <Route path="/">
           <Redirect to="/movie-list" />
         </Route>
