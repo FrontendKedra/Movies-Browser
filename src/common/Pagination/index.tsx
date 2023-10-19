@@ -7,7 +7,7 @@ import {
   PageCounter,
   Span,
 } from "./styled";
-import { usePageNumber } from "../../usePageNumber";
+import { usePageNumber } from "../../hooks/usePageNumber";
 import {
   PaginationProps,
   UsePageNumber,

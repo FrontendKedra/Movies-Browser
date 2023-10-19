@@ -3,12 +3,12 @@ import { useEffect } from "react";
 import { MovieTile } from "../../../common/tiles/MovieTile";
 import { Loader } from "../../../common/fetchStates/Loader";
 import { Error } from "../../../common/fetchStates/Error";
-import useQueryParameter from "../../../useQueryParameter";
+import useQueryParameter from "../../../hooks/useQueryParameter";
 import { NoResult } from "../../../common/fetchStates/NoResult";
 import { Pagination } from "../../../common/Pagination";
 import { Wrapper } from "../../../common/tiles/generisStyles/styled";
 import { useQuery, useQueryClient } from "react-query";
-import { usePageNumber } from "../../../usePageNumber";
+import { usePageNumber } from "../../../hooks/usePageNumber";
 import { getMovies } from "../../../api/movies/getMovies";
 import { getGenres } from "../../../api/getGenres";
 

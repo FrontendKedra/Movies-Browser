@@ -6,9 +6,9 @@ import { PersonContainer, ListTitle } from "./styled";
 import { Pagination } from "../../../common/Pagination";
 import { NoResult } from "../../../common/fetchStates/NoResult";
 import { Wrapper } from "../../../common/tiles/generisStyles/styled";
-import useQueryParameter from "../../../useQueryParameter";
+import useQueryParameter from "../../../hooks/useQueryParameter";
 import { useQuery, useQueryClient } from "react-query";
-import { usePageNumber } from "../../../usePageNumber";
+import { usePageNumber } from "../../../hooks/usePageNumber";
 import { getPeople } from "../../../api/people/getPeople";
 
 export const PeoplePage = () => {

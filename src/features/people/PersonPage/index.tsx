@@ -4,7 +4,7 @@ import { Loader } from "../../../common/fetchStates/Loader";
 import { Error } from "../../../common/fetchStates/Error";
 import { BigTile } from "../../../common/tiles/BigTile";
 import { MovieTile } from "../../../common/tiles/MovieTile";
-import useQueryParameter from "../../../useQueryParameter";
+import useQueryParameter from "../../../hooks/useQueryParameter";
 import { PeoplePage } from "../PeoplePage";
 import { Id } from "../../../apiInterfaces/generalTypesInterfaces/typesAndInterfaces";
 import { useQuery } from "react-query";

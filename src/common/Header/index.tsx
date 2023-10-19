@@ -1,6 +1,6 @@
 import { useLocation } from "react-router";
-import useQueryParameter from "../../useQueryParameter";
-import { useReplaceQueryParameter } from "../../useReplaceQueryParameter";
+import useQueryParameter from "../../hooks/useQueryParameter";
+import { useReplaceQueryParameter } from "../../hooks/useReplaceQueryParameter";
 import {
   HeaderArea,
   HeaderContainer,

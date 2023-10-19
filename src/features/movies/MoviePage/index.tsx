@@ -5,7 +5,7 @@ import { ContentContainer, Header, Wrapper } from "./styled";
 import { Loader } from "../../../common/fetchStates/Loader";
 import { Error } from "../../../common/fetchStates/Error";
 import { PersonTile } from "../../../common/tiles/PersonTile";
-import useQueryParameter from "../../../useQueryParameter";
+import useQueryParameter from "../../../hooks/useQueryParameter";
 import { MovieList } from "../MovieList";
 import { Id } from "../../../apiInterfaces/generalTypesInterfaces/typesAndInterfaces";
 import { useQuery } from "react-query";

@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useState } from "react";
 import { useHistory, useLocation } from "react-router-dom";
-import { UsePageNumber } from "./apiInterfaces/generalTypesInterfaces/typesAndInterfaces";
+import { UsePageNumber } from "../apiInterfaces/generalTypesInterfaces/typesAndInterfaces";
 
 export const usePageNumber = (): UsePageNumber => {
   const history = useHistory();
