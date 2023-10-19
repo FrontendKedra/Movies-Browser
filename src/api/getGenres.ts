@@ -1,4 +1,4 @@
-import { apiKey, baseUrl, language } from "../ApiValue";
+import { apiKey, baseUrl, language } from "./ApiValue";
 import { Genres } from "../apiInterfaces/genresInterfaces/genres";
 import { wait } from "./wait";
 

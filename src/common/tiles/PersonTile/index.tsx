@@ -1,4 +1,4 @@
-import { imageBaseUrl } from "../../../ApiValue";
+import { imageBaseUrl } from "../../../api/ApiValue";
 import { Container, ProfileImage, Name, Info } from "./styled";
 import noPicture from "./noPicture.png";
 import { PeopleStyledLink } from "../generisStyles/styled";

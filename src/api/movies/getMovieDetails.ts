@@ -1,4 +1,4 @@
-import { apiKey, baseUrl, language } from "../../ApiValue";
+import { apiKey, baseUrl, language } from "../ApiValue";
 import { MovieCredits } from "../../apiInterfaces/movieInterfaces/movieCredits";
 import { MovieDetails } from "../../apiInterfaces/movieInterfaces/movieDetails";
 import { wait } from "../wait";

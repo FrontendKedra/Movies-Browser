@@ -1,4 +1,4 @@
-import { apiKey, baseUrl, language } from "../../ApiValue";
+import { apiKey, baseUrl, language } from "../ApiValue";
 import { PersonPopularAndSearch } from "../../apiInterfaces/peopleInterfaces/personPopularAndSearch";
 import { wait } from "../wait";
 
