@@ -14,13 +14,12 @@ https://frontendkedra.github.io/Movies-Browser/
 ## Used Technologies
 
 - React
-- React Redux
+- React-Query
 - React Router
 - Styled Components
-- Redux Saga
 - Redux Toolkit
 - CSS Flexbox/ Grid
-- data imported from API - using Axios
+- React Hooks
 - Javascript ES6+
 - Github(pull requests & review)
 - Error handling
