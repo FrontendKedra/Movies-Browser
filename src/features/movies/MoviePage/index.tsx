@@ -9,7 +9,7 @@ import useQueryParameter from "../../../hooks/useQueryParameter";
 import { MovieList } from "../MovieList";
 import { Id } from "../../../apiInterfaces/generalTypesInterfaces/typesAndInterfaces";
 import { useQuery } from "react-query";
-import { getMovieDetails } from "../../../api/movies/getMovieDetails";
+import { getMovieDetails } from "../../../lib/movies/getMovieDetails";
 
 export const MoviePage = () => {
   const { id } = useParams<Id>();

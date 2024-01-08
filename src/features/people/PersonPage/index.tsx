@@ -8,8 +8,8 @@ import useQueryParameter from "../../../hooks/useQueryParameter";
 import { PeoplePage } from "../PeoplePage";
 import { Id } from "../../../apiInterfaces/generalTypesInterfaces/typesAndInterfaces";
 import { useQuery } from "react-query";
-import { getPersonDetails } from "../../../api/people/getPersonDetails";
-import { getGenres } from "../../../api/getGenres";
+import { getPersonDetails } from "../../../lib/people/getPersonDetails";
+import { getGenres } from "../../../lib/getGenres";
 
 export const PersonPage = () => {
   const { id } = useParams<Id>();

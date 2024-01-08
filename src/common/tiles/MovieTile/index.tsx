@@ -8,7 +8,7 @@ import {
   Year,
 } from "./styled";
 import { Genre } from "./Genre";
-import { imageBaseUrl } from "../../../api/ApiValue";
+import { imageBaseUrl } from "../../../lib/ApiValue";
 import noPoster from "./noPoster.png";
 import { MovieStyledLink } from "../generisStyles/styled";
 import { MovieTileProps } from "../../../apiInterfaces/generalTypesInterfaces/typesAndInterfaces";

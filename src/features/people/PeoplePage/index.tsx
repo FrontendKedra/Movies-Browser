@@ -9,7 +9,7 @@ import { Wrapper } from "../../../common/tiles/generisStyles/styled";
 import useQueryParameter from "../../../hooks/useQueryParameter";
 import { useQuery, useQueryClient } from "react-query";
 import { usePageNumber } from "../../../hooks/usePageNumber";
-import { getPeople } from "../../../api/people/getPeople";
+import { getPeople } from "../../../lib/people/getPeople";
 
 export const PeoplePage = () => {
   const [page] = usePageNumber();

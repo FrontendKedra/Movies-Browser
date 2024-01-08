@@ -1,4 +1,4 @@
-import { imageBaseUrl } from "../../../api/ApiValue";
+import { imageBaseUrl } from "../../../lib/ApiValue";
 import {
   MainContainer,
   Image,

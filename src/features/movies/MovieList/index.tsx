@@ -9,8 +9,8 @@ import { Pagination } from "../../../common/Pagination";
 import { Wrapper } from "../../../common/tiles/generisStyles/styled";
 import { useQuery, useQueryClient } from "react-query";
 import { usePageNumber } from "../../../hooks/usePageNumber";
-import { getMovies } from "../../../api/movies/getMovies";
-import { getGenres } from "../../../api/getGenres";
+import { getMovies } from "../../../lib/movies/getMovies";
+import { getGenres } from "../../../lib/getGenres";
 
 export const MovieList = () => {
   const [page] = usePageNumber();

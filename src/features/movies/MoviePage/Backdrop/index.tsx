@@ -1,5 +1,5 @@
 import { BackdropProps } from "../../../../apiInterfaces/generalTypesInterfaces/typesAndInterfaces";
-import { imageBaseUrl } from "../../../../api/ApiValue";
+import { imageBaseUrl } from "../../../../lib/ApiValue";
 import {
   BackdropImg,
   BlureFrame,
